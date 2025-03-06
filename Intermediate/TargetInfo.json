@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Game2DCPlusPlus",
+			"Path": "..\\Source\\Game2DCPlusPlus.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "Game2DCPlusPlusEditor",
+			"Path": "..\\Source\\Game2DCPlusPlusEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

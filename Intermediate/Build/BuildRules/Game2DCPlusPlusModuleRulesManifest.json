@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Users\\natha\\Documents\\Unreal Projects\\Game2DCPlusPlus\\Source\\Game2DCPlusPlus\\Game2DCPlusPlus.Build.cs",
+		"C:\\Users\\natha\\Documents\\Unreal Projects\\Game2DCPlusPlus\\Source\\Game2DCPlusPlus.Target.cs",
+		"C:\\Users\\natha\\Documents\\Unreal Projects\\Game2DCPlusPlus\\Source\\Game2DCPlusPlusEditor.Target.cs"
+	],
+	"EngineVersion": "5.4.4"
+}
