@@ -63,10 +63,14 @@ void UCharacterCombatComponent::LightAttack()
 {
 	if (bIsAttacking)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("⚠️ LightAttack ignorée : Une attaque est déjà en cours, ajoutée à la queue"));
+		//UE_LOG(LogTemp, Warning, TEXT("⚠️ LightAttack ignorée : Une attaque est déjà en cours, ajoutée à la queue"));
 
 		//Stocke l'attaque en file d'attente si une attaque est déjà en cours
-		AttackQueue.Enqueue(ComboStep + 1 > 3 ? 1 : ComboStep + 1);
+		if (AttackQueueSize < 2)
+		{
+			AttackQueue.Enqueue(ComboStep + 1 > 3 ? 1 : ComboStep + 1);
+			AttackQueueSize++;
+		}
 		return;
 	}
 
@@ -76,41 +80,46 @@ void UCharacterCombatComponent::LightAttack()
 
 void UCharacterCombatComponent::ExecuteLightAttack()
 {
-	//if (bIsAttacking) return; // 🔥 Sécurité supplémentaire pour éviter les erreurs
+    bIsAttacking = true;
 
-	bIsAttacking = true;
+    if (!AttackQueue.IsEmpty())
+    {
+        int32 NextComboStep;
+        AttackQueue.Dequeue(NextComboStep);
 
-	// 🔥 Récupère la prochaine attaque en attente (sinon, continue normalement)
-	if (!AttackQueue.IsEmpty())
-	{
-		AttackQueue.Dequeue(ComboStep);
-	}
-	else
-	{
-		ComboStep++;
-		if (ComboStep > 3)
-		{
-			ComboStep = 1;
-		}
-	}
+        // 🔥 Évite que le ComboStep reste bloqué
+        if (NextComboStep == ComboStep)
+        {
+            UE_LOG(LogTemp, Warning, TEXT("⚠️ Ignoré : ComboStep déjà utilisé, force passage au suivant."));
+            ComboStep = (ComboStep % 3) + 1;  // Passe à l'attaque suivante
+        }
+        else
+        {
+            ComboStep = NextComboStep;
+        }
+    }
+    else
+    {
+        // 🔥 Incrémente toujours ComboStep proprement
+        ComboStep = (ComboStep % 3) + 1;
+    }
 
-	UE_LOG(LogTemp, Warning, TEXT("ExecuteLightAttack : ComboStep = %d"), ComboStep);
+    UE_LOG(LogTemp, Warning, TEXT("ExecuteLightAttack : ComboStep = %d"), ComboStep);
 
-	PlayComboAnimation();
-	OwnerCharacter->SwordHitbox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+    PlayComboAnimation();
+    OwnerCharacter->SwordHitbox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 
-	GetWorld()->GetTimerManager().ClearTimer(ComboResetTimerHandle);
+    GetWorld()->GetTimerManager().ClearTimer(ComboResetTimerHandle);
 
-	// 🔥 Récupérer la durée de l'animation actuelle pour bien attendre sa fin
-	float AnimationDuration; // Valeur par défaut
-	if (AnimationComponent && AnimationComponent->FlipbookComponent)
-	{
-		AnimationDuration = AnimationComponent->FlipbookComponent->GetFlipbookLength();
-	}
+    float AnimationDuration;
+    if (AnimationComponent && AnimationComponent->FlipbookComponent)
+    {
+        AnimationDuration = AnimationComponent->FlipbookComponent->GetFlipbookLength();
+    }
 
-	// 🔥 Après l'animation, on vérifie s'il y a encore des attaques en attente
-	GetWorld()->GetTimerManager().SetTimer(ComboResetTimerHandle, this, &UCharacterCombatComponent::EndLightAttack, AnimationDuration, false);
+    GetWorld()->GetTimerManager().SetTimer(ComboResetTimerHandle, this, &UCharacterCombatComponent::EndLightAttack, AnimationDuration, false);
 }
+
 
 
 
@@ -123,11 +132,14 @@ void UCharacterCombatComponent::EndLightAttack()
 	// 🔥 Si une attaque est en attente, on l’exécute immédiatement
 	if (!AttackQueue.IsEmpty())
 	{
+		AttackQueue.Dequeue(ComboStep);
+		AttackQueueSize--;
 		ExecuteLightAttack();
 	}
 	else
 	{
 		// 🔥 Programme le reset du combo uniquement si aucune attaque n'est en attente
+		AttackQueueSize = 0;
 		GetWorld()->GetTimerManager().SetTimer(ComboResetTimerHandle, this, &UCharacterCombatComponent::ResetCombo, 0.5f, false);
 	}
 	if (AnimationComponent)

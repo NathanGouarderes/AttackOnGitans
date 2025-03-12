@@ -59,14 +59,35 @@ void UCharacterAnimationComponent::UpdateAnimation()
     //UE_LOG(LogTemp, Warning, TEXT("UpadateAnimation execute !"));
     if (!FlipbookComponent || !OwnerCharacter) return;
 
+    bool bAnimationSet = false; // Permet de savoir si une animation a été jouée
+
+    if (OwnerCharacter->GetVelocity().X != 0.0f)
+    {
+        CombatComponent->bIsAttacking = false;
+        CombatComponent->AttackQueueSize = 0;
+        FlipbookComponent->SetFlipbook(WalkAnimation);
+        bAnimationSet = true;
+    }
+
     if (OwnerCharacter->GetCharacterMovement()->IsFalling())
     {
         FlipbookComponent->SetFlipbook(JumpAnimation);
+        bAnimationSet = true;
     }
+
     if (CombatComponent->bIsAttacking)
     {
         PlayAttackAnimation();
+        bAnimationSet = true;
     }
+
+    // Si aucune animation n'a été jouée, on joue l'animation par défaut
+    if (!bAnimationSet)
+    {
+        SetDefaultAnimation();
+    }
+
+    
 }
 
 

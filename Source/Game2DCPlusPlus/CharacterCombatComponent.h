@@ -34,10 +34,12 @@ public:
 
 	UFUNCTION()
 	void OnSwordOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Combat")
 	
 	bool bIsAttacking;
 
 	int32 ComboStep;
+	int32 AttackQueueSize = 0;
 
 	FTimerHandle ComboResetTimerHandle;
 
@@ -45,6 +47,8 @@ private:
 	UCharacterAbilitiesComponent* AbilitiesComponent;
 	UCharacterAnimationComponent* AnimationComponent;
 	TQueue<int32> AttackQueue;
+	
 	class AMyCharacter* OwnerCharacter;
+	
 
 };
