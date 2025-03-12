@@ -18,6 +18,7 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animations")
 	UPaperFlipbook* Swing1SwordFlipbook;
@@ -29,24 +30,29 @@ protected:
 	UPaperFlipbook* Swing3SwordFlipbook;
 
 public:
-	/** Joue l'animation en fonction de l'état du personnage */
+	/** Joue l'animation en fonction de l'etat du personnage */
 	void UpdateAnimation();
 
-	/** Déclenche l'animation d'attaque */
+	/** Declenche l'animation d'attaque */
 	void PlayAttackAnimation();
 
-	/** Réinitialise le combo après une attaque */
+	void EndAttackAnimation();
+
+	/** Reinitialise le combo apres une attaque */
 	void ResetCombo();
 
-	/** Définit l'animation de base en fonction de l'état */
+	/** Definit l'animation de base en fonction de l'etat */
 	void SetDefaultAnimation();
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Animation")
+	UPaperFlipbookComponent* FlipbookComponent;
+
+	FTimerHandle AttackEndTimer;
 
 private:
 	UPROPERTY()
 	AMyCharacter* OwnerCharacter;
 
-	UPROPERTY()
-	UPaperFlipbookComponent* FlipbookComponent;
 
 	/** Liste des animations */
 	UPROPERTY(EditAnywhere, Category = "Animations")

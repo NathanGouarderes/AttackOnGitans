@@ -1,5 +1,7 @@
 #include "CharacterAbilitiesComponent.h"
 #include "CharacterCombatComponent.h"
+#include "MyKiProjectileBase.h"
+#include "CharacterAnimationComponent.h"
 #include "MyCharacter.h"
 #include "MyProjectileBase.h"
 #include "GameFramework/CharacterMovementComponent.h"
@@ -8,6 +10,12 @@
 UCharacterAbilitiesComponent::UCharacterAbilitiesComponent()
 {
 	PrimaryComponentTick.bCanEverTick = false;
+
+	// Initialisation des valeurs par défaut
+	KiCostForAttack = 0.f;
+	MaxKi = 100.f;
+	Strength = 10.f;
+	SwordDamages = 15.f;
 
 	DashDistance = 1000.0f;
 	DashCooldown = 0.3f;
@@ -20,48 +28,61 @@ UCharacterAbilitiesComponent::UCharacterAbilitiesComponent()
 void UCharacterAbilitiesComponent::BeginPlay()
 {
 	Super::BeginPlay();
-	OwnerCharacter = Cast<AMyCharacter>(GetOwner());
 
+	OwnerCharacter = Cast<AMyCharacter>(GetOwner());
 	if (!OwnerCharacter)
 	{
-		UE_LOG(LogTemp, Error, TEXT("UCharacterAbilitiesComponent : Impossible de récupérer OwnerCharacter !"));
+		UE_LOG(LogTemp, Error, TEXT("UCharacterAbilitiesComponent : Impossible de recuperer OwnerCharacter !"));
+		return;  // On quitte pour eviter un crash
 	}
-	CombatComponent = OwnerCharacter->FindComponentByClass<UCharacterCombatComponent>();
 
-	if (!CombatComponent)
+	UE_LOG(LogTemp, Warning, TEXT("UCharacterAbilitiesComponent : Initialisation terminee"));
+}
+
+
+void UCharacterAbilitiesComponent::CastProjectile(EProjectileType ProjectileType)
+{
+	if (!OwnerCharacter) return;
+
+	TSubclassOf<AMyProjectileBase> SelectedProjectile;
+
+	switch (ProjectileType)
 	{
-		UE_LOG(LogTemp, Error, TEXT("UCharacterAbilitiesComponent : CombatComponent non trouvé !"));
+	case EProjectileType::Kamehameha:
+		SelectedProjectile = KamehamehaClass;
+		break;
+	case EProjectileType::Fireball:
+		SelectedProjectile = FireballClass;
+		break;
+	default:
+		return;
 	}
-}
 
-void UCharacterAbilitiesComponent::LightAttack()
-{
-	if (bIsAttacking) return;
-	bIsAttacking = true;
+	if (!SelectedProjectile) return;
 
-	FTimerHandle TimerHandle;
-	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &UCharacterAbilitiesComponent::EndLightAttack, 0.5f, false);
-}
-
-void UCharacterAbilitiesComponent::EndLightAttack()
-{
-	bIsAttacking = false;
-	UE_LOG(LogTemp, Warning, TEXT("Fin de l'attaque"));
-}
-
-void UCharacterAbilitiesComponent::CastProjectile()
-{
-	if (!ProjectileClass || !OwnerCharacter) return;
-
-	FVector FireDirection = (OwnerCharacter->GetActorForwardVector());
+	FVector FireDirection = OwnerCharacter->GetActorForwardVector();
 	FVector SpawnLocation = OwnerCharacter->GetActorLocation() + FireDirection * 100;
 	FRotator SpawnRotation = FireDirection.Rotation();
 
-	AMyProjectileBase* Projectile = GetWorld()->SpawnActor<AMyProjectileBase>(ProjectileClass, SpawnLocation, SpawnRotation);
+	AMyProjectileBase* Projectile = GetWorld()->SpawnActor<AMyProjectileBase>(SelectedProjectile, SpawnLocation, SpawnRotation);
 
 	if (Projectile)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Projectile lance"));
+
+		Projectile->SetOwner(OwnerCharacter); // Definit le proprietaire du projectile
+
+		AMyKiProjectileBase* KiProjectile = Cast<AMyKiProjectileBase>(Projectile);
+		if (KiProjectile)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("C'est un projectile à Ki, appel de Initialize()"));
+			KiProjectile->Initialize(FireDirection);
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("C'est un projectile normal"));
+			Projectile->Initialize(FireDirection);
+		}
 	}
 }
 
@@ -83,5 +104,5 @@ void UCharacterAbilitiesComponent::Dodge()
 void UCharacterAbilitiesComponent::ResetDash()
 {
 	bCanDash = true;
-	UE_LOG(LogTemp, Warning, TEXT("Dash réinitialise"));
+	UE_LOG(LogTemp, Warning, TEXT("Dash reinitialise"));
 }

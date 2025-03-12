@@ -80,6 +80,12 @@
     <ClInclude Include="..\..\Source\Game2DCPlusPlus\CharacterKiComponent.h">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\FireBall.cpp">
+      <Filter>Source\Game2DCPlusPlus</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\FireBall.h">
+      <Filter>Source\Game2DCPlusPlus</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\FireDamageType.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>

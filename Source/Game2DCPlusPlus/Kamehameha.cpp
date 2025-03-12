@@ -34,7 +34,7 @@ AKamehameha::AKamehameha() {
 		maxKiUser = 0;
 	}
 	Damage = 100.0f;
-	KiCost = 100.0f;
+	KiCost = 10.0f;
 	Speed = 1500.0f;
 	LifeSpan = 5.0f;
 	ExpansionSpeed = 200.0f;

@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define GAME2DCPLUSPLUS_CharacterAbilitiesComponent_generated_h
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_16_INCLASS_NO_PURE_DECLS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_23_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUCharacterAbilitiesComponent(); \
 	friend struct Z_Construct_UClass_UCharacterAbilitiesComponent_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(UCharacterAbilitiesComponent)
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_16_ENHANCED_CONSTRUCTORS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_23_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UCharacterAbilitiesComponent(UCharacterAbilitiesComponent&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~UCharacterAbilitiesComponent();
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_13_PROLOG
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_16_GENERATED_BODY \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_20_PROLOG
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_23_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_16_INCLASS_NO_PURE_DECLS \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_16_ENHANCED_CONSTRUCTORS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_23_INCLASS_NO_PURE_DECLS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_23_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -50,5 +50,13 @@ template<> GAME2DCPLUSPLUS_API UClass* StaticClass<class UCharacterAbilitiesComp
 #undef CURRENT_FILE_ID
 #define CURRENT_FILE_ID FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h
 
+
+#define FOREACH_ENUM_EPROJECTILETYPE(op) \
+	op(EProjectileType::Kamehameha) \
+	op(EProjectileType::Fireball) 
+
+enum class EProjectileType : uint8;
+template<> struct TIsUEnumClass<EProjectileType> { enum { Value = true }; };
+template<> GAME2DCPLUSPLUS_API UEnum* StaticEnum<EProjectileType>();
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

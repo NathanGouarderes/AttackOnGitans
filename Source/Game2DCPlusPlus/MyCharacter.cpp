@@ -43,6 +43,18 @@ AMyCharacter::AMyCharacter()
 	SwordHitbox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 	SwordHitbox->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
 	SwordHitbox->SetNotifyRigidBodyCollision(true);
+
+
+
+	if (AnimationComponent)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("✅ AnimationComponent créé avec CreateDefaultSubobject"));
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("❌ AnimationComponent est NULL après CreateDefaultSubobject !"));
+	}
+
 }
 
 void AMyCharacter::BeginPlay()
@@ -129,6 +141,30 @@ void AMyCharacter::BeginPlay()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("CharacterCombatComponent : Initialisation du systeme de combat."));
 	}
+
+	if (CharacterFlipbook)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("✅ CharacterFlipbook trouvé !"));
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("❌ CharacterFlipbook est NULL !"));
+	}
+	if (!AnimationComponent)
+	{
+		UE_LOG(LogTemp, Error, TEXT("❌ AnimationComponent est NULL dans BeginPlay ! Tentative de récupération..."));
+
+		AnimationComponent = FindComponentByClass<UCharacterAnimationComponent>();
+
+		if (AnimationComponent)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("✅ AnimationComponent récupéré dynamiquement !"));
+		}
+		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("❌ Impossible de récupérer AnimationComponent !"));
+		}
+	}
 }
 
 void AMyCharacter::Tick(float DeltaTime)
@@ -154,7 +190,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	else
 	{
 		UE_LOG(LogTemp, Error, TEXT("InputHandler est NULL, impossible de lier les inputs !"));
-	}
+	}	
 }
 
 

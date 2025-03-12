@@ -24,6 +24,9 @@ public:
 	/** Lier les inputs à leurs actions correspondantes **/
 	void BindInputs(UInputComponent* PlayerInputComponent);
 
+	void FireKamehameha();
+	void FireFireball();
+
 private:
 	UPROPERTY()
 	AMyCharacter* OwnerCharacter;
