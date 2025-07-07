@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/MyStandBase.h"
+#include "Game2DCPlusPlus/Abilities/MyStandBase.h"
 #include "Runtime/Engine/Classes/Engine/HitResult.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMyStandBase() {}
@@ -36,7 +36,7 @@ struct Z_Construct_UFunction_AMyStandBase_OnHit_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "MyStandBase.h" },
+		{ "ModuleRelativePath", "Abilities/MyStandBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_HitComponent_MetaData[] = {
 		{ "EditInline", "true" },
@@ -108,7 +108,7 @@ struct Z_Construct_UFunction_AMyStandBase_OnOverlapBegin_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "MyStandBase.h" },
+		{ "ModuleRelativePath", "Abilities/MyStandBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OverlappedComp_MetaData[] = {
 		{ "EditInline", "true" },
@@ -194,17 +194,17 @@ struct Z_Construct_UClass_AMyStandBase_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-		{ "IncludePath", "MyStandBase.h" },
-		{ "ModuleRelativePath", "MyStandBase.h" },
+		{ "IncludePath", "Abilities/MyStandBase.h" },
+		{ "ModuleRelativePath", "Abilities/MyStandBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StandFlipbook_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Stand" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "MyStandBase.h" },
+		{ "ModuleRelativePath", "Abilities/MyStandBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CharacterUser_MetaData[] = {
-		{ "ModuleRelativePath", "MyStandBase.h" },
+		{ "ModuleRelativePath", "Abilities/MyStandBase.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_StandFlipbook;
@@ -212,8 +212,8 @@ struct Z_Construct_UClass_AMyStandBase_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AMyStandBase_OnHit, "OnHit" }, // 2064492898
-		{ &Z_Construct_UFunction_AMyStandBase_OnOverlapBegin, "OnOverlapBegin" }, // 1336104054
+		{ &Z_Construct_UFunction_AMyStandBase_OnHit, "OnHit" }, // 3605446435
+		{ &Z_Construct_UFunction_AMyStandBase_OnOverlapBegin, "OnOverlapBegin" }, // 2961865258
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -265,14 +265,14 @@ AMyStandBase::~AMyStandBase() {}
 // End Class AMyStandBase
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyStandBase_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyStandBase, AMyStandBase::StaticClass, TEXT("AMyStandBase"), &Z_Registration_Info_UClass_AMyStandBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyStandBase), 2611593998U) },
+		{ Z_Construct_UClass_AMyStandBase, AMyStandBase::StaticClass, TEXT("AMyStandBase"), &Z_Registration_Info_UClass_AMyStandBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyStandBase), 1730936453U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyStandBase_h_1404314569(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyStandBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyStandBase_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_32450075(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

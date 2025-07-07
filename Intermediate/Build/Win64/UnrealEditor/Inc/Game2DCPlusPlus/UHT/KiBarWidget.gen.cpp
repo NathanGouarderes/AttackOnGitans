@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/KiBarWidget.h"
+#include "Game2DCPlusPlus/Widgets/KiBarWidget.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeKiBarWidget() {}
 
@@ -28,7 +28,7 @@ struct Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "KI" },
-		{ "ModuleRelativePath", "KiBarWidget.h" },
+		{ "ModuleRelativePath", "Widgets/KiBarWidget.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CurentKi;
@@ -86,20 +86,20 @@ struct Z_Construct_UClass_UKiBarWidget_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/**\n * \n */" },
 #endif
-		{ "IncludePath", "KiBarWidget.h" },
-		{ "ModuleRelativePath", "KiBarWidget.h" },
+		{ "IncludePath", "Widgets/KiBarWidget.h" },
+		{ "ModuleRelativePath", "Widgets/KiBarWidget.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KiProgressBar_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "KiBarWidget.h" },
+		{ "ModuleRelativePath", "Widgets/KiBarWidget.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_KiProgressBar;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UKiBarWidget_UpdateKiBar, "UpdateKiBar" }, // 1783463735
+		{ &Z_Construct_UFunction_UKiBarWidget_UpdateKiBar, "UpdateKiBar" }, // 3095036925
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -150,14 +150,14 @@ UKiBarWidget::~UKiBarWidget() {}
 // End Class UKiBarWidget
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_KiBarWidget_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Widgets_KiBarWidget_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UKiBarWidget, UKiBarWidget::StaticClass, TEXT("UKiBarWidget"), &Z_Registration_Info_UClass_UKiBarWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UKiBarWidget), 4074166797U) },
+		{ Z_Construct_UClass_UKiBarWidget, UKiBarWidget::StaticClass, TEXT("UKiBarWidget"), &Z_Registration_Info_UClass_UKiBarWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UKiBarWidget), 1717685453U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_KiBarWidget_h_2205541816(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_KiBarWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_KiBarWidget_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Widgets_KiBarWidget_h_3714374553(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Widgets_KiBarWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Widgets_KiBarWidget_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

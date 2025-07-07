@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/JordanCharacter.h"
+#include "Game2DCPlusPlus/Characters/JordanCharacter.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeJordanCharacter() {}
 
@@ -34,8 +34,8 @@ struct Z_Construct_UClass_AJordanCharacter_Statics
 		{ "Comment", "/**\n * \n */" },
 #endif
 		{ "HideCategories", "Navigation" },
-		{ "IncludePath", "JordanCharacter.h" },
-		{ "ModuleRelativePath", "JordanCharacter.h" },
+		{ "IncludePath", "Characters/JordanCharacter.h" },
+		{ "ModuleRelativePath", "Characters/JordanCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SpecialJordanAttackFlipbook_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -43,7 +43,7 @@ struct Z_Construct_UClass_AJordanCharacter_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// Propri\xef\xbf\xbdt\xef\xbf\xbds sp\xef\xbf\xbd""cifiques \xef\xbf\xbd Jordan\n" },
 #endif
-		{ "ModuleRelativePath", "JordanCharacter.h" },
+		{ "ModuleRelativePath", "Characters/JordanCharacter.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Propri\xef\xbf\xbdt\xef\xbf\xbds sp\xef\xbf\xbd""cifiques \xef\xbf\xbd Jordan" },
 #endif
@@ -99,14 +99,14 @@ AJordanCharacter::~AJordanCharacter() {}
 // End Class AJordanCharacter
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_JordanCharacter_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Characters_JordanCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AJordanCharacter, AJordanCharacter::StaticClass, TEXT("AJordanCharacter"), &Z_Registration_Info_UClass_AJordanCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AJordanCharacter), 761328678U) },
+		{ Z_Construct_UClass_AJordanCharacter, AJordanCharacter::StaticClass, TEXT("AJordanCharacter"), &Z_Registration_Info_UClass_AJordanCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AJordanCharacter), 1801987198U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_JordanCharacter_h_2400051133(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_JordanCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_JordanCharacter_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Characters_JordanCharacter_h_2916653797(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Characters_JordanCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Characters_JordanCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

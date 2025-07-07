@@ -4,17 +4,22 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "CharacterAnimationComponent.h"
+// IWYU pragma: private, include "Components/CharacterAnimationComponent.h"
 #include "UObject/ObjectMacros.h"
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPaperFlipbook;
 #ifdef GAME2DCPLUSPLUS_CharacterAnimationComponent_generated_h
 #error "CharacterAnimationComponent.generated.h already included, missing '#pragma once' in CharacterAnimationComponent.h"
 #endif
 #define GAME2DCPLUSPLUS_CharacterAnimationComponent_generated_h
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAnimationComponent_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execPlayAnimation);
+
+
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_28_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUCharacterAnimationComponent(); \
 	friend struct Z_Construct_UClass_UCharacterAnimationComponent_Statics; \
@@ -23,7 +28,7 @@ public: \
 	DECLARE_SERIALIZER(UCharacterAnimationComponent)
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAnimationComponent_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_28_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UCharacterAnimationComponent(UCharacterAnimationComponent&&); \
@@ -35,12 +40,13 @@ public: \
 	NO_API virtual ~UCharacterAnimationComponent();
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAnimationComponent_h_11_PROLOG
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAnimationComponent_h_14_GENERATED_BODY \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_25_PROLOG
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_28_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAnimationComponent_h_14_INCLASS_NO_PURE_DECLS \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAnimationComponent_h_14_ENHANCED_CONSTRUCTORS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_28_INCLASS_NO_PURE_DECLS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_28_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +54,17 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> GAME2DCPLUSPLUS_API UClass* StaticClass<class UCharacterAnimationComponent>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAnimationComponent_h
+#define CURRENT_FILE_ID FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h
 
+
+#define FOREACH_ENUM_EROLE(op) \
+	op(ERole::Player) \
+	op(ERole::Enemy) \
+	op(ERole::Boss) \
+	op(ERole::NPC) 
+
+enum class ERole : uint8;
+template<> struct TIsUEnumClass<ERole> { enum { Value = true }; };
+template<> GAME2DCPLUSPLUS_API UEnum* StaticEnum<ERole>();
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

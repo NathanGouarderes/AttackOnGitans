@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/CharacterAbilitiesComponent.h"
+#include "Game2DCPlusPlus/Components/CharacterAbilitiesComponent.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeCharacterAbilitiesComponent() {}
 
@@ -42,7 +42,7 @@ struct Z_Construct_UEnum_Game2DCPlusPlus_EProjectileType_Statics
 		{ "Fireball.Name", "EProjectileType::Fireball" },
 		{ "Kamehameha.DisplayName", "Kamehameha" },
 		{ "Kamehameha.Name", "EProjectileType::Kamehameha" },
-		{ "ModuleRelativePath", "CharacterAbilitiesComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterAbilitiesComponent.h" },
 	};
 #endif // WITH_METADATA
 	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
@@ -88,52 +88,52 @@ struct Z_Construct_UClass_UCharacterAbilitiesComponent_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "BlueprintSpawnableComponent", "" },
 		{ "ClassGroupNames", "Custom" },
-		{ "IncludePath", "CharacterAbilitiesComponent.h" },
-		{ "ModuleRelativePath", "CharacterAbilitiesComponent.h" },
+		{ "IncludePath", "Components/CharacterAbilitiesComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterAbilitiesComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DashDistance_MetaData[] = {
 		{ "Category", "Movement" },
-		{ "ModuleRelativePath", "CharacterAbilitiesComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterAbilitiesComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DashCooldown_MetaData[] = {
 		{ "Category", "Movement" },
-		{ "ModuleRelativePath", "CharacterAbilitiesComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterAbilitiesComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DashDuration_MetaData[] = {
 		{ "Category", "Movement" },
-		{ "ModuleRelativePath", "CharacterAbilitiesComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterAbilitiesComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AttackDamage_MetaData[] = {
 		{ "Category", "Combat" },
-		{ "ModuleRelativePath", "CharacterAbilitiesComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterAbilitiesComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KiCostForAttack_MetaData[] = {
 		{ "Category", "Combat" },
-		{ "ModuleRelativePath", "CharacterAbilitiesComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterAbilitiesComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SwordDamages_MetaData[] = {
 		{ "Category", "Combat" },
-		{ "ModuleRelativePath", "CharacterAbilitiesComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterAbilitiesComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Strength_MetaData[] = {
 		{ "Category", "Combat" },
-		{ "ModuleRelativePath", "CharacterAbilitiesComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterAbilitiesComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxKi_MetaData[] = {
 		{ "Category", "Combat" },
-		{ "ModuleRelativePath", "CharacterAbilitiesComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterAbilitiesComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KamehamehaClass_MetaData[] = {
 		{ "Category", "Combat" },
-		{ "ModuleRelativePath", "CharacterAbilitiesComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterAbilitiesComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FireballClass_MetaData[] = {
 		{ "Category", "Combat" },
-		{ "ModuleRelativePath", "CharacterAbilitiesComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterAbilitiesComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileClass_MetaData[] = {
 		{ "Category", "Combat" },
-		{ "ModuleRelativePath", "CharacterAbilitiesComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterAbilitiesComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_DashDistance;
@@ -216,18 +216,18 @@ UCharacterAbilitiesComponent::~UCharacterAbilitiesComponent() {}
 // End Class UCharacterAbilitiesComponent
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAbilitiesComponent_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ EProjectileType_StaticEnum, TEXT("EProjectileType"), &Z_Registration_Info_UEnum_EProjectileType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 361500510U) },
+		{ EProjectileType_StaticEnum, TEXT("EProjectileType"), &Z_Registration_Info_UEnum_EProjectileType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 530737925U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCharacterAbilitiesComponent, UCharacterAbilitiesComponent::StaticClass, TEXT("UCharacterAbilitiesComponent"), &Z_Registration_Info_UClass_UCharacterAbilitiesComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterAbilitiesComponent), 888898340U) },
+		{ Z_Construct_UClass_UCharacterAbilitiesComponent, UCharacterAbilitiesComponent::StaticClass, TEXT("UCharacterAbilitiesComponent"), &Z_Registration_Info_UClass_UCharacterAbilitiesComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterAbilitiesComponent), 2774789370U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_1167972309(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAbilitiesComponent_h_3102020511(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAbilitiesComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAbilitiesComponent_h_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterAbilitiesComponent_h_Statics::EnumInfo));
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAbilitiesComponent_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAbilitiesComponent_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

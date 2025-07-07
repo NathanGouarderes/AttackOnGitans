@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "MyEnemyBase.h"
+// IWYU pragma: private, include "Enemies/MyEnemyBase.h"
 #include "UObject/ObjectMacros.h"
 #include "UObject/ScriptMacros.h"
 
@@ -17,20 +17,21 @@ struct FHitResult;
 #endif
 #define GAME2DCPLUSPLUS_MyEnemyBase_generated_h
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyEnemyBase_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnOverlapBegin);
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyEnemyBase_h_17_INCLASS_NO_PURE_DECLS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMyEnemyBase(); \
 	friend struct Z_Construct_UClass_AMyEnemyBase_Statics; \
 public: \
 	DECLARE_CLASS(AMyEnemyBase, ACharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Game2DCPlusPlus"), NO_API) \
-	DECLARE_SERIALIZER(AMyEnemyBase)
+	DECLARE_SERIALIZER(AMyEnemyBase) \
+	virtual UObject* _getUObject() const override { return const_cast<AMyEnemyBase*>(this); }
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyEnemyBase_h_17_ENHANCED_CONSTRUCTORS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMyEnemyBase(AMyEnemyBase&&); \
@@ -42,13 +43,13 @@ public: \
 	NO_API virtual ~AMyEnemyBase();
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyEnemyBase_h_14_PROLOG
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyEnemyBase_h_17_GENERATED_BODY \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h_17_PROLOG
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyEnemyBase_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyEnemyBase_h_17_INCLASS_NO_PURE_DECLS \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyEnemyBase_h_17_ENHANCED_CONSTRUCTORS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h_20_INCLASS_NO_PURE_DECLS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -56,7 +57,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> GAME2DCPLUSPLUS_API UClass* StaticClass<class AMyEnemyBase>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyEnemyBase_h
+#define CURRENT_FILE_ID FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

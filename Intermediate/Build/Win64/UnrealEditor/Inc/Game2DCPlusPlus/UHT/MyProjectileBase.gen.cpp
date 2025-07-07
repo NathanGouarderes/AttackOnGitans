@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/MyProjectileBase.h"
+#include "Game2DCPlusPlus/Abilities/Projectiles/MyProjectileBase.h"
 #include "Runtime/Engine/Classes/Engine/HitResult.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMyProjectileBase() {}
@@ -37,7 +37,7 @@ struct Z_Construct_UFunction_AMyProjectileBase_OnHit_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "MyProjectileBase.h" },
+		{ "ModuleRelativePath", "Abilities/Projectiles/MyProjectileBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_HitComp_MetaData[] = {
 		{ "EditInline", "true" },
@@ -109,7 +109,7 @@ struct Z_Construct_UFunction_AMyProjectileBase_OnOverlapBegin_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "MyProjectileBase.h" },
+		{ "ModuleRelativePath", "Abilities/Projectiles/MyProjectileBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OverlappedComp_MetaData[] = {
 		{ "EditInline", "true" },
@@ -195,36 +195,36 @@ struct Z_Construct_UClass_AMyProjectileBase_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-		{ "IncludePath", "MyProjectileBase.h" },
-		{ "ModuleRelativePath", "MyProjectileBase.h" },
+		{ "IncludePath", "Abilities/Projectiles/MyProjectileBase.h" },
+		{ "ModuleRelativePath", "Abilities/Projectiles/MyProjectileBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Damage_MetaData[] = {
 		{ "Category", "Damage" },
-		{ "ModuleRelativePath", "MyProjectileBase.h" },
+		{ "ModuleRelativePath", "Abilities/Projectiles/MyProjectileBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Speed_MetaData[] = {
 		{ "Category", "Movement" },
-		{ "ModuleRelativePath", "MyProjectileBase.h" },
+		{ "ModuleRelativePath", "Abilities/Projectiles/MyProjectileBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LifeSpan_MetaData[] = {
 		{ "Category", "LifeSpan" },
-		{ "ModuleRelativePath", "MyProjectileBase.h" },
+		{ "ModuleRelativePath", "Abilities/Projectiles/MyProjectileBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CollisionComponent_MetaData[] = {
 		{ "Category", "Projectile" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "MyProjectileBase.h" },
+		{ "ModuleRelativePath", "Abilities/Projectiles/MyProjectileBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_UparticleSystemInstance_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Particle" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "MyProjectileBase.h" },
+		{ "ModuleRelativePath", "Abilities/Projectiles/MyProjectileBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_UparticleEffect_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Particle" },
-		{ "ModuleRelativePath", "MyProjectileBase.h" },
+		{ "ModuleRelativePath", "Abilities/Projectiles/MyProjectileBase.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_Damage;
@@ -236,8 +236,8 @@ struct Z_Construct_UClass_AMyProjectileBase_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AMyProjectileBase_OnHit, "OnHit" }, // 3126928940
-		{ &Z_Construct_UFunction_AMyProjectileBase_OnOverlapBegin, "OnOverlapBegin" }, // 4041910223
+		{ &Z_Construct_UFunction_AMyProjectileBase_OnHit, "OnHit" }, // 3273189757
+		{ &Z_Construct_UFunction_AMyProjectileBase_OnOverlapBegin, "OnOverlapBegin" }, // 2215000965
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -297,14 +297,14 @@ AMyProjectileBase::~AMyProjectileBase() {}
 // End Class AMyProjectileBase
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyProjectileBase_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_Projectiles_MyProjectileBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyProjectileBase, AMyProjectileBase::StaticClass, TEXT("AMyProjectileBase"), &Z_Registration_Info_UClass_AMyProjectileBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyProjectileBase), 2655083151U) },
+		{ Z_Construct_UClass_AMyProjectileBase, AMyProjectileBase::StaticClass, TEXT("AMyProjectileBase"), &Z_Registration_Info_UClass_AMyProjectileBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyProjectileBase), 4201881504U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyProjectileBase_h_3952591124(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyProjectileBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyProjectileBase_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_Projectiles_MyProjectileBase_h_370477595(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_Projectiles_MyProjectileBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_Projectiles_MyProjectileBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

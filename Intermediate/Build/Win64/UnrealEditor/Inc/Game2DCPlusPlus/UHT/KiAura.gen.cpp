@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/KiAura.h"
+#include "Game2DCPlusPlus/Visuals/KiAura.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeKiAura() {}
 
@@ -35,37 +35,37 @@ struct Z_Construct_UClass_AKiAura_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-		{ "IncludePath", "KiAura.h" },
-		{ "ModuleRelativePath", "KiAura.h" },
+		{ "IncludePath", "Visuals/KiAura.h" },
+		{ "ModuleRelativePath", "Visuals/KiAura.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AuraFlipbook_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Aura" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "KiAura.h" },
+		{ "ModuleRelativePath", "Visuals/KiAura.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AuraFlipbookAsset_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Aura" },
-		{ "ModuleRelativePath", "KiAura.h" },
+		{ "ModuleRelativePath", "Visuals/KiAura.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AuraEffect_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Aura" },
-		{ "ModuleRelativePath", "KiAura.h" },
+		{ "ModuleRelativePath", "Visuals/KiAura.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AuraChargingSound_MetaData[] = {
 		{ "Category", "Sound" },
-		{ "ModuleRelativePath", "KiAura.h" },
+		{ "ModuleRelativePath", "Visuals/KiAura.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AuraChargingAudioComponent_MetaData[] = {
 		{ "Category", "Sound" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "KiAura.h" },
+		{ "ModuleRelativePath", "Visuals/KiAura.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AuraComponentInstance_MetaData[] = {
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "KiAura.h" },
+		{ "ModuleRelativePath", "Visuals/KiAura.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AuraFlipbook;
@@ -133,14 +133,14 @@ AKiAura::~AKiAura() {}
 // End Class AKiAura
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_KiAura_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Visuals_KiAura_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AKiAura, AKiAura::StaticClass, TEXT("AKiAura"), &Z_Registration_Info_UClass_AKiAura, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AKiAura), 3734635937U) },
+		{ Z_Construct_UClass_AKiAura, AKiAura::StaticClass, TEXT("AKiAura"), &Z_Registration_Info_UClass_AKiAura, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AKiAura), 766937757U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_KiAura_h_3823409141(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_KiAura_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_KiAura_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Visuals_KiAura_h_1416553278(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Visuals_KiAura_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Visuals_KiAura_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

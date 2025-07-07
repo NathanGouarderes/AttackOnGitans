@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/MyKiProjectileBase.h"
+#include "Game2DCPlusPlus/Abilities/Projectiles/MyKiProjectileBase.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMyKiProjectileBase() {}
 
@@ -33,19 +33,19 @@ struct Z_Construct_UClass_AMyKiProjectileBase_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/**\n * \n */" },
 #endif
-		{ "IncludePath", "MyKiProjectileBase.h" },
-		{ "ModuleRelativePath", "MyKiProjectileBase.h" },
+		{ "IncludePath", "Abilities/Projectiles/MyKiProjectileBase.h" },
+		{ "ModuleRelativePath", "Abilities/Projectiles/MyKiProjectileBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KiCost_MetaData[] = {
 		{ "Category", "Ki" },
-		{ "ModuleRelativePath", "MyKiProjectileBase.h" },
+		{ "ModuleRelativePath", "Abilities/Projectiles/MyKiProjectileBase.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KiComponent_MetaData[] = {
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// Co\xef\xbf\xbdt en Ki pour lancer ce projectile\n" },
 #endif
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "MyKiProjectileBase.h" },
+		{ "ModuleRelativePath", "Abilities/Projectiles/MyKiProjectileBase.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Co\xef\xbf\xbdt en Ki pour lancer ce projectile" },
 #endif
@@ -104,14 +104,14 @@ AMyKiProjectileBase::~AMyKiProjectileBase() {}
 // End Class AMyKiProjectileBase
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyKiProjectileBase_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_Projectiles_MyKiProjectileBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyKiProjectileBase, AMyKiProjectileBase::StaticClass, TEXT("AMyKiProjectileBase"), &Z_Registration_Info_UClass_AMyKiProjectileBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyKiProjectileBase), 4140628777U) },
+		{ Z_Construct_UClass_AMyKiProjectileBase, AMyKiProjectileBase::StaticClass, TEXT("AMyKiProjectileBase"), &Z_Registration_Info_UClass_AMyKiProjectileBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyKiProjectileBase), 4090674798U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyKiProjectileBase_h_1770346033(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyKiProjectileBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyKiProjectileBase_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_Projectiles_MyKiProjectileBase_h_3405029810(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_Projectiles_MyKiProjectileBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_Projectiles_MyKiProjectileBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

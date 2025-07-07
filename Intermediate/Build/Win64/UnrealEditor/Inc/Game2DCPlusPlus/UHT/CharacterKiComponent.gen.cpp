@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/CharacterKiComponent.h"
+#include "Game2DCPlusPlus/Components/CharacterKiComponent.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeCharacterKiComponent() {}
 
@@ -35,44 +35,44 @@ struct Z_Construct_UClass_UCharacterKiComponent_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "BlueprintSpawnableComponent", "" },
 		{ "ClassGroupNames", "Custom" },
-		{ "IncludePath", "CharacterKiComponent.h" },
-		{ "ModuleRelativePath", "CharacterKiComponent.h" },
+		{ "IncludePath", "Components/CharacterKiComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxKi_MetaData[] = {
 		{ "Category", "Ki Stats" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/** \xef\xbf\xbdtat du Ki */" },
 #endif
-		{ "ModuleRelativePath", "CharacterKiComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xef\xbf\xbdtat du Ki" },
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentKi_MetaData[] = {
 		{ "Category", "Ki Stats" },
-		{ "ModuleRelativePath", "CharacterKiComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KiLoadSpeed_MetaData[] = {
 		{ "Category", "Ki Stats" },
-		{ "ModuleRelativePath", "CharacterKiComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OwnerCharacter_MetaData[] = {
-		{ "ModuleRelativePath", "CharacterKiComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KiBarWidget_MetaData[] = {
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "CharacterKiComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KiBarWidgetClass_MetaData[] = {
 		{ "Category", "Ki" },
-		{ "ModuleRelativePath", "CharacterKiComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KiAuraClass_MetaData[] = {
 		{ "Category", "Ki" },
-		{ "ModuleRelativePath", "CharacterKiComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KiAura_MetaData[] = {
-		{ "ModuleRelativePath", "CharacterKiComponent.h" },
+		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxKi;
@@ -146,14 +146,14 @@ UCharacterKiComponent::~UCharacterKiComponent() {}
 // End Class UCharacterKiComponent
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterKiComponent_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCharacterKiComponent, UCharacterKiComponent::StaticClass, TEXT("UCharacterKiComponent"), &Z_Registration_Info_UClass_UCharacterKiComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterKiComponent), 2412030065U) },
+		{ Z_Construct_UClass_UCharacterKiComponent, UCharacterKiComponent::StaticClass, TEXT("UCharacterKiComponent"), &Z_Registration_Info_UClass_UCharacterKiComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterKiComponent), 3535546053U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterKiComponent_h_3159582426(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterKiComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_CharacterKiComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h_3612586119(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

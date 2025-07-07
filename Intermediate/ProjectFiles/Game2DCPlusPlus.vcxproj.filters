@@ -29,173 +29,332 @@
     <None Include="..\..\Config\DefaultInput.ini">
       <Filter>Config</Filter>
     </None>
+    <Filter Include="Plugins">
+      <UniqueIdentifier>{BB38096A-B391-30DC-A0D4-4F3EA6B44507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\VisualStudioTools">
+      <UniqueIdentifier>{41769F9C-1A97-316F-BB54-C3A5E5B67BD9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\VisualStudioTools\Source">
+      <UniqueIdentifier>{1D6F83A9-DB28-3ED2-9726-5CBD49662E2A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\VisualStudioTools\Source\VisualStudioTools">
+      <UniqueIdentifier>{E48AC123-3582-39B0-901B-970708A27A9A}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\VisualStudioTools.Build.cs">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools</Filter>
+    </None>
+    <Filter Include="Plugins\VisualStudioTools\Source\VisualStudioTools\Private">
+      <UniqueIdentifier>{75F6F5BA-F8E5-3E94-8434-FA6DC9ABBA70}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Private\BlueprintAssetHelper.cpp">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Private\BlueprintAssetHelpers.h">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Private\BlueprintReferencesCommandlet.cpp">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Private\BlueprintReferencesCommandlet.h">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Private\VisualStudioTools.cpp">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Private\VisualStudioToolsCommandlet.cpp">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Private\VisualStudioToolsCommandlet.h">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Private\VisualStudioToolsCommandletBase.cpp">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Private\VisualStudioToolsCommandletBase.h">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Private\VSServerCommandlet.cpp">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Private\VSServerCommandlet.h">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Private\VSTestAdapterCommandlet.cpp">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Private\VSTestAdapterCommandlet.h">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Private</Filter>
+    </ClCompile>
+    <Filter Include="Plugins\VisualStudioTools\Source\VisualStudioTools\Public">
+      <UniqueIdentifier>{333EB5AC-492F-3ED7-9C7F-15701C1818EC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\Public\VisualStudioTools.h">
+      <Filter>Plugins\VisualStudioTools\Source\VisualStudioTools\Public</Filter>
+    </ClCompile>
+    <None Include="..\..\Plugins\VisualStudioTools\VisualStudioTools.uplugin">
+      <Filter>Plugins\VisualStudioTools</Filter>
+    </None>
+    <Filter Include="Plugins\VisualStudioTools\Config">
+      <UniqueIdentifier>{CB5E8725-3658-331E-9E61-542E2997D7C5}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\VisualStudioTools\Config\FilterPlugin.ini">
+      <Filter>Plugins\VisualStudioTools\Config</Filter>
+    </None>
     <Filter Include="Source\Game2DCPlusPlus">
       <UniqueIdentifier>{2BC3CCD8-4801-3C22-A9B1-ECB5529ABDA6}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\AMyEnemyAIController.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\AMyEnemyAIController.h">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\AMyEnemyAIController.h">
       <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\BB_EnemyBlackboard.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\BB_EnemyBlackboard.h">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\BB_EnemyBlackboard.h">
       <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\BT_EnemyBehavior.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\BT_EnemyBehavior.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\CharacterAbilitiesComponent.cpp">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\BT_EnemyBehavior.h">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\CharacterAbilitiesComponent.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\CharacterAnimationComponent.cpp">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\FistCombatRow.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\CharacterAnimationComponent.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\CharacterCombatComponent.cpp">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\FistCombatRow.h">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\CharacterCombatComponent.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\CharacterInputComponent.cpp">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\CharacterInputComponent.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\CharacterKiComponent.cpp">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\CharacterKiComponent.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\FireBall.cpp">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\FireBall.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\FireDamageType.cpp">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\FireDamageType.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
     <None Include="..\..\Source\Game2DCPlusPlus\Game2DCPlusPlus.Build.cs">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </None>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\Game2DCPlusPlus.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Game2DCPlusPlus.h">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Game2DCPlusPlus.h">
       <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\GroundBase.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\GroundBase.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\JordanCharacter.cpp">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\GroundBase.h">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\JordanCharacter.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Kamehameha.cpp">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Kamehameha.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\KiAura.cpp">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\KiAura.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\KiBarWidget.cpp">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\KiBarWidget.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyActorComponent.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\MyActorComponent.h">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyActorComponent.h">
       <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyAIController.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\MyAIController.h">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyAIController.h">
       <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyBehaviorTree.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\MyBehaviorTree.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyBTTask_OnPlayerseen.cpp">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyBehaviorTree.h">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\MyBTTask_OnPlayerseen.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyBTTask_SetPatrolLocation.cpp">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyFistBase.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\MyBTTask_SetPatrolLocation.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyCharacter.cpp">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyFistBase.h">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\MyCharacter.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyEnemyBase.cpp">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\MyEnemyBase.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyGameModeCPlusPlus.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\MyGameModeCPlusPlus.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyKiProjectileBase.cpp">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyGameModeCPlusPlus.h">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\MyKiProjectileBase.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyProjectileBase.cpp">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyHands.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\MyProjectileBase.h">
-      <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyStandBase.cpp">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyHands.h">
       <Filter>Source\Game2DCPlusPlus</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Game2DCPlusPlus\MyStandBase.h">
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MySword.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>
-    </ClInclude>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MySword.h">
+      <Filter>Source\Game2DCPlusPlus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyWeaponBase.cpp">
+      <Filter>Source\Game2DCPlusPlus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\MyWeaponBase.h">
+      <Filter>Source\Game2DCPlusPlus</Filter>
+    </ClCompile>
+    <Filter Include="Source\Game2DCPlusPlus\Abilities">
+      <UniqueIdentifier>{733ABE52-A697-398F-B9A6-4856CE34AE40}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Abilities\MyStandBase.cpp">
+      <Filter>Source\Game2DCPlusPlus\Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Abilities\MyStandBase.h">
+      <Filter>Source\Game2DCPlusPlus\Abilities</Filter>
+    </ClCompile>
+    <Filter Include="Source\Game2DCPlusPlus\Abilities\Beams">
+      <UniqueIdentifier>{5F097D9E-B204-361A-B27D-2F41DF58DFC4}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Abilities\Beams\Kamehameha.cpp">
+      <Filter>Source\Game2DCPlusPlus\Abilities\Beams</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Abilities\Beams\Kamehameha.h">
+      <Filter>Source\Game2DCPlusPlus\Abilities\Beams</Filter>
+    </ClCompile>
+    <Filter Include="Source\Game2DCPlusPlus\Abilities\Projectiles">
+      <UniqueIdentifier>{8CCB9D4A-C4F1-3ABD-85BE-7420F0029408}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Abilities\Projectiles\FireBall.cpp">
+      <Filter>Source\Game2DCPlusPlus\Abilities\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Abilities\Projectiles\FireBall.h">
+      <Filter>Source\Game2DCPlusPlus\Abilities\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Abilities\Projectiles\MyKiProjectileBase.cpp">
+      <Filter>Source\Game2DCPlusPlus\Abilities\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Abilities\Projectiles\MyKiProjectileBase.h">
+      <Filter>Source\Game2DCPlusPlus\Abilities\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Abilities\Projectiles\MyProjectileBase.cpp">
+      <Filter>Source\Game2DCPlusPlus\Abilities\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Abilities\Projectiles\MyProjectileBase.h">
+      <Filter>Source\Game2DCPlusPlus\Abilities\Projectiles</Filter>
+    </ClCompile>
+    <Filter Include="Source\Game2DCPlusPlus\Characters">
+      <UniqueIdentifier>{EE4E378F-8B4B-3B4F-A448-A82251CEB7C2}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Characters\JordanCharacter.cpp">
+      <Filter>Source\Game2DCPlusPlus\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Characters\JordanCharacter.h">
+      <Filter>Source\Game2DCPlusPlus\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Characters\MyCharacter.cpp">
+      <Filter>Source\Game2DCPlusPlus\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Characters\MyCharacter.h">
+      <Filter>Source\Game2DCPlusPlus\Characters</Filter>
+    </ClCompile>
+    <Filter Include="Source\Game2DCPlusPlus\Components">
+      <UniqueIdentifier>{92DF5E18-9F21-3E42-B267-190A6A9E9C36}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CharacterAbilitiesComponent.cpp">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CharacterAbilitiesComponent.h">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CharacterAnimationComponent.cpp">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CharacterAnimationComponent.h">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CharacterCombatComponent.cpp">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CharacterCombatComponent.h">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CharacterInputComponent.cpp">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CharacterInputComponent.h">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CharacterKiComponent.cpp">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CharacterKiComponent.h">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\StatsComponent.cpp">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\StatsComponent.h">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <Filter Include="Source\Game2DCPlusPlus\DamageTypes">
+      <UniqueIdentifier>{E8E82B47-32FA-3149-A73C-75EFAEFF88B2}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\DamageTypes\FireDamageType.cpp">
+      <Filter>Source\Game2DCPlusPlus\DamageTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\DamageTypes\FireDamageType.h">
+      <Filter>Source\Game2DCPlusPlus\DamageTypes</Filter>
+    </ClCompile>
+    <Filter Include="Source\Game2DCPlusPlus\Data">
+      <UniqueIdentifier>{AEA51105-D3F1-3C6F-AFB1-ED9E448DB6E6}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Data\FAnimationData.h">
+      <Filter>Source\Game2DCPlusPlus\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Data\FAttackData.h">
+      <Filter>Source\Game2DCPlusPlus\Data</Filter>
+    </ClCompile>
+    <Filter Include="Source\Game2DCPlusPlus\Enemies">
+      <UniqueIdentifier>{1F47D115-7EFC-346A-AEAF-D729C649117A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Enemies\MyEnemyBase.cpp">
+      <Filter>Source\Game2DCPlusPlus\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Enemies\MyEnemyBase.h">
+      <Filter>Source\Game2DCPlusPlus\Enemies</Filter>
+    </ClCompile>
+    <Filter Include="Source\Game2DCPlusPlus\Interface">
+      <UniqueIdentifier>{E7DC0801-AD77-3D25-889F-49E23C428AA7}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Interface\UFlipbookProviderInterface.h">
+      <Filter>Source\Game2DCPlusPlus\Interface</Filter>
+    </ClCompile>
+    <Filter Include="Source\Game2DCPlusPlus\Tasks">
+      <UniqueIdentifier>{C12FE358-55B0-32B0-88D2-A535EB850282}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Tasks\BTTask_AttackTarget.cpp">
+      <Filter>Source\Game2DCPlusPlus\Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Tasks\BTTask_AttackTarget.h">
+      <Filter>Source\Game2DCPlusPlus\Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Tasks\MyBTTask_OnPlayerseen.cpp">
+      <Filter>Source\Game2DCPlusPlus\Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Tasks\MyBTTask_OnPlayerseen.h">
+      <Filter>Source\Game2DCPlusPlus\Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Tasks\MyBTTask_SetPatrolLocation.cpp">
+      <Filter>Source\Game2DCPlusPlus\Tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Tasks\MyBTTask_SetPatrolLocation.h">
+      <Filter>Source\Game2DCPlusPlus\Tasks</Filter>
+    </ClCompile>
+    <Filter Include="Source\Game2DCPlusPlus\Visuals">
+      <UniqueIdentifier>{011A5BB7-0EED-310B-A983-7C1E72AAD474}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Visuals\KiAura.cpp">
+      <Filter>Source\Game2DCPlusPlus\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Visuals\KiAura.h">
+      <Filter>Source\Game2DCPlusPlus\Visuals</Filter>
+    </ClCompile>
+    <Filter Include="Source\Game2DCPlusPlus\Widgets">
+      <UniqueIdentifier>{728E2BB0-FDC7-3C99-917B-57E8581E1BB3}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Widgets\KiBarWidget.cpp">
+      <Filter>Source\Game2DCPlusPlus\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Widgets\KiBarWidget.h">
+      <Filter>Source\Game2DCPlusPlus\Widgets</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

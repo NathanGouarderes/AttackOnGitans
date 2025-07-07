@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/MyBTTask_OnPlayerseen.h"
+#include "Game2DCPlusPlus/Tasks/MyBTTask_OnPlayerseen.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMyBTTask_OnPlayerseen() {}
 
@@ -32,8 +32,8 @@ struct Z_Construct_UClass_UMyBTTask_OnPlayerseen_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/**\n * \n */" },
 #endif
-		{ "IncludePath", "MyBTTask_OnPlayerseen.h" },
-		{ "ModuleRelativePath", "MyBTTask_OnPlayerseen.h" },
+		{ "IncludePath", "Tasks/MyBTTask_OnPlayerseen.h" },
+		{ "ModuleRelativePath", "Tasks/MyBTTask_OnPlayerseen.h" },
 	};
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
@@ -79,14 +79,14 @@ UMyBTTask_OnPlayerseen::~UMyBTTask_OnPlayerseen() {}
 // End Class UMyBTTask_OnPlayerseen
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyBTTask_OnPlayerseen_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Tasks_MyBTTask_OnPlayerseen_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UMyBTTask_OnPlayerseen, UMyBTTask_OnPlayerseen::StaticClass, TEXT("UMyBTTask_OnPlayerseen"), &Z_Registration_Info_UClass_UMyBTTask_OnPlayerseen, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyBTTask_OnPlayerseen), 4127624925U) },
+		{ Z_Construct_UClass_UMyBTTask_OnPlayerseen, UMyBTTask_OnPlayerseen::StaticClass, TEXT("UMyBTTask_OnPlayerseen"), &Z_Registration_Info_UClass_UMyBTTask_OnPlayerseen, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyBTTask_OnPlayerseen), 3088663894U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyBTTask_OnPlayerseen_h_2396684240(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyBTTask_OnPlayerseen_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_MyBTTask_OnPlayerseen_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Tasks_MyBTTask_OnPlayerseen_h_36053230(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Tasks_MyBTTask_OnPlayerseen_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Tasks_MyBTTask_OnPlayerseen_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

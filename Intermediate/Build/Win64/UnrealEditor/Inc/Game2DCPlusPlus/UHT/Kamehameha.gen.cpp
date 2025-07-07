@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/Kamehameha.h"
+#include "Game2DCPlusPlus/Abilities/Beams/Kamehameha.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeKamehameha() {}
 
@@ -37,31 +37,31 @@ struct Z_Construct_UClass_AKamehameha_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/**\n * \n */" },
 #endif
-		{ "IncludePath", "Kamehameha.h" },
-		{ "ModuleRelativePath", "Kamehameha.h" },
+		{ "IncludePath", "Abilities/Beams/Kamehameha.h" },
+		{ "ModuleRelativePath", "Abilities/Beams/Kamehameha.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FlipbookComponent_MetaData[] = {
 		{ "Category", "Animation" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Kamehameha.h" },
+		{ "ModuleRelativePath", "Abilities/Beams/Kamehameha.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CapsuleCollisionComponent_MetaData[] = {
 		{ "Category", "Collision" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Kamehameha.h" },
+		{ "ModuleRelativePath", "Abilities/Beams/Kamehameha.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KamehamehaFlipbook_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Animations" },
-		{ "ModuleRelativePath", "Kamehameha.h" },
+		{ "ModuleRelativePath", "Abilities/Beams/Kamehameha.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ExpansionSpeed_MetaData[] = {
 		{ "Category", "Kamehameha" },
-		{ "ModuleRelativePath", "Kamehameha.h" },
+		{ "ModuleRelativePath", "Abilities/Beams/Kamehameha.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CharacterClass_MetaData[] = {
 		{ "Category", "Character" },
-		{ "ModuleRelativePath", "Kamehameha.h" },
+		{ "ModuleRelativePath", "Abilities/Beams/Kamehameha.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_FlipbookComponent;
@@ -126,14 +126,14 @@ AKamehameha::~AKamehameha() {}
 // End Class AKamehameha
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_Kamehameha_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_Beams_Kamehameha_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AKamehameha, AKamehameha::StaticClass, TEXT("AKamehameha"), &Z_Registration_Info_UClass_AKamehameha, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AKamehameha), 621507327U) },
+		{ Z_Construct_UClass_AKamehameha, AKamehameha::StaticClass, TEXT("AKamehameha"), &Z_Registration_Info_UClass_AKamehameha, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AKamehameha), 251481202U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_Kamehameha_h_3895678158(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_Kamehameha_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_Source_Game2DCPlusPlus_Kamehameha_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_Beams_Kamehameha_h_1348025897(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_Beams_Kamehameha_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Abilities_Beams_Kamehameha_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
