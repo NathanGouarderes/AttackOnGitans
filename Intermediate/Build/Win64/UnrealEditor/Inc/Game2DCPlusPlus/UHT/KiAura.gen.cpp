@@ -6,10 +6,12 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Game2DCPlusPlus/Visuals/KiAura.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeKiAura() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_UAudioComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
@@ -20,16 +22,40 @@ GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AKiAura_NoRegister();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbook_NoRegister();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbookComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class AKiAura
+// ********** Begin Class AKiAura ******************************************************************
 void AKiAura::StaticRegisterNativesAKiAura()
 {
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AKiAura);
+FClassRegistrationInfo Z_Registration_Info_UClass_AKiAura;
+UClass* AKiAura::GetPrivateStaticClass()
+{
+	using TClass = AKiAura;
+	if (!Z_Registration_Info_UClass_AKiAura.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("KiAura"),
+			Z_Registration_Info_UClass_AKiAura.InnerSingleton,
+			StaticRegisterNativesAKiAura,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_AKiAura.InnerSingleton;
+}
 UClass* Z_Construct_UClass_AKiAura_NoRegister()
 {
-	return AKiAura::StaticClass();
+	return AKiAura::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_AKiAura_Statics
 {
@@ -124,24 +150,21 @@ UClass* Z_Construct_UClass_AKiAura()
 	}
 	return Z_Registration_Info_UClass_AKiAura.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<AKiAura>()
-{
-	return AKiAura::StaticClass();
-}
-DEFINE_VTABLE_PTR_HELPER_CTOR(AKiAura);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, AKiAura);
 AKiAura::~AKiAura() {}
-// End Class AKiAura
+// ********** End Class AKiAura ********************************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Visuals_KiAura_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Visuals_KiAura_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AKiAura, AKiAura::StaticClass, TEXT("AKiAura"), &Z_Registration_Info_UClass_AKiAura, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AKiAura), 766937757U) },
+		{ Z_Construct_UClass_AKiAura, AKiAura::StaticClass, TEXT("AKiAura"), &Z_Registration_Info_UClass_AKiAura, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AKiAura), 2561035400U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Visuals_KiAura_h_1416553278(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Visuals_KiAura_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Visuals_KiAura_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Visuals_KiAura_h__Script_Game2DCPlusPlus_1609979554(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Visuals_KiAura_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Visuals_KiAura_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

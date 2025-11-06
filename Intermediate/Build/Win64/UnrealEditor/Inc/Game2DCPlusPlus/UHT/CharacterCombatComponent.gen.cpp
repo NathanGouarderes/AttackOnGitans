@@ -5,26 +5,31 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/Components/CharacterCombatComponent.h"
+#include "CharacterCombatComponent.h"
+#include "Engine/HitResult.h"
 #include "Game2DCPlusPlus/Data/FAttackData.h"
-#include "Runtime/Engine/Classes/Engine/HitResult.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeCharacterCombatComponent() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
+GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterAbilitiesComponent_NoRegister();
+GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterAnimationComponent_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterCombatComponent();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterCombatComponent_NoRegister();
+GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterStateComponent_NoRegister();
 GAME2DCPLUSPLUS_API UScriptStruct* Z_Construct_UScriptStruct_FAttackData();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbook_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class UCharacterCombatComponent Function DoWeaponTrace
+// ********** Begin Class UCharacterCombatComponent Function DoWeaponTrace *************************
 struct Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics
 {
 	struct CharacterCombatComponent_eventDoWeaponTrace_Parms
@@ -44,12 +49,12 @@ struct Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::NewProp_AttackData = { "AttackData", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterCombatComponent_eventDoWeaponTrace_Parms, AttackData), Z_Construct_UScriptStruct_FAttackData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackData_MetaData), NewProp_AttackData_MetaData) }; // 3363663188
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::NewProp_AttackData = { "AttackData", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterCombatComponent_eventDoWeaponTrace_Parms, AttackData), Z_Construct_UScriptStruct_FAttackData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackData_MetaData), NewProp_AttackData_MetaData) }; // 1947728159
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::NewProp_AttackData,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCharacterCombatComponent, nullptr, "DoWeaponTrace", nullptr, nullptr, Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::PropPointers), sizeof(Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::CharacterCombatComponent_eventDoWeaponTrace_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UCharacterCombatComponent, nullptr, "DoWeaponTrace", Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::PropPointers), sizeof(Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::CharacterCombatComponent_eventDoWeaponTrace_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::CharacterCombatComponent_eventDoWeaponTrace_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace()
 {
@@ -68,9 +73,9 @@ DEFINE_FUNCTION(UCharacterCombatComponent::execDoWeaponTrace)
 	P_THIS->DoWeaponTrace(Z_Param_Out_AttackData);
 	P_NATIVE_END;
 }
-// End Class UCharacterCombatComponent Function DoWeaponTrace
+// ********** End Class UCharacterCombatComponent Function DoWeaponTrace ***************************
 
-// Begin Class UCharacterCombatComponent Function IsAttacking
+// ********** Begin Class UCharacterCombatComponent Function IsAttacking ***************************
 struct Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics
 {
 	struct CharacterCombatComponent_eventIsAttacking_Parms
@@ -97,7 +102,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UChara
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCharacterCombatComponent, nullptr, "IsAttacking", nullptr, nullptr, Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::PropPointers), sizeof(Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::CharacterCombatComponent_eventIsAttacking_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UCharacterCombatComponent, nullptr, "IsAttacking", Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::PropPointers), sizeof(Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::CharacterCombatComponent_eventIsAttacking_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking_Statics::CharacterCombatComponent_eventIsAttacking_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking()
 {
@@ -115,9 +120,9 @@ DEFINE_FUNCTION(UCharacterCombatComponent::execIsAttacking)
 	*(bool*)Z_Param__Result=P_THIS->IsAttacking();
 	P_NATIVE_END;
 }
-// End Class UCharacterCombatComponent Function IsAttacking
+// ********** End Class UCharacterCombatComponent Function IsAttacking *****************************
 
-// Begin Class UCharacterCombatComponent Function OnSwordOverlap
+// ********** Begin Class UCharacterCombatComponent Function OnSwordOverlap ************************
 struct Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics
 {
 	struct CharacterCombatComponent_eventOnSwordOverlap_Parms
@@ -162,7 +167,7 @@ void Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::New
 	((CharacterCombatComponent_eventOnSwordOverlap_Parms*)Obj)->bFromSweep = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::NewProp_bFromSweep = { "bFromSweep", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(CharacterCombatComponent_eventOnSwordOverlap_Parms), &Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::NewProp_bFromSweep_SetBit, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::NewProp_SweepResult = { "SweepResult", nullptr, (EPropertyFlags)0x0010008008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterCombatComponent_eventOnSwordOverlap_Parms, SweepResult), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SweepResult_MetaData), NewProp_SweepResult_MetaData) }; // 4100991306
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::NewProp_SweepResult = { "SweepResult", nullptr, (EPropertyFlags)0x0010008008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterCombatComponent_eventOnSwordOverlap_Parms, SweepResult), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SweepResult_MetaData), NewProp_SweepResult_MetaData) }; // 267591329
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::NewProp_OverlappedComp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::NewProp_OtherActor,
@@ -172,7 +177,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UChara
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::NewProp_SweepResult,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCharacterCombatComponent, nullptr, "OnSwordOverlap", nullptr, nullptr, Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::PropPointers), sizeof(Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::CharacterCombatComponent_eventOnSwordOverlap_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UCharacterCombatComponent, nullptr, "OnSwordOverlap", Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::PropPointers), sizeof(Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::CharacterCombatComponent_eventOnSwordOverlap_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap_Statics::CharacterCombatComponent_eventOnSwordOverlap_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap()
 {
@@ -196,9 +201,9 @@ DEFINE_FUNCTION(UCharacterCombatComponent::execOnSwordOverlap)
 	P_THIS->OnSwordOverlap(Z_Param_OverlappedComp,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult);
 	P_NATIVE_END;
 }
-// End Class UCharacterCombatComponent Function OnSwordOverlap
+// ********** End Class UCharacterCombatComponent Function OnSwordOverlap **************************
 
-// Begin Class UCharacterCombatComponent Function UpdateHitboxFromSockets
+// ********** Begin Class UCharacterCombatComponent Function UpdateHitboxFromSockets ***************
 struct Z_Construct_UFunction_UCharacterCombatComponent_UpdateHitboxFromSockets_Statics
 {
 #if WITH_METADATA
@@ -215,7 +220,7 @@ struct Z_Construct_UFunction_UCharacterCombatComponent_UpdateHitboxFromSockets_S
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCharacterCombatComponent_UpdateHitboxFromSockets_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCharacterCombatComponent, nullptr, "UpdateHitboxFromSockets", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_UpdateHitboxFromSockets_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCharacterCombatComponent_UpdateHitboxFromSockets_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCharacterCombatComponent_UpdateHitboxFromSockets_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UCharacterCombatComponent, nullptr, "UpdateHitboxFromSockets", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterCombatComponent_UpdateHitboxFromSockets_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCharacterCombatComponent_UpdateHitboxFromSockets_Statics::Function_MetaDataParams)},  };
 UFunction* Z_Construct_UFunction_UCharacterCombatComponent_UpdateHitboxFromSockets()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -232,9 +237,9 @@ DEFINE_FUNCTION(UCharacterCombatComponent::execUpdateHitboxFromSockets)
 	P_THIS->UpdateHitboxFromSockets();
 	P_NATIVE_END;
 }
-// End Class UCharacterCombatComponent Function UpdateHitboxFromSockets
+// ********** End Class UCharacterCombatComponent Function UpdateHitboxFromSockets *****************
 
-// Begin Class UCharacterCombatComponent
+// ********** Begin Class UCharacterCombatComponent ************************************************
 void UCharacterCombatComponent::StaticRegisterNativesUCharacterCombatComponent()
 {
 	UClass* Class = UCharacterCombatComponent::StaticClass();
@@ -246,10 +251,34 @@ void UCharacterCombatComponent::StaticRegisterNativesUCharacterCombatComponent()
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UCharacterCombatComponent);
+FClassRegistrationInfo Z_Registration_Info_UClass_UCharacterCombatComponent;
+UClass* UCharacterCombatComponent::GetPrivateStaticClass()
+{
+	using TClass = UCharacterCombatComponent;
+	if (!Z_Registration_Info_UClass_UCharacterCombatComponent.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("CharacterCombatComponent"),
+			Z_Registration_Info_UClass_UCharacterCombatComponent.InnerSingleton,
+			StaticRegisterNativesUCharacterCombatComponent,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UCharacterCombatComponent.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UCharacterCombatComponent_NoRegister()
 {
-	return UCharacterCombatComponent::StaticClass();
+	return UCharacterCombatComponent::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UCharacterCombatComponent_Statics
 {
@@ -262,6 +291,21 @@ struct Z_Construct_UClass_UCharacterCombatComponent_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentComboStep_MetaData[] = {
 		{ "Category", "Combat" },
+		{ "ModuleRelativePath", "Components/CharacterCombatComponent.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AbilitiesComponent_MetaData[] = {
+		{ "Category", "Component" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Components/CharacterCombatComponent.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AnimationComponent_MetaData[] = {
+		{ "Category", "Component" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Components/CharacterCombatComponent.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StateComponent_MetaData[] = {
+		{ "Category", "Component" },
+		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Components/CharacterCombatComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentAttackFlipbook_MetaData[] = {
@@ -286,6 +330,9 @@ struct Z_Construct_UClass_UCharacterCombatComponent_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentComboStep;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_AbilitiesComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_AnimationComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_StateComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentAttackFlipbook;
 	static void NewProp_bIsAttacking_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsAttacking;
@@ -294,10 +341,10 @@ struct Z_Construct_UClass_UCharacterCombatComponent_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace, "DoWeaponTrace" }, // 2300163159
-		{ &Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking, "IsAttacking" }, // 2906669991
-		{ &Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap, "OnSwordOverlap" }, // 3678773696
-		{ &Z_Construct_UFunction_UCharacterCombatComponent_UpdateHitboxFromSockets, "UpdateHitboxFromSockets" }, // 755276037
+		{ &Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace, "DoWeaponTrace" }, // 4138964745
+		{ &Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking, "IsAttacking" }, // 1923942013
+		{ &Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap, "OnSwordOverlap" }, // 2118132951
+		{ &Z_Construct_UFunction_UCharacterCombatComponent_UpdateHitboxFromSockets, "UpdateHitboxFromSockets" }, // 3855058955
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -306,6 +353,9 @@ struct Z_Construct_UClass_UCharacterCombatComponent_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_CurrentComboStep = { "CurrentComboStep", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, CurrentComboStep), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentComboStep_MetaData), NewProp_CurrentComboStep_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_AbilitiesComponent = { "AbilitiesComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, AbilitiesComponent), Z_Construct_UClass_UCharacterAbilitiesComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AbilitiesComponent_MetaData), NewProp_AbilitiesComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_AnimationComponent = { "AnimationComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, AnimationComponent), Z_Construct_UClass_UCharacterAnimationComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AnimationComponent_MetaData), NewProp_AnimationComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_StateComponent = { "StateComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, StateComponent), Z_Construct_UClass_UCharacterStateComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StateComponent_MetaData), NewProp_StateComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_CurrentAttackFlipbook = { "CurrentAttackFlipbook", nullptr, (EPropertyFlags)0x0114000000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, CurrentAttackFlipbook), Z_Construct_UClass_UPaperFlipbook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentAttackFlipbook_MetaData), NewProp_CurrentAttackFlipbook_MetaData) };
 void Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_bIsAttacking_SetBit(void* Obj)
 {
@@ -313,9 +363,12 @@ void Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_bIsAttacking_
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_bIsAttacking = { "bIsAttacking", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UCharacterCombatComponent), &Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_bIsAttacking_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsAttacking_MetaData), NewProp_bIsAttacking_MetaData) };
 const UECodeGen_Private::FSoftObjectPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_AttackDataTableAsset = { "AttackDataTableAsset", nullptr, (EPropertyFlags)0x0014000000010001, UECodeGen_Private::EPropertyGenFlags::SoftObject, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, AttackDataTableAsset), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackDataTableAsset_MetaData), NewProp_AttackDataTableAsset_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_CurrentAttackData = { "CurrentAttackData", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, CurrentAttackData), Z_Construct_UScriptStruct_FAttackData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentAttackData_MetaData), NewProp_CurrentAttackData_MetaData) }; // 3363663188
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_CurrentAttackData = { "CurrentAttackData", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, CurrentAttackData), Z_Construct_UScriptStruct_FAttackData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentAttackData_MetaData), NewProp_CurrentAttackData_MetaData) }; // 1947728159
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UCharacterCombatComponent_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_CurrentComboStep,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_AbilitiesComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_AnimationComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_StateComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_CurrentAttackFlipbook,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_bIsAttacking,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_AttackDataTableAsset,
@@ -350,24 +403,21 @@ UClass* Z_Construct_UClass_UCharacterCombatComponent()
 	}
 	return Z_Registration_Info_UClass_UCharacterCombatComponent.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<UCharacterCombatComponent>()
-{
-	return UCharacterCombatComponent::StaticClass();
-}
-DEFINE_VTABLE_PTR_HELPER_CTOR(UCharacterCombatComponent);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, UCharacterCombatComponent);
 UCharacterCombatComponent::~UCharacterCombatComponent() {}
-// End Class UCharacterCombatComponent
+// ********** End Class UCharacterCombatComponent **************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCharacterCombatComponent, UCharacterCombatComponent::StaticClass, TEXT("UCharacterCombatComponent"), &Z_Registration_Info_UClass_UCharacterCombatComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterCombatComponent), 2259822105U) },
+		{ Z_Construct_UClass_UCharacterCombatComponent, UCharacterCombatComponent::StaticClass, TEXT("UCharacterCombatComponent"), &Z_Registration_Info_UClass_UCharacterCombatComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterCombatComponent), 2187347354U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_3151559707(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h__Script_Game2DCPlusPlus_683213912(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

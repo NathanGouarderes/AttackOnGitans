@@ -5,23 +5,27 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/Components/CharacterAnimationComponent.h"
+#include "CharacterAnimationComponent.h"
+#include "Game2DCPlusPlus/Data/FBeamAttackData.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeCharacterAnimationComponent() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 ENGINE_API UClass* Z_Construct_UClass_ACharacter_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterAnimationComponent();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterAnimationComponent_NoRegister();
 GAME2DCPLUSPLUS_API UEnum* Z_Construct_UEnum_Game2DCPlusPlus_ERole();
+GAME2DCPLUSPLUS_API UScriptStruct* Z_Construct_UScriptStruct_FBeamAttackData();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbook_NoRegister();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbookComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Enum ERole
+// ********** Begin Enum ERole *********************************************************************
 static FEnumRegistrationInfo Z_Registration_Info_UEnum_ERole;
 static UEnum* ERole_StaticEnum()
 {
@@ -31,7 +35,7 @@ static UEnum* ERole_StaticEnum()
 	}
 	return Z_Registration_Info_UEnum_ERole.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UEnum* StaticEnum<ERole>()
+template<> GAME2DCPLUSPLUS_NON_ATTRIBUTED_API UEnum* StaticEnum<ERole>()
 {
 	return ERole_StaticEnum();
 }
@@ -75,9 +79,9 @@ UEnum* Z_Construct_UEnum_Game2DCPlusPlus_ERole()
 	}
 	return Z_Registration_Info_UEnum_ERole.InnerSingleton;
 }
-// End Enum ERole
+// ********** End Enum ERole ***********************************************************************
 
-// Begin Class UCharacterAnimationComponent Function PlayAnimation
+// ********** Begin Class UCharacterAnimationComponent Function PlayAnimation **********************
 struct Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics
 {
 	struct CharacterAnimationComponent_eventPlayAnimation_Parms
@@ -105,7 +109,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UChara
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::NewProp_Animation,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCharacterAnimationComponent, nullptr, "PlayAnimation", nullptr, nullptr, Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::PropPointers), sizeof(Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::CharacterAnimationComponent_eventPlayAnimation_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UCharacterAnimationComponent, nullptr, "PlayAnimation", Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::PropPointers), sizeof(Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::CharacterAnimationComponent_eventPlayAnimation_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation_Statics::CharacterAnimationComponent_eventPlayAnimation_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation()
 {
@@ -124,21 +128,92 @@ DEFINE_FUNCTION(UCharacterAnimationComponent::execPlayAnimation)
 	P_THIS->PlayAnimation(Z_Param_Animation);
 	P_NATIVE_END;
 }
-// End Class UCharacterAnimationComponent Function PlayAnimation
+// ********** End Class UCharacterAnimationComponent Function PlayAnimation ************************
 
-// Begin Class UCharacterAnimationComponent
+// ********** Begin Class UCharacterAnimationComponent Function PlayChangingBeamAnimation **********
+struct Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation_Statics
+{
+	struct CharacterAnimationComponent_eventPlayChangingBeamAnimation_Parms
+	{
+		FBeamAttackData BeamData;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Animation|Beam" },
+		{ "ModuleRelativePath", "Components/CharacterAnimationComponent.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BeamData_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_BeamData;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation_Statics::NewProp_BeamData = { "BeamData", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterAnimationComponent_eventPlayChangingBeamAnimation_Parms, BeamData), Z_Construct_UScriptStruct_FBeamAttackData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BeamData_MetaData), NewProp_BeamData_MetaData) }; // 1982421153
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation_Statics::NewProp_BeamData,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UCharacterAnimationComponent, nullptr, "PlayChangingBeamAnimation", Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation_Statics::PropPointers), sizeof(Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation_Statics::CharacterAnimationComponent_eventPlayChangingBeamAnimation_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation_Statics::CharacterAnimationComponent_eventPlayChangingBeamAnimation_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UCharacterAnimationComponent::execPlayChangingBeamAnimation)
+{
+	P_GET_STRUCT_REF(FBeamAttackData,Z_Param_Out_BeamData);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->PlayChangingBeamAnimation(Z_Param_Out_BeamData);
+	P_NATIVE_END;
+}
+// ********** End Class UCharacterAnimationComponent Function PlayChangingBeamAnimation ************
+
+// ********** Begin Class UCharacterAnimationComponent *********************************************
 void UCharacterAnimationComponent::StaticRegisterNativesUCharacterAnimationComponent()
 {
 	UClass* Class = UCharacterAnimationComponent::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "PlayAnimation", &UCharacterAnimationComponent::execPlayAnimation },
+		{ "PlayChangingBeamAnimation", &UCharacterAnimationComponent::execPlayChangingBeamAnimation },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UCharacterAnimationComponent);
+FClassRegistrationInfo Z_Registration_Info_UClass_UCharacterAnimationComponent;
+UClass* UCharacterAnimationComponent::GetPrivateStaticClass()
+{
+	using TClass = UCharacterAnimationComponent;
+	if (!Z_Registration_Info_UClass_UCharacterAnimationComponent.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("CharacterAnimationComponent"),
+			Z_Registration_Info_UClass_UCharacterAnimationComponent.InnerSingleton,
+			StaticRegisterNativesUCharacterAnimationComponent,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UCharacterAnimationComponent.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UCharacterAnimationComponent_NoRegister()
 {
-	return UCharacterAnimationComponent::StaticClass();
+	return UCharacterAnimationComponent::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UCharacterAnimationComponent_Statics
 {
@@ -194,6 +269,18 @@ struct Z_Construct_UClass_UCharacterAnimationComponent_Statics
 		{ "Category", "Animation" },
 		{ "ModuleRelativePath", "Components/CharacterAnimationComponent.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PhysicalAttackDataTable_MetaData[] = {
+		{ "Category", "Data" },
+		{ "ModuleRelativePath", "Components/CharacterAnimationComponent.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileDataTable_MetaData[] = {
+		{ "Category", "Data" },
+		{ "ModuleRelativePath", "Components/CharacterAnimationComponent.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BeamDataTableDataTable_MetaData[] = {
+		{ "Category", "Data" },
+		{ "ModuleRelativePath", "Components/CharacterAnimationComponent.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OwnerCharacter_MetaData[] = {
 		{ "ModuleRelativePath", "Components/CharacterAnimationComponent.h" },
 	};
@@ -206,11 +293,15 @@ struct Z_Construct_UClass_UCharacterAnimationComponent_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_FallAnimation;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_JumpAbsorbtionAnimation;
 	static const UECodeGen_Private::FSoftObjectPropertyParams NewProp_AnimationDataTableAsset;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_PhysicalAttackDataTable;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ProjectileDataTable;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_BeamDataTableDataTable;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_OwnerCharacter;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation, "PlayAnimation" }, // 3295303648
+		{ &Z_Construct_UFunction_UCharacterAnimationComponent_PlayAnimation, "PlayAnimation" }, // 147114549
+		{ &Z_Construct_UFunction_UCharacterAnimationComponent_PlayChangingBeamAnimation, "PlayChangingBeamAnimation" }, // 27019780
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -226,6 +317,9 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterAnim
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_FallAnimation = { "FallAnimation", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterAnimationComponent, FallAnimation), Z_Construct_UClass_UPaperFlipbook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FallAnimation_MetaData), NewProp_FallAnimation_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_JumpAbsorbtionAnimation = { "JumpAbsorbtionAnimation", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterAnimationComponent, JumpAbsorbtionAnimation), Z_Construct_UClass_UPaperFlipbook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_JumpAbsorbtionAnimation_MetaData), NewProp_JumpAbsorbtionAnimation_MetaData) };
 const UECodeGen_Private::FSoftObjectPropertyParams Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_AnimationDataTableAsset = { "AnimationDataTableAsset", nullptr, (EPropertyFlags)0x0014000000000015, UECodeGen_Private::EPropertyGenFlags::SoftObject, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterAnimationComponent, AnimationDataTableAsset), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AnimationDataTableAsset_MetaData), NewProp_AnimationDataTableAsset_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_PhysicalAttackDataTable = { "PhysicalAttackDataTable", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterAnimationComponent, PhysicalAttackDataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PhysicalAttackDataTable_MetaData), NewProp_PhysicalAttackDataTable_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_ProjectileDataTable = { "ProjectileDataTable", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterAnimationComponent, ProjectileDataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileDataTable_MetaData), NewProp_ProjectileDataTable_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_BeamDataTableDataTable = { "BeamDataTableDataTable", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterAnimationComponent, BeamDataTableDataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BeamDataTableDataTable_MetaData), NewProp_BeamDataTableDataTable_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_OwnerCharacter = { "OwnerCharacter", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterAnimationComponent, OwnerCharacter), Z_Construct_UClass_ACharacter_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OwnerCharacter_MetaData), NewProp_OwnerCharacter_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UCharacterAnimationComponent_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_FlipbookComponent,
@@ -236,6 +330,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UCharacte
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_FallAnimation,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_JumpAbsorbtionAnimation,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_AnimationDataTableAsset,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_PhysicalAttackDataTable,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_ProjectileDataTable,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_BeamDataTableDataTable,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterAnimationComponent_Statics::NewProp_OwnerCharacter,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UCharacterAnimationComponent_Statics::PropPointers) < 2048);
@@ -267,27 +364,24 @@ UClass* Z_Construct_UClass_UCharacterAnimationComponent()
 	}
 	return Z_Registration_Info_UClass_UCharacterAnimationComponent.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<UCharacterAnimationComponent>()
-{
-	return UCharacterAnimationComponent::StaticClass();
-}
-DEFINE_VTABLE_PTR_HELPER_CTOR(UCharacterAnimationComponent);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, UCharacterAnimationComponent);
 UCharacterAnimationComponent::~UCharacterAnimationComponent() {}
-// End Class UCharacterAnimationComponent
+// ********** End Class UCharacterAnimationComponent ***********************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ ERole_StaticEnum, TEXT("ERole"), &Z_Registration_Info_UEnum_ERole, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4013508945U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCharacterAnimationComponent, UCharacterAnimationComponent::StaticClass, TEXT("UCharacterAnimationComponent"), &Z_Registration_Info_UClass_UCharacterAnimationComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterAnimationComponent), 2920132460U) },
+		{ Z_Construct_UClass_UCharacterAnimationComponent, UCharacterAnimationComponent::StaticClass, TEXT("UCharacterAnimationComponent"), &Z_Registration_Info_UClass_UCharacterAnimationComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterAnimationComponent), 2402967086U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_754780255(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h__Script_Game2DCPlusPlus_4027169814(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h_Statics::EnumInfo));
-// End Registration
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h__Script_Game2DCPlusPlus_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterAnimationComponent_h__Script_Game2DCPlusPlus_Statics::EnumInfo));
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -10,6 +10,10 @@
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "../Components/CharacterAnimationComponent.h"
+#include "../Components/CharacterKiComponent.h"
+#include "../Components/CharacterAbilitiesComponent.h"
+#include "../Components/UCharacterStateComponent.h"
+#include "../Components/StatsComponent.h"
 #include "GameFramework/Character.h"
 #include "MyEnemyBase.generated.h"
 
@@ -66,6 +70,19 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Component", meta = (AllowPrivateAccess = "true"))
 	UCharacterAnimationComponent* AnimationComponent;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Component", meta = (AllowPrivateAccess = "true"))
+	UStatsComponent* StatsComponent;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Component", meta = (AllowPrivateAccess = "true"))
+	UCharacterKiComponent* KiComponent;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Component", meta = (AllowPrivateAccess = "true"))
+	UCharacterAbilitiesComponent* AbilitiesComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UCharacterStateComponent* StateComponent;
+
 
 
 protected:

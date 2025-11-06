@@ -5,29 +5,56 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/Components/CharacterKiComponent.h"
+#include "CharacterKiComponent.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeCharacterKiComponent() {}
 
-// Begin Cross Module References
-COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+// ********** Begin Cross Module References ********************************************************
+COREUOBJECT_API UClass* Z_Construct_UClass_UClass_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AKiAura_NoRegister();
-GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AMyCharacter_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterKiComponent();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterKiComponent_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UKiBarWidget_NoRegister();
+GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UStatsComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class UCharacterKiComponent
+// ********** Begin Class UCharacterKiComponent ****************************************************
 void UCharacterKiComponent::StaticRegisterNativesUCharacterKiComponent()
 {
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UCharacterKiComponent);
+FClassRegistrationInfo Z_Registration_Info_UClass_UCharacterKiComponent;
+UClass* UCharacterKiComponent::GetPrivateStaticClass()
+{
+	using TClass = UCharacterKiComponent;
+	if (!Z_Registration_Info_UClass_UCharacterKiComponent.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("CharacterKiComponent"),
+			Z_Registration_Info_UClass_UCharacterKiComponent.InnerSingleton,
+			StaticRegisterNativesUCharacterKiComponent,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UCharacterKiComponent.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UCharacterKiComponent_NoRegister()
 {
-	return UCharacterKiComponent::StaticClass();
+	return UCharacterKiComponent::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UCharacterKiComponent_Statics
 {
@@ -38,28 +65,14 @@ struct Z_Construct_UClass_UCharacterKiComponent_Statics
 		{ "IncludePath", "Components/CharacterKiComponent.h" },
 		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxKi_MetaData[] = {
-		{ "Category", "Ki Stats" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** \xef\xbf\xbdtat du Ki */" },
-#endif
-		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xef\xbf\xbdtat du Ki" },
-#endif
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentKi_MetaData[] = {
-		{ "Category", "Ki Stats" },
-		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KiLoadSpeed_MetaData[] = {
-		{ "Category", "Ki Stats" },
-		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
-	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OwnerCharacter_MetaData[] = {
 		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KiBarWidget_MetaData[] = {
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StatsComponent_MetaData[] = {
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
 	};
@@ -75,11 +88,9 @@ struct Z_Construct_UClass_UCharacterKiComponent_Statics
 		{ "ModuleRelativePath", "Components/CharacterKiComponent.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxKi;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_CurrentKi;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_KiLoadSpeed;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_OwnerCharacter;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_KiBarWidget;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_StatsComponent;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_KiBarWidgetClass;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_KiAuraClass;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_KiAura;
@@ -90,20 +101,16 @@ struct Z_Construct_UClass_UCharacterKiComponent_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_MaxKi = { "MaxKi", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, MaxKi), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxKi_MetaData), NewProp_MaxKi_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_CurrentKi = { "CurrentKi", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, CurrentKi), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentKi_MetaData), NewProp_CurrentKi_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiLoadSpeed = { "KiLoadSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, KiLoadSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KiLoadSpeed_MetaData), NewProp_KiLoadSpeed_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_OwnerCharacter = { "OwnerCharacter", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, OwnerCharacter), Z_Construct_UClass_AMyCharacter_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OwnerCharacter_MetaData), NewProp_OwnerCharacter_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_OwnerCharacter = { "OwnerCharacter", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, OwnerCharacter), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OwnerCharacter_MetaData), NewProp_OwnerCharacter_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiBarWidget = { "KiBarWidget", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, KiBarWidget), Z_Construct_UClass_UKiBarWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KiBarWidget_MetaData), NewProp_KiBarWidget_MetaData) };
-const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiBarWidgetClass = { "KiBarWidgetClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, KiBarWidgetClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UKiBarWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KiBarWidgetClass_MetaData), NewProp_KiBarWidgetClass_MetaData) };
-const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiAuraClass = { "KiAuraClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, KiAuraClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AKiAura_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KiAuraClass_MetaData), NewProp_KiAuraClass_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_StatsComponent = { "StatsComponent", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, StatsComponent), Z_Construct_UClass_UStatsComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StatsComponent_MetaData), NewProp_StatsComponent_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiBarWidgetClass = { "KiBarWidgetClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, KiBarWidgetClass), Z_Construct_UClass_UClass_NoRegister, Z_Construct_UClass_UKiBarWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KiBarWidgetClass_MetaData), NewProp_KiBarWidgetClass_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiAuraClass = { "KiAuraClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, KiAuraClass), Z_Construct_UClass_UClass_NoRegister, Z_Construct_UClass_AKiAura_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KiAuraClass_MetaData), NewProp_KiAuraClass_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiAura = { "KiAura", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, KiAura), Z_Construct_UClass_AKiAura_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KiAura_MetaData), NewProp_KiAura_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UCharacterKiComponent_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_MaxKi,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_CurrentKi,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiLoadSpeed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_OwnerCharacter,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiBarWidget,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_StatsComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiBarWidgetClass,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiAuraClass,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiAura,
@@ -137,24 +144,21 @@ UClass* Z_Construct_UClass_UCharacterKiComponent()
 	}
 	return Z_Registration_Info_UClass_UCharacterKiComponent.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<UCharacterKiComponent>()
-{
-	return UCharacterKiComponent::StaticClass();
-}
-DEFINE_VTABLE_PTR_HELPER_CTOR(UCharacterKiComponent);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, UCharacterKiComponent);
 UCharacterKiComponent::~UCharacterKiComponent() {}
-// End Class UCharacterKiComponent
+// ********** End Class UCharacterKiComponent ******************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCharacterKiComponent, UCharacterKiComponent::StaticClass, TEXT("UCharacterKiComponent"), &Z_Registration_Info_UClass_UCharacterKiComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterKiComponent), 3535546053U) },
+		{ Z_Construct_UClass_UCharacterKiComponent, UCharacterKiComponent::StaticClass, TEXT("UCharacterKiComponent"), &Z_Registration_Info_UClass_UCharacterKiComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterKiComponent), 3941354927U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h_3612586119(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h__Script_Game2DCPlusPlus_3650821616(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

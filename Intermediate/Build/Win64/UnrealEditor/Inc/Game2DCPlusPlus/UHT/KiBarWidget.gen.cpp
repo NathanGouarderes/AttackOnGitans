@@ -6,18 +6,20 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Game2DCPlusPlus/Widgets/KiBarWidget.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeKiBarWidget() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UKiBarWidget();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UKiBarWidget_NoRegister();
 UMG_API UClass* Z_Construct_UClass_UProgressBar_NoRegister();
 UMG_API UClass* Z_Construct_UClass_UUserWidget();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class UKiBarWidget Function UpdateKiBar
+// ********** Begin Class UKiBarWidget Function UpdateKiBar ****************************************
 struct Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics
 {
 	struct KiBarWidget_eventUpdateKiBar_Parms
@@ -43,7 +45,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UKiBar
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::NewProp_MaxKi,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UKiBarWidget, nullptr, "UpdateKiBar", nullptr, nullptr, Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::PropPointers), sizeof(Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::KiBarWidget_eventUpdateKiBar_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::Function_MetaDataParams), Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UKiBarWidget, nullptr, "UpdateKiBar", Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::PropPointers), sizeof(Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::KiBarWidget_eventUpdateKiBar_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::Function_MetaDataParams), Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UKiBarWidget_UpdateKiBar_Statics::KiBarWidget_eventUpdateKiBar_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UKiBarWidget_UpdateKiBar()
 {
@@ -63,9 +65,9 @@ DEFINE_FUNCTION(UKiBarWidget::execUpdateKiBar)
 	P_THIS->UpdateKiBar(Z_Param_CurentKi,Z_Param_MaxKi);
 	P_NATIVE_END;
 }
-// End Class UKiBarWidget Function UpdateKiBar
+// ********** End Class UKiBarWidget Function UpdateKiBar ******************************************
 
-// Begin Class UKiBarWidget
+// ********** Begin Class UKiBarWidget *************************************************************
 void UKiBarWidget::StaticRegisterNativesUKiBarWidget()
 {
 	UClass* Class = UKiBarWidget::StaticClass();
@@ -74,10 +76,34 @@ void UKiBarWidget::StaticRegisterNativesUKiBarWidget()
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UKiBarWidget);
+FClassRegistrationInfo Z_Registration_Info_UClass_UKiBarWidget;
+UClass* UKiBarWidget::GetPrivateStaticClass()
+{
+	using TClass = UKiBarWidget;
+	if (!Z_Registration_Info_UClass_UKiBarWidget.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("KiBarWidget"),
+			Z_Registration_Info_UClass_UKiBarWidget.InnerSingleton,
+			StaticRegisterNativesUKiBarWidget,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UKiBarWidget.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UKiBarWidget_NoRegister()
 {
-	return UKiBarWidget::StaticClass();
+	return UKiBarWidget::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UKiBarWidget_Statics
 {
@@ -99,7 +125,7 @@ struct Z_Construct_UClass_UKiBarWidget_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UKiBarWidget_UpdateKiBar, "UpdateKiBar" }, // 3095036925
+		{ &Z_Construct_UFunction_UKiBarWidget_UpdateKiBar, "UpdateKiBar" }, // 3559370694
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -140,25 +166,22 @@ UClass* Z_Construct_UClass_UKiBarWidget()
 	}
 	return Z_Registration_Info_UClass_UKiBarWidget.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<UKiBarWidget>()
-{
-	return UKiBarWidget::StaticClass();
-}
 UKiBarWidget::UKiBarWidget(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
-DEFINE_VTABLE_PTR_HELPER_CTOR(UKiBarWidget);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, UKiBarWidget);
 UKiBarWidget::~UKiBarWidget() {}
-// End Class UKiBarWidget
+// ********** End Class UKiBarWidget ***************************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Widgets_KiBarWidget_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Widgets_KiBarWidget_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UKiBarWidget, UKiBarWidget::StaticClass, TEXT("UKiBarWidget"), &Z_Registration_Info_UClass_UKiBarWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UKiBarWidget), 1717685453U) },
+		{ Z_Construct_UClass_UKiBarWidget, UKiBarWidget::StaticClass, TEXT("UKiBarWidget"), &Z_Registration_Info_UClass_UKiBarWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UKiBarWidget), 2982796505U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Widgets_KiBarWidget_h_3714374553(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Widgets_KiBarWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Widgets_KiBarWidget_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Widgets_KiBarWidget_h__Script_Game2DCPlusPlus_2958911408(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Widgets_KiBarWidget_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Widgets_KiBarWidget_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

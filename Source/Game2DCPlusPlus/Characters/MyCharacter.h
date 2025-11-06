@@ -5,7 +5,10 @@
 #include "../MyFistBase.h"
 #include "../Interface/UFlipbookProviderInterface.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "../Components/UCharacterStateComponent.h"
 #include "../Components/StatsComponent.h"
+#include "../Components/StandComponent.h"
+#include "../Data/FCharacterData.h"
 #include "MyCharacter.generated.h"
 
 class UCharacterCombatComponent;
@@ -75,6 +78,16 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UStatsComponent* StatsComponent;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UCharacterStateComponent* StateComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UStandComponent* StandComponent;
+
+	TSoftObjectPtr<UDataTable> CharacterDataTable;
+
+	FCharacterData CharacterData;
+
 	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Visuals")
 	//UPaperFlipbookComponent* SwordFlipbook;
 
@@ -92,4 +105,12 @@ public:
 	//AMyWeaponBase* EquipedWeapon;
 
 	TArray<USceneComponent*> SceneComponents;
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character Stat")
+
+	float CharacterMaxKi;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character Stat")
+	float CharacterKiLoadSpeed;
 };

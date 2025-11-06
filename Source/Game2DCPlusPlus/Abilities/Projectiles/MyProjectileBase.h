@@ -34,9 +34,11 @@ public:
 		UPrimitiveComponent* OtherComp, FVector NormalImpulse,
 		const FHitResult& Hit);
 
-	virtual void Initialize(FVector Direction);
+	virtual void Initialize(AActor* InOwner, FVector Direction);
 
 	virtual void DealDamages();
+
+	AActor* OwnerCharacter;
 
 	UPROPERTY(EditAnywhere, Category = "Damage")
 	float Damage;

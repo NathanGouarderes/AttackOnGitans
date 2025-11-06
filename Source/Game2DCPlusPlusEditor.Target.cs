@@ -1,15 +1,17 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
 using UnrealBuildTool;
 using System.Collections.Generic;
 
 public class Game2DCPlusPlusEditorTarget : TargetRules
 {
-	public Game2DCPlusPlusEditorTarget( TargetInfo Target) : base(Target)
-	{
-		Type = TargetType.Editor;
-		DefaultBuildSettings = BuildSettingsVersion.V5;
-		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_4;
-		ExtraModuleNames.Add("Game2DCPlusPlus");
-	}
+    public Game2DCPlusPlusEditorTarget(TargetInfo Target) : base(Target)
+    {
+        Type = TargetType.Editor;
+
+        DefaultBuildSettings = BuildSettingsVersion.V6;
+        IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_7;
+
+        bOverrideBuildEnvironment = true;
+
+        ExtraModuleNames.Add("Game2DCPlusPlus");
+    }
 }

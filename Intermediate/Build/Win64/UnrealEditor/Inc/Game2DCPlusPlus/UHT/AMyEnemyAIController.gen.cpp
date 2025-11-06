@@ -6,11 +6,13 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Game2DCPlusPlus/AMyEnemyAIController.h"
-#include "Runtime/AIModule/Classes/Perception/AIPerceptionTypes.h"
+#include "Perception/AIPerceptionTypes.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeAMyEnemyAIController() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 AIMODULE_API UClass* Z_Construct_UClass_AAIController();
 AIMODULE_API UClass* Z_Construct_UClass_UAISenseConfig_Sight_NoRegister();
 AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
@@ -22,9 +24,9 @@ ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AAMyEnemyAIController();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AAMyEnemyAIController_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class AAMyEnemyAIController Function OnTargetDetected
+// ********** Begin Class AAMyEnemyAIController Function OnTargetDetected **************************
 struct Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics
 {
 	struct AMyEnemyAIController_eventOnTargetDetected_Parms
@@ -43,13 +45,13 @@ struct Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::NewProp_Actor = { "Actor", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyAIController_eventOnTargetDetected_Parms, Actor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::NewProp_Stimulus = { "Stimulus", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyAIController_eventOnTargetDetected_Parms, Stimulus), Z_Construct_UScriptStruct_FAIStimulus, METADATA_PARAMS(0, nullptr) }; // 177100813
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::NewProp_Stimulus = { "Stimulus", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyAIController_eventOnTargetDetected_Parms, Stimulus), Z_Construct_UScriptStruct_FAIStimulus, METADATA_PARAMS(0, nullptr) }; // 1267494880
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::NewProp_Actor,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::NewProp_Stimulus,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAMyEnemyAIController, nullptr, "OnTargetDetected", nullptr, nullptr, Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::PropPointers), sizeof(Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::AMyEnemyAIController_eventOnTargetDetected_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AAMyEnemyAIController, nullptr, "OnTargetDetected", Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::PropPointers), sizeof(Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::AMyEnemyAIController_eventOnTargetDetected_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected_Statics::AMyEnemyAIController_eventOnTargetDetected_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected()
 {
@@ -69,9 +71,9 @@ DEFINE_FUNCTION(AAMyEnemyAIController::execOnTargetDetected)
 	P_THIS->OnTargetDetected(Z_Param_Actor,Z_Param_Stimulus);
 	P_NATIVE_END;
 }
-// End Class AAMyEnemyAIController Function OnTargetDetected
+// ********** End Class AAMyEnemyAIController Function OnTargetDetected ****************************
 
-// Begin Class AAMyEnemyAIController
+// ********** Begin Class AAMyEnemyAIController ****************************************************
 void AAMyEnemyAIController::StaticRegisterNativesAAMyEnemyAIController()
 {
 	UClass* Class = AAMyEnemyAIController::StaticClass();
@@ -80,18 +82,39 @@ void AAMyEnemyAIController::StaticRegisterNativesAAMyEnemyAIController()
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AAMyEnemyAIController);
+FClassRegistrationInfo Z_Registration_Info_UClass_AAMyEnemyAIController;
+UClass* AAMyEnemyAIController::GetPrivateStaticClass()
+{
+	using TClass = AAMyEnemyAIController;
+	if (!Z_Registration_Info_UClass_AAMyEnemyAIController.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("AMyEnemyAIController"),
+			Z_Registration_Info_UClass_AAMyEnemyAIController.InnerSingleton,
+			StaticRegisterNativesAAMyEnemyAIController,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_AAMyEnemyAIController.InnerSingleton;
+}
 UClass* Z_Construct_UClass_AAMyEnemyAIController_NoRegister()
 {
-	return AAMyEnemyAIController::StaticClass();
+	return AAMyEnemyAIController::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_AAMyEnemyAIController_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * \n */" },
-#endif
 		{ "HideCategories", "Collision Rendering Transformation" },
 		{ "IncludePath", "AMyEnemyAIController.h" },
 		{ "ModuleRelativePath", "AMyEnemyAIController.h" },
@@ -128,7 +151,7 @@ struct Z_Construct_UClass_AAMyEnemyAIController_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected, "OnTargetDetected" }, // 2952730043
+		{ &Z_Construct_UFunction_AAMyEnemyAIController_OnTargetDetected, "OnTargetDetected" }, // 2356274685
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -177,24 +200,21 @@ UClass* Z_Construct_UClass_AAMyEnemyAIController()
 	}
 	return Z_Registration_Info_UClass_AAMyEnemyAIController.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<AAMyEnemyAIController>()
-{
-	return AAMyEnemyAIController::StaticClass();
-}
-DEFINE_VTABLE_PTR_HELPER_CTOR(AAMyEnemyAIController);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, AAMyEnemyAIController);
 AAMyEnemyAIController::~AAMyEnemyAIController() {}
-// End Class AAMyEnemyAIController
+// ********** End Class AAMyEnemyAIController ******************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_AMyEnemyAIController_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_AMyEnemyAIController_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AAMyEnemyAIController, AAMyEnemyAIController::StaticClass, TEXT("AAMyEnemyAIController"), &Z_Registration_Info_UClass_AAMyEnemyAIController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAMyEnemyAIController), 488477040U) },
+		{ Z_Construct_UClass_AAMyEnemyAIController, AAMyEnemyAIController::StaticClass, TEXT("AAMyEnemyAIController"), &Z_Registration_Info_UClass_AAMyEnemyAIController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAMyEnemyAIController), 3670767349U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_AMyEnemyAIController_h_1033116701(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_AMyEnemyAIController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_AMyEnemyAIController_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_AMyEnemyAIController_h__Script_Game2DCPlusPlus_130759889(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_AMyEnemyAIController_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_AMyEnemyAIController_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -7,23 +7,27 @@
 #include "UObject/GeneratedCppIncludes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeGame2DCPlusPlus_init() {}
-	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_Game2DCPlusPlus;
-	FORCENOINLINE UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus()
+	GAME2DCPLUSPLUS_API UFunction* Z_Construct_UDelegateFunction_UHitboxComponent_OnCustomHit__DelegateSignature();
+static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_Game2DCPlusPlus;
+FORCENOINLINE UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus()
+{
+	if (!Z_Registration_Info_UPackage__Script_Game2DCPlusPlus.OuterSingleton)
 	{
-		if (!Z_Registration_Info_UPackage__Script_Game2DCPlusPlus.OuterSingleton)
-		{
-			static const UECodeGen_Private::FPackageParams PackageParams = {
-				"/Script/Game2DCPlusPlus",
-				nullptr,
-				0,
-				PKG_CompiledIn | 0x00000000,
-				0x0FFF41EE,
-				0xAEC65B63,
-				METADATA_PARAMS(0, nullptr)
-			};
-			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_Game2DCPlusPlus.OuterSingleton, PackageParams);
-		}
-		return Z_Registration_Info_UPackage__Script_Game2DCPlusPlus.OuterSingleton;
+		static UObject* (*const SingletonFuncArray[])() = {
+			(UObject* (*)())Z_Construct_UDelegateFunction_UHitboxComponent_OnCustomHit__DelegateSignature,
+		};
+		static const UECodeGen_Private::FPackageParams PackageParams = {
+			"/Script/Game2DCPlusPlus",
+			SingletonFuncArray,
+			UE_ARRAY_COUNT(SingletonFuncArray),
+			PKG_CompiledIn | 0x00000000,
+			0xC7A17819,
+			0x9B80E416,
+			METADATA_PARAMS(0, nullptr)
+		};
+		UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_Game2DCPlusPlus.OuterSingleton, PackageParams);
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Game2DCPlusPlus(Z_Construct_UPackage__Script_Game2DCPlusPlus, TEXT("/Script/Game2DCPlusPlus"), Z_Registration_Info_UPackage__Script_Game2DCPlusPlus, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x0FFF41EE, 0xAEC65B63));
+	return Z_Registration_Info_UPackage__Script_Game2DCPlusPlus.OuterSingleton;
+}
+static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Game2DCPlusPlus(Z_Construct_UPackage__Script_Game2DCPlusPlus, TEXT("/Script/Game2DCPlusPlus"), Z_Registration_Info_UPackage__Script_Game2DCPlusPlus, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xC7A17819, 0x9B80E416));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

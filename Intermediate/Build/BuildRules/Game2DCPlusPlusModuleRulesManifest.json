@@ -1,9 +1,10 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\natha\\Documents\\Unreal Projects\\Game2DCPlusPlus 5.5\\Source\\Game2DCPlusPlus\\Game2DCPlusPlus.Build.cs",
-		"C:\\Users\\natha\\Documents\\Unreal Projects\\Game2DCPlusPlus 5.5\\Plugins\\VisualStudioTools\\Source\\VisualStudioTools\\VisualStudioTools.Build.cs",
-		"C:\\Users\\natha\\Documents\\Unreal Projects\\Game2DCPlusPlus 5.5\\Source\\Game2DCPlusPlus.Target.cs",
-		"C:\\Users\\natha\\Documents\\Unreal Projects\\Game2DCPlusPlus 5.5\\Source\\Game2DCPlusPlusEditor.Target.cs"
+		"C:\\Users\\natha\\Documents\\Unreal Projects\\Game2DCPlusPlus 5.6 5.7\\Source\\Game2DCPlusPlus\\Game2DCPlusPlus.Build.cs",
+		"C:\\Users\\natha\\Documents\\Unreal Projects\\Game2DCPlusPlus 5.6 5.7\\Plugins\\VisualStudioTools\\Source\\VisualStudioBlueprintDebuggerHelper\\VisualStudioBlueprintDebuggerHelper.Build.cs",
+		"C:\\Users\\natha\\Documents\\Unreal Projects\\Game2DCPlusPlus 5.6 5.7\\Plugins\\VisualStudioTools\\Source\\VisualStudioTools\\VisualStudioTools.Build.cs",
+		"C:\\Users\\natha\\Documents\\Unreal Projects\\Game2DCPlusPlus 5.6 5.7\\Source\\Game2DCPlusPlus.Target.cs",
+		"C:\\Users\\natha\\Documents\\Unreal Projects\\Game2DCPlusPlus 5.6 5.7\\Source\\Game2DCPlusPlusEditor.Target.cs"
 	],
-	"EngineVersion": "5.5.4"
+	"EngineVersion": "5.7.0"
 }

@@ -6,26 +6,52 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Game2DCPlusPlus/GroundBase.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeGroundBase() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AGroundBase();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AGroundBase_NoRegister();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperSpriteComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class AGroundBase
+// ********** Begin Class AGroundBase **************************************************************
 void AGroundBase::StaticRegisterNativesAGroundBase()
 {
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AGroundBase);
+FClassRegistrationInfo Z_Registration_Info_UClass_AGroundBase;
+UClass* AGroundBase::GetPrivateStaticClass()
+{
+	using TClass = AGroundBase;
+	if (!Z_Registration_Info_UClass_AGroundBase.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("GroundBase"),
+			Z_Registration_Info_UClass_AGroundBase.InnerSingleton,
+			StaticRegisterNativesAGroundBase,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_AGroundBase.InnerSingleton;
+}
 UClass* Z_Construct_UClass_AGroundBase_NoRegister()
 {
-	return AGroundBase::StaticClass();
+	return AGroundBase::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_AGroundBase_Statics
 {
@@ -91,24 +117,21 @@ UClass* Z_Construct_UClass_AGroundBase()
 	}
 	return Z_Registration_Info_UClass_AGroundBase.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<AGroundBase>()
-{
-	return AGroundBase::StaticClass();
-}
-DEFINE_VTABLE_PTR_HELPER_CTOR(AGroundBase);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, AGroundBase);
 AGroundBase::~AGroundBase() {}
-// End Class AGroundBase
+// ********** End Class AGroundBase ****************************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_GroundBase_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_GroundBase_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AGroundBase, AGroundBase::StaticClass, TEXT("AGroundBase"), &Z_Registration_Info_UClass_AGroundBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGroundBase), 2174630808U) },
+		{ Z_Construct_UClass_AGroundBase, AGroundBase::StaticClass, TEXT("AGroundBase"), &Z_Registration_Info_UClass_AGroundBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGroundBase), 601481148U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_GroundBase_h_1523903929(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_GroundBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_GroundBase_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_GroundBase_h__Script_Game2DCPlusPlus_822321800(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_GroundBase_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_GroundBase_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

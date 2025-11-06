@@ -6,24 +6,50 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Game2DCPlusPlus/MyGameModeCPlusPlus.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeMyGameModeCPlusPlus() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AMyGameModeCPlusPlus();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AMyGameModeCPlusPlus_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class AMyGameModeCPlusPlus
+// ********** Begin Class AMyGameModeCPlusPlus *****************************************************
 void AMyGameModeCPlusPlus::StaticRegisterNativesAMyGameModeCPlusPlus()
 {
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AMyGameModeCPlusPlus);
+FClassRegistrationInfo Z_Registration_Info_UClass_AMyGameModeCPlusPlus;
+UClass* AMyGameModeCPlusPlus::GetPrivateStaticClass()
+{
+	using TClass = AMyGameModeCPlusPlus;
+	if (!Z_Registration_Info_UClass_AMyGameModeCPlusPlus.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("MyGameModeCPlusPlus"),
+			Z_Registration_Info_UClass_AMyGameModeCPlusPlus.InnerSingleton,
+			StaticRegisterNativesAMyGameModeCPlusPlus,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_AMyGameModeCPlusPlus.InnerSingleton;
+}
 UClass* Z_Construct_UClass_AMyGameModeCPlusPlus_NoRegister()
 {
-	return AMyGameModeCPlusPlus::StaticClass();
+	return AMyGameModeCPlusPlus::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_AMyGameModeCPlusPlus_Statics
 {
@@ -72,25 +98,22 @@ UClass* Z_Construct_UClass_AMyGameModeCPlusPlus()
 	}
 	return Z_Registration_Info_UClass_AMyGameModeCPlusPlus.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<AMyGameModeCPlusPlus>()
-{
-	return AMyGameModeCPlusPlus::StaticClass();
-}
 AMyGameModeCPlusPlus::AMyGameModeCPlusPlus(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
-DEFINE_VTABLE_PTR_HELPER_CTOR(AMyGameModeCPlusPlus);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, AMyGameModeCPlusPlus);
 AMyGameModeCPlusPlus::~AMyGameModeCPlusPlus() {}
-// End Class AMyGameModeCPlusPlus
+// ********** End Class AMyGameModeCPlusPlus *******************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_MyGameModeCPlusPlus_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_MyGameModeCPlusPlus_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyGameModeCPlusPlus, AMyGameModeCPlusPlus::StaticClass, TEXT("AMyGameModeCPlusPlus"), &Z_Registration_Info_UClass_AMyGameModeCPlusPlus, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyGameModeCPlusPlus), 2192354386U) },
+		{ Z_Construct_UClass_AMyGameModeCPlusPlus, AMyGameModeCPlusPlus::StaticClass, TEXT("AMyGameModeCPlusPlus"), &Z_Registration_Info_UClass_AMyGameModeCPlusPlus, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyGameModeCPlusPlus), 1116370701U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_MyGameModeCPlusPlus_h_2708152881(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_MyGameModeCPlusPlus_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_MyGameModeCPlusPlus_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_MyGameModeCPlusPlus_h__Script_Game2DCPlusPlus_3275907740(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_MyGameModeCPlusPlus_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_MyGameModeCPlusPlus_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

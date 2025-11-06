@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "../Abilities/Beams/BeamBase.h"
 #include "CharacterInputComponent.generated.h"
 
 class AMyCharacter;
@@ -25,9 +26,15 @@ public:
 	void BindInputs(UInputComponent* PlayerInputComponent);
 
 	void FireKamehameha();
+	void ChargingBeam();
+	void FireBeam();
 	void FireFireball();
 
 private:
 	UPROPERTY()
 	AMyCharacter* OwnerCharacter;
+	UPROPERTY(EditAnywhere, Category = "ClassType")
+
+	TSubclassOf<ABeamBase> BeamClass;
+
 };

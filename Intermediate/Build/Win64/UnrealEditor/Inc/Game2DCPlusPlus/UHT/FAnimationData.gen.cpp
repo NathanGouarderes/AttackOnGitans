@@ -6,30 +6,28 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Game2DCPlusPlus/Data/FAnimationData.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeFAnimationData() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FTableRowBase();
 GAME2DCPLUSPLUS_API UScriptStruct* Z_Construct_UScriptStruct_FAnimationData();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbook_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin ScriptStruct FAnimationData
+// ********** Begin ScriptStruct FAnimationData ****************************************************
 static_assert(std::is_polymorphic<FAnimationData>() == std::is_polymorphic<FTableRowBase>(), "USTRUCT FAnimationData cannot be polymorphic unless super FTableRowBase is polymorphic");
-static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_AnimationData;
+static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_FAnimationData;
 class UScriptStruct* FAnimationData::StaticStruct()
 {
-	if (!Z_Registration_Info_UScriptStruct_AnimationData.OuterSingleton)
+	if (!Z_Registration_Info_UScriptStruct_FAnimationData.OuterSingleton)
 	{
-		Z_Registration_Info_UScriptStruct_AnimationData.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FAnimationData, (UObject*)Z_Construct_UPackage__Script_Game2DCPlusPlus(), TEXT("AnimationData"));
+		Z_Registration_Info_UScriptStruct_FAnimationData.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FAnimationData, (UObject*)Z_Construct_UPackage__Script_Game2DCPlusPlus(), TEXT("AnimationData"));
 	}
-	return Z_Registration_Info_UScriptStruct_AnimationData.OuterSingleton;
-}
-template<> GAME2DCPLUSPLUS_API UScriptStruct* StaticStruct<FAnimationData>()
-{
-	return FAnimationData::StaticStruct();
+	return Z_Registration_Info_UScriptStruct_FAnimationData.OuterSingleton;
 }
 struct Z_Construct_UScriptStruct_FAnimationData_Statics
 {
@@ -98,24 +96,25 @@ const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FAnimationData_
 };
 UScriptStruct* Z_Construct_UScriptStruct_FAnimationData()
 {
-	if (!Z_Registration_Info_UScriptStruct_AnimationData.InnerSingleton)
+	if (!Z_Registration_Info_UScriptStruct_FAnimationData.InnerSingleton)
 	{
-		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_AnimationData.InnerSingleton, Z_Construct_UScriptStruct_FAnimationData_Statics::StructParams);
+		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_FAnimationData.InnerSingleton, Z_Construct_UScriptStruct_FAnimationData_Statics::StructParams);
 	}
-	return Z_Registration_Info_UScriptStruct_AnimationData.InnerSingleton;
+	return Z_Registration_Info_UScriptStruct_FAnimationData.InnerSingleton;
 }
-// End ScriptStruct FAnimationData
+// ********** End ScriptStruct FAnimationData ******************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Data_FAnimationData_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FAnimationData_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FAnimationData::StaticStruct, Z_Construct_UScriptStruct_FAnimationData_Statics::NewStructOps, TEXT("AnimationData"), &Z_Registration_Info_UScriptStruct_AnimationData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FAnimationData), 1994944193U) },
+		{ FAnimationData::StaticStruct, Z_Construct_UScriptStruct_FAnimationData_Statics::NewStructOps, TEXT("AnimationData"), &Z_Registration_Info_UScriptStruct_FAnimationData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FAnimationData), 120034490U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Data_FAnimationData_h_1153886806(TEXT("/Script/Game2DCPlusPlus"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FAnimationData_h__Script_Game2DCPlusPlus_4056568536(TEXT("/Script/Game2DCPlusPlus"),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Data_FAnimationData_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Data_FAnimationData_h_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FAnimationData_h__Script_Game2DCPlusPlus_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FAnimationData_h__Script_Game2DCPlusPlus_Statics::ScriptStructInfo),
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

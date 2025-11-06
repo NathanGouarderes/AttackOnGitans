@@ -4,6 +4,7 @@
 #include "Components/ActorComponent.h"
 #include "../Data/FAttackData.h"
 #include "../Interface/UFlipbookProviderInterface.h"
+#include "../Data/FBeamAttackData.h"
 #include "CharacterCombatComponent.h"
 #include "../Data/FAnimationData.h"
 #include "CharacterAnimationComponent.generated.h"
@@ -12,6 +13,7 @@ class UPaperFlipbookComponent;
 class UPaperFlipbook;
 class AMyCharacter;
 class UCharacterCombatComponent;
+class UCharacterAbilitiesComponent;
 
 UENUM(BlueprintType)
 enum class ERole : uint8
@@ -48,6 +50,11 @@ public:
 
 	void PlayIdleAnimation(ERole Role);
 	void PlayWalkAnimation(ERole Role);
+
+	UFUNCTION(BlueprintCallable, Category = "Animation|Beam")
+	void PlayChangingBeamAnimation(const FBeamAttackData& BeamData);
+	void PlayAndFreezeAtEnd(UPaperFlipbook* Animation);
+	void UnfreezeAnimation();
 	void PlayJumpStartAnimation(ERole Role);
 	void PlayJumpLoopAnimation(ERole Role);
 	void PlayJumpEndAnimation(ERole Role);
@@ -74,6 +81,7 @@ public:
 	UPaperFlipbookComponent* FlipbookComponent;
 
 	FTimerHandle AttackEndTimer;
+	FTimerHandle BeamFreezeTimerHandle;
 
 	/** Liste des animations */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation")
@@ -100,6 +108,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation")
 	TSoftObjectPtr<UDataTable> AnimationDataTableAsset;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Data")
+	UDataTable* PhysicalAttackDataTable;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Data")
+	UDataTable* ProjectileDataTable;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Data")
+	UDataTable* BeamDataTableDataTable;
+
 	FAnimationData* CurrentAnimationData;
 
 	bool bIsFacingRight = true;
@@ -113,6 +130,7 @@ private:
 	
 
 	UCharacterCombatComponent* CombatComponent;
+	UCharacterAbilitiesComponent* AbilitiesComponent;
 
 	bool bIsAttacking;
 };

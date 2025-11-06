@@ -6,24 +6,50 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Game2DCPlusPlus/BT_EnemyBehavior.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeBT_EnemyBehavior() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UBT_EnemyBehavior();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UBT_EnemyBehavior_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class UBT_EnemyBehavior
+// ********** Begin Class UBT_EnemyBehavior ********************************************************
 void UBT_EnemyBehavior::StaticRegisterNativesUBT_EnemyBehavior()
 {
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UBT_EnemyBehavior);
+FClassRegistrationInfo Z_Registration_Info_UClass_UBT_EnemyBehavior;
+UClass* UBT_EnemyBehavior::GetPrivateStaticClass()
+{
+	using TClass = UBT_EnemyBehavior;
+	if (!Z_Registration_Info_UClass_UBT_EnemyBehavior.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("BT_EnemyBehavior"),
+			Z_Registration_Info_UClass_UBT_EnemyBehavior.InnerSingleton,
+			StaticRegisterNativesUBT_EnemyBehavior,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UBT_EnemyBehavior.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UBT_EnemyBehavior_NoRegister()
 {
-	return UBT_EnemyBehavior::StaticClass();
+	return UBT_EnemyBehavior::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UBT_EnemyBehavior_Statics
 {
@@ -70,25 +96,22 @@ UClass* Z_Construct_UClass_UBT_EnemyBehavior()
 	}
 	return Z_Registration_Info_UClass_UBT_EnemyBehavior.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<UBT_EnemyBehavior>()
-{
-	return UBT_EnemyBehavior::StaticClass();
-}
 UBT_EnemyBehavior::UBT_EnemyBehavior(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
-DEFINE_VTABLE_PTR_HELPER_CTOR(UBT_EnemyBehavior);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, UBT_EnemyBehavior);
 UBT_EnemyBehavior::~UBT_EnemyBehavior() {}
-// End Class UBT_EnemyBehavior
+// ********** End Class UBT_EnemyBehavior **********************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_BT_EnemyBehavior_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_BT_EnemyBehavior_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UBT_EnemyBehavior, UBT_EnemyBehavior::StaticClass, TEXT("UBT_EnemyBehavior"), &Z_Registration_Info_UClass_UBT_EnemyBehavior, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBT_EnemyBehavior), 1741624305U) },
+		{ Z_Construct_UClass_UBT_EnemyBehavior, UBT_EnemyBehavior::StaticClass, TEXT("UBT_EnemyBehavior"), &Z_Registration_Info_UClass_UBT_EnemyBehavior, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBT_EnemyBehavior), 4142325230U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_BT_EnemyBehavior_h_2725746462(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_BT_EnemyBehavior_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_BT_EnemyBehavior_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_BT_EnemyBehavior_h__Script_Game2DCPlusPlus_4215915990(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_BT_EnemyBehavior_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_BT_EnemyBehavior_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

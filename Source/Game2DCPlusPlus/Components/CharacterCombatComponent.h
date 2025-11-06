@@ -7,6 +7,7 @@
 #include "PaperFlipbook.h"
 #include "../MyWeaponBase.h"
 #include "../Data/FAttackData.h"
+#include "./UCharacterStateComponent.h"
 #include "Components/ActorComponent.h"
 #include "CharacterCombatComponent.generated.h"
 class UCharacterAnimationComponent;
@@ -55,6 +56,15 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Combat")
 	int CurrentComboStep;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Component")
+	UCharacterAbilitiesComponent* AbilitiesComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Component")
+	UCharacterAnimationComponent* AnimationComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Component")
+	UCharacterStateComponent* StateComponent;
+
 	UPROPERTY()
 	TObjectPtr<UPaperFlipbook> CurrentAttackFlipbook = nullptr;
 
@@ -82,8 +92,8 @@ public:
 	FTimerHandle ComboResetTimerHandle;
 
 private:
-	UCharacterAbilitiesComponent* AbilitiesComponent;
-	UCharacterAnimationComponent* AnimationComponent;
+	
+
 	TQueue<int32> AttackQueue;
 	
 	ACharacter* OwnerCharacter;

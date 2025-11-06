@@ -31,6 +31,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
 	int32 CurrentHealth;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
+	float MaxKi;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
+	float CurrentKi;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
+	float KiLoadSpeed;
+
 	UFUNCTION(BlueprintCallable, Category = "Stats")
 	void ApplyDamages(int32 Damege);
 

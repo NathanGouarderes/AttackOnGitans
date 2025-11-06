@@ -5,12 +5,14 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/Enemies/MyEnemyBase.h"
-#include "Runtime/Engine/Classes/Engine/HitResult.h"
+#include "MyEnemyBase.h"
+#include "Engine/HitResult.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeMyEnemyBase() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
 AIMODULE_API UClass* Z_Construct_UClass_UBlackboardData_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
@@ -19,15 +21,19 @@ ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AMyEnemyBase();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AMyEnemyBase_NoRegister();
+GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterAbilitiesComponent_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterAnimationComponent_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterCombatComponent_NoRegister();
+GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterKiComponent_NoRegister();
+GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterStateComponent_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UFlipbookProviderInterface_NoRegister();
+GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UStatsComponent_NoRegister();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbook_NoRegister();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbookComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class AMyEnemyBase Function OnOverlapBegin
+// ********** Begin Class AMyEnemyBase Function OnOverlapBegin *************************************
 struct Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics
 {
 	struct MyEnemyBase_eventOnOverlapBegin_Parms
@@ -72,7 +78,7 @@ void Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::NewProp_bFromSwe
 	((MyEnemyBase_eventOnOverlapBegin_Parms*)Obj)->bFromSweep = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::NewProp_bFromSweep = { "bFromSweep", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(MyEnemyBase_eventOnOverlapBegin_Parms), &Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::NewProp_bFromSweep_SetBit, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::NewProp_SweepResult = { "SweepResult", nullptr, (EPropertyFlags)0x0010008008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MyEnemyBase_eventOnOverlapBegin_Parms, SweepResult), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SweepResult_MetaData), NewProp_SweepResult_MetaData) }; // 4100991306
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::NewProp_SweepResult = { "SweepResult", nullptr, (EPropertyFlags)0x0010008008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MyEnemyBase_eventOnOverlapBegin_Parms, SweepResult), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SweepResult_MetaData), NewProp_SweepResult_MetaData) }; // 267591329
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::NewProp_OverlappedComp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::NewProp_OtherActor,
@@ -82,7 +88,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMyEne
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::NewProp_SweepResult,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyEnemyBase, nullptr, "OnOverlapBegin", nullptr, nullptr, Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::MyEnemyBase_eventOnOverlapBegin_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMyEnemyBase, nullptr, "OnOverlapBegin", Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::MyEnemyBase_eventOnOverlapBegin_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin_Statics::MyEnemyBase_eventOnOverlapBegin_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin()
 {
@@ -106,9 +112,9 @@ DEFINE_FUNCTION(AMyEnemyBase::execOnOverlapBegin)
 	P_THIS->OnOverlapBegin(Z_Param_OverlappedComp,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult);
 	P_NATIVE_END;
 }
-// End Class AMyEnemyBase Function OnOverlapBegin
+// ********** End Class AMyEnemyBase Function OnOverlapBegin ***************************************
 
-// Begin Class AMyEnemyBase
+// ********** Begin Class AMyEnemyBase *************************************************************
 void AMyEnemyBase::StaticRegisterNativesAMyEnemyBase()
 {
 	UClass* Class = AMyEnemyBase::StaticClass();
@@ -117,10 +123,34 @@ void AMyEnemyBase::StaticRegisterNativesAMyEnemyBase()
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AMyEnemyBase);
+FClassRegistrationInfo Z_Registration_Info_UClass_AMyEnemyBase;
+UClass* AMyEnemyBase::GetPrivateStaticClass()
+{
+	using TClass = AMyEnemyBase;
+	if (!Z_Registration_Info_UClass_AMyEnemyBase.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("MyEnemyBase"),
+			Z_Registration_Info_UClass_AMyEnemyBase.InnerSingleton,
+			StaticRegisterNativesAMyEnemyBase,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_AMyEnemyBase.InnerSingleton;
+}
 UClass* Z_Construct_UClass_AMyEnemyBase_NoRegister()
 {
-	return AMyEnemyBase::StaticClass();
+	return AMyEnemyBase::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_AMyEnemyBase_Statics
 {
@@ -176,6 +206,29 @@ struct Z_Construct_UClass_AMyEnemyBase_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Enemies/MyEnemyBase.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StatsComponent_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Component" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Enemies/MyEnemyBase.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KiComponent_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Component" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Enemies/MyEnemyBase.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AbilitiesComponent_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Component" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Enemies/MyEnemyBase.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StateComponent_MetaData[] = {
+		{ "Category", "Components" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Enemies/MyEnemyBase.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IdleFlipbook_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Animations" },
@@ -199,13 +252,17 @@ struct Z_Construct_UClass_AMyEnemyBase_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_BlackboardData;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CombatComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AnimationComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_StatsComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_KiComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_AbilitiesComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_StateComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_IdleFlipbook;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_WalkFlipbook;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Attack1Flipbook;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin, "OnOverlapBegin" }, // 615100168
+		{ &Z_Construct_UFunction_AMyEnemyBase_OnOverlapBegin, "OnOverlapBegin" }, // 1305153141
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
@@ -221,6 +278,10 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_S
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_BlackboardData = { "BlackboardData", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, BlackboardData), Z_Construct_UClass_UBlackboardData_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BlackboardData_MetaData), NewProp_BlackboardData_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_CombatComponent = { "CombatComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, CombatComponent), Z_Construct_UClass_UCharacterCombatComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CombatComponent_MetaData), NewProp_CombatComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_AnimationComponent = { "AnimationComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, AnimationComponent), Z_Construct_UClass_UCharacterAnimationComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AnimationComponent_MetaData), NewProp_AnimationComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_StatsComponent = { "StatsComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, StatsComponent), Z_Construct_UClass_UStatsComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StatsComponent_MetaData), NewProp_StatsComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_KiComponent = { "KiComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, KiComponent), Z_Construct_UClass_UCharacterKiComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KiComponent_MetaData), NewProp_KiComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_AbilitiesComponent = { "AbilitiesComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, AbilitiesComponent), Z_Construct_UClass_UCharacterAbilitiesComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AbilitiesComponent_MetaData), NewProp_AbilitiesComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_StateComponent = { "StateComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, StateComponent), Z_Construct_UClass_UCharacterStateComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StateComponent_MetaData), NewProp_StateComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_IdleFlipbook = { "IdleFlipbook", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, IdleFlipbook), Z_Construct_UClass_UPaperFlipbook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IdleFlipbook_MetaData), NewProp_IdleFlipbook_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_WalkFlipbook = { "WalkFlipbook", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, WalkFlipbook), Z_Construct_UClass_UPaperFlipbook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WalkFlipbook_MetaData), NewProp_WalkFlipbook_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_Attack1Flipbook = { "Attack1Flipbook", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, Attack1Flipbook), Z_Construct_UClass_UPaperFlipbook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Attack1Flipbook_MetaData), NewProp_Attack1Flipbook_MetaData) };
@@ -232,6 +293,10 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyEnemyB
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_BlackboardData,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_CombatComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_AnimationComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_StatsComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_KiComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_AbilitiesComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_StateComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_IdleFlipbook,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_WalkFlipbook,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_Attack1Flipbook,
@@ -243,7 +308,7 @@ UObject* (*const Z_Construct_UClass_AMyEnemyBase_Statics::DependentSingletons[])
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyEnemyBase_Statics::DependentSingletons) < 16);
 const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AMyEnemyBase_Statics::InterfaceParams[] = {
-	{ Z_Construct_UClass_UFlipbookProviderInterface_NoRegister, (int32)VTABLE_OFFSET(AMyEnemyBase, IFlipbookProviderInterface), false },  // 179942296
+	{ Z_Construct_UClass_UFlipbookProviderInterface_NoRegister, (int32)VTABLE_OFFSET(AMyEnemyBase, IFlipbookProviderInterface), false },  // 692605173
 };
 const UECodeGen_Private::FClassParams Z_Construct_UClass_AMyEnemyBase_Statics::ClassParams = {
 	&AMyEnemyBase::StaticClass,
@@ -268,24 +333,21 @@ UClass* Z_Construct_UClass_AMyEnemyBase()
 	}
 	return Z_Registration_Info_UClass_AMyEnemyBase.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<AMyEnemyBase>()
-{
-	return AMyEnemyBase::StaticClass();
-}
-DEFINE_VTABLE_PTR_HELPER_CTOR(AMyEnemyBase);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, AMyEnemyBase);
 AMyEnemyBase::~AMyEnemyBase() {}
-// End Class AMyEnemyBase
+// ********** End Class AMyEnemyBase ***************************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyEnemyBase, AMyEnemyBase::StaticClass, TEXT("AMyEnemyBase"), &Z_Registration_Info_UClass_AMyEnemyBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyEnemyBase), 2612655998U) },
+		{ Z_Construct_UClass_AMyEnemyBase, AMyEnemyBase::StaticClass, TEXT("AMyEnemyBase"), &Z_Registration_Info_UClass_AMyEnemyBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyEnemyBase), 888382975U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h_1101257059(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h__Script_Game2DCPlusPlus_1973038446(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

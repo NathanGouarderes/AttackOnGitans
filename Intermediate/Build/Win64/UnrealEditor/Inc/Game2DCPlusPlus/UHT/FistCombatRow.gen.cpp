@@ -6,30 +6,28 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Game2DCPlusPlus/FistCombatRow.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeFistCombatRow() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FTableRowBase();
 GAME2DCPLUSPLUS_API UScriptStruct* Z_Construct_UScriptStruct_FFistCombatRow();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbook_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin ScriptStruct FFistCombatRow
+// ********** Begin ScriptStruct FFistCombatRow ****************************************************
 static_assert(std::is_polymorphic<FFistCombatRow>() == std::is_polymorphic<FTableRowBase>(), "USTRUCT FFistCombatRow cannot be polymorphic unless super FTableRowBase is polymorphic");
-static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_FistCombatRow;
+static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_FFistCombatRow;
 class UScriptStruct* FFistCombatRow::StaticStruct()
 {
-	if (!Z_Registration_Info_UScriptStruct_FistCombatRow.OuterSingleton)
+	if (!Z_Registration_Info_UScriptStruct_FFistCombatRow.OuterSingleton)
 	{
-		Z_Registration_Info_UScriptStruct_FistCombatRow.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FFistCombatRow, (UObject*)Z_Construct_UPackage__Script_Game2DCPlusPlus(), TEXT("FistCombatRow"));
+		Z_Registration_Info_UScriptStruct_FFistCombatRow.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FFistCombatRow, (UObject*)Z_Construct_UPackage__Script_Game2DCPlusPlus(), TEXT("FistCombatRow"));
 	}
-	return Z_Registration_Info_UScriptStruct_FistCombatRow.OuterSingleton;
-}
-template<> GAME2DCPLUSPLUS_API UScriptStruct* StaticStruct<FFistCombatRow>()
-{
-	return FFistCombatRow::StaticStruct();
+	return Z_Registration_Info_UScriptStruct_FFistCombatRow.OuterSingleton;
 }
 struct Z_Construct_UScriptStruct_FFistCombatRow_Statics
 {
@@ -134,24 +132,25 @@ const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FFistCombatRow_
 };
 UScriptStruct* Z_Construct_UScriptStruct_FFistCombatRow()
 {
-	if (!Z_Registration_Info_UScriptStruct_FistCombatRow.InnerSingleton)
+	if (!Z_Registration_Info_UScriptStruct_FFistCombatRow.InnerSingleton)
 	{
-		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_FistCombatRow.InnerSingleton, Z_Construct_UScriptStruct_FFistCombatRow_Statics::StructParams);
+		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_FFistCombatRow.InnerSingleton, Z_Construct_UScriptStruct_FFistCombatRow_Statics::StructParams);
 	}
-	return Z_Registration_Info_UScriptStruct_FistCombatRow.InnerSingleton;
+	return Z_Registration_Info_UScriptStruct_FFistCombatRow.InnerSingleton;
 }
-// End ScriptStruct FFistCombatRow
+// ********** End ScriptStruct FFistCombatRow ******************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_FistCombatRow_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_FistCombatRow_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FFistCombatRow::StaticStruct, Z_Construct_UScriptStruct_FFistCombatRow_Statics::NewStructOps, TEXT("FistCombatRow"), &Z_Registration_Info_UScriptStruct_FistCombatRow, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FFistCombatRow), 3191231932U) },
+		{ FFistCombatRow::StaticStruct, Z_Construct_UScriptStruct_FFistCombatRow_Statics::NewStructOps, TEXT("FistCombatRow"), &Z_Registration_Info_UScriptStruct_FFistCombatRow, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FFistCombatRow), 3891029134U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_FistCombatRow_h_4115112860(TEXT("/Script/Game2DCPlusPlus"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_FistCombatRow_h__Script_Game2DCPlusPlus_1897624470(TEXT("/Script/Game2DCPlusPlus"),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_FistCombatRow_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_FistCombatRow_h_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_FistCombatRow_h__Script_Game2DCPlusPlus_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_FistCombatRow_h__Script_Game2DCPlusPlus_Statics::ScriptStructInfo),
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

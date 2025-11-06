@@ -14,6 +14,18 @@
 /**
  * 
  */
+
+namespace BBKeys {
+    inline const FName Player(TEXT("Player"));
+    inline const FName IsPlayerVisible(TEXT("IsPlayerVisible"));
+    inline const FName LastKnownPlayerLocation(TEXT("LastKnownPlayerLocation"));
+    inline const FName PatrolLocation(TEXT("PatrolLocation"));
+    inline const FName CurrentPlayerLocation(TEXT("CurrentPlayerLocation"));
+    inline const FName DistanceFromClosestEnemy(TEXT("DistanceFromClosestEnemy"));
+
+
+}
+
 UCLASS()
 class GAME2DCPLUSPLUS_API AAMyEnemyAIController : public AAIController
 {

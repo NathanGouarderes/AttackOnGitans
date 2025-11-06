@@ -6,24 +6,50 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Game2DCPlusPlus/MyActorComponent.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeMyActorComponent() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UMyActorComponent();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UMyActorComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class UMyActorComponent
+// ********** Begin Class UMyActorComponent ********************************************************
 void UMyActorComponent::StaticRegisterNativesUMyActorComponent()
 {
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UMyActorComponent);
+FClassRegistrationInfo Z_Registration_Info_UClass_UMyActorComponent;
+UClass* UMyActorComponent::GetPrivateStaticClass()
+{
+	using TClass = UMyActorComponent;
+	if (!Z_Registration_Info_UClass_UMyActorComponent.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("MyActorComponent"),
+			Z_Registration_Info_UClass_UMyActorComponent.InnerSingleton,
+			StaticRegisterNativesUMyActorComponent,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UMyActorComponent.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UMyActorComponent_NoRegister()
 {
-	return UMyActorComponent::StaticClass();
+	return UMyActorComponent::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UMyActorComponent_Statics
 {
@@ -69,24 +95,21 @@ UClass* Z_Construct_UClass_UMyActorComponent()
 	}
 	return Z_Registration_Info_UClass_UMyActorComponent.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<UMyActorComponent>()
-{
-	return UMyActorComponent::StaticClass();
-}
-DEFINE_VTABLE_PTR_HELPER_CTOR(UMyActorComponent);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, UMyActorComponent);
 UMyActorComponent::~UMyActorComponent() {}
-// End Class UMyActorComponent
+// ********** End Class UMyActorComponent **********************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_MyActorComponent_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_MyActorComponent_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UMyActorComponent, UMyActorComponent::StaticClass, TEXT("UMyActorComponent"), &Z_Registration_Info_UClass_UMyActorComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyActorComponent), 1887154535U) },
+		{ Z_Construct_UClass_UMyActorComponent, UMyActorComponent::StaticClass, TEXT("UMyActorComponent"), &Z_Registration_Info_UClass_UMyActorComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyActorComponent), 2211407938U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_MyActorComponent_h_2371376249(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_MyActorComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_MyActorComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_MyActorComponent_h__Script_Game2DCPlusPlus_3321663831(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_MyActorComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_MyActorComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

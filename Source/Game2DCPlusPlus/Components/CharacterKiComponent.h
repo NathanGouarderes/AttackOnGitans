@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "Components/ActorComponent.h"
+#include "StatsComponent.h"
 #include "CharacterKiComponent.generated.h"
 
 
@@ -25,6 +26,9 @@ public:
 	/** Charge le Ki du personnage */
 	void LoadKi(float Value);
 
+	void LoadKiAI(float DeltaTime);
+
+
 	/** Démarre le chargement du Ki */
 	void StartChargingKi();
 
@@ -37,24 +41,22 @@ public:
 	/** Initialise la barre de Ki et l'aura */
 	void InitializeKiSystem();
 
+	void InitializeStatsComponent(UStatsComponent* InStats);
+
+	bool TryConsumeKi(float KiCost);
+
 	/** État du Ki */
-	UPROPERTY(EditAnywhere, Category = "Ki Stats")
-	float MaxKi;
-
-	UPROPERTY(EditAnywhere, Category = "Ki Stats")
-	float CurrentKi;
-
-	UPROPERTY(EditAnywhere, Category = "Ki Stats")
-	float KiLoadSpeed;
-
 	bool bIsKiCharging;
 
 private:
 	UPROPERTY()
-	class AMyCharacter* OwnerCharacter;
+	AActor* OwnerCharacter;
 
 	UPROPERTY()
 	UKiBarWidget* KiBarWidget;
+
+	UPROPERTY()
+	UStatsComponent* StatsComponent;
 
 	UPROPERTY(EditAnywhere, Category = "Ki")
 	TSubclassOf<UKiBarWidget> KiBarWidgetClass;

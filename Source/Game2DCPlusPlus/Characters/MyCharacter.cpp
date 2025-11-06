@@ -9,7 +9,10 @@
 #include "PaperFlipbookComponent.h"
 #include "Components/BoxComponent.h"
 
+#define ECC_BEAMOBJECT ECC_GameTraceChannel3
 #define ECC_TRACEHITBOX ECC_GameTraceChannel1
+#define ECC_BEAMTRACE ECC_GameTraceChannel2
+
 
 
 AMyCharacter::AMyCharacter()
@@ -29,6 +32,9 @@ AMyCharacter::AMyCharacter()
 	GetCapsuleComponent()->SetCollisionResponseToAllChannels(ECR_Block);
 	GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_Visibility, ECR_Ignore);
 	GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore);
+	GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_BEAMTRACE, ECR_Overlap);
+	GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_BEAMOBJECT, ECR_Overlap);
+
 
 	// === Components custom ===
 	CombatComponent = CreateDefaultSubobject<UCharacterCombatComponent>(TEXT("CombatComponent"));
@@ -37,6 +43,8 @@ AMyCharacter::AMyCharacter()
 	InputHandler = CreateDefaultSubobject<UCharacterInputComponent>(TEXT("InputHandler"));
 	CharacterAnimationComponent = CreateDefaultSubobject<UCharacterAnimationComponent>(TEXT("CharacterAnimationComponent"));
 	StatsComponent = CreateDefaultSubobject<UStatsComponent>(TEXT("StatsComponent"));
+	StateComponent = CreateDefaultSubobject<UCharacterStateComponent>(TEXT("StateComponent"));
+	StandComponent = CreateDefaultSubobject<UStandComponent>(TEXT("StandComponent"));
 
 
 	// === Character flipbook (perso) ===
@@ -63,6 +71,17 @@ AMyCharacter::AMyCharacter()
 	//SwordHitbox->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
 	//SwordHitbox->SetNotifyRigidBodyCollision(true);
 
+	static ConstructorHelpers::FObjectFinder<UDataTable> CharacterDT(TEXT("/Game/DataTables/DT_CharacterData.DT_CharacterData"));
+
+	if (CharacterDT.Succeeded())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("AMyCharacter::AMyCharacter() --> CharacterDT OK"));
+		CharacterDataTable = CharacterDT.Object;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("AMyCharacter::AMyCharacter() --> CharacterDT KO"));
+	}
 
 	// === Mouvements ===
 	GetCharacterMovement()->JumpZVelocity = 1000.0f;
@@ -76,15 +95,10 @@ AMyCharacter::AMyCharacter()
 	MaxJumpCount = 2;
 	JumpMaxCount = MaxJumpCount;
 
-	// === Logs de sécurité ===
+	// Stats de base du personnage
 
-
-	/********************
-	if (!SwordFlipbook)
-	{
-		UE_LOG(LogTemp, Error, TEXT("❌ SwordFlipbook est NULL !"));
-	}
-	*********************/
+	CharacterMaxKi = 300.0f;
+	CharacterKiLoadSpeed = 3.0f;
 
 }
 
@@ -95,6 +109,17 @@ void AMyCharacter::BeginPlay()
 	InitializeInputHandler();
 
 	CharacterAnimationComponent->CharacterRole = ERole::Player;
+
+	const FString Context(TEXT("AMyCharacter::BeginPlay() --> CharacterData Initialisation"));
+	if (CharacterDataTable)
+	{
+		FCharacterData* Row = CharacterDataTable->FindRow<FCharacterData>(FName("CharacterBase"), Context);
+		if (Row && Row->bIsStandUser && Row->StandName != "")
+		{
+			CharacterData = *Row;
+			UE_LOG(LogTemp, Warning, TEXT("Chargé : %s, Stand = %s"), *Row->CharacterName.ToString(), *Row->StandName.ToString());
+		}
+	}
 
 	if (!GetCapsuleComponent())
 	{
@@ -162,18 +187,31 @@ void AMyCharacter::BeginPlay()
 	}
 
 	/** Initialisation des composants **/
-	if (KiComponent)
-	{
-		KiComponent->InitializeKiSystem();
-	}
 
 	if (StatsComponent)
 	{
 		StatsComponent->CurrentHealth = StatsComponent->MaxHealth;
+		StatsComponent->MaxKi = CharacterMaxKi;
+		StatsComponent->KiLoadSpeed = CharacterKiLoadSpeed;
+	}
+
+	if (KiComponent && StatsComponent)
+	{
+		KiComponent->InitializeStatsComponent(StatsComponent);
+		KiComponent->InitializeKiSystem();
+	}
+
+	if (KiComponent && AbilitiesComponent && StatsComponent)
+	{
+		AbilitiesComponent->InitializeAllComponents(KiComponent, StatsComponent);
 	}
 
 
 	/*********************************
+	* 
+	* 
+	* 
+	* 
 	if (CombatComponent)
 	{
 		AMyWeaponBase* DefaultWeapon = GetWorld()->SpawnActor<AMyWeaponBase>(DefaultWeaponClass);
@@ -207,7 +245,7 @@ void AMyCharacter::BeginPlay()
 void AMyCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	
+
 }
 
 UPaperFlipbookComponent* AMyCharacter::GetCharacterFlipbook() const 

@@ -10,7 +10,8 @@ enum class EDamageTypeEnum : uint8
     Physical UMETA(DisplayName = "Physical"),
     Fire     UMETA(DisplayName = "Fire"),
     Ice      UMETA(DisplayName = "Ice"),
-    Magic    UMETA(DisplayName = "Magic")
+    Magic    UMETA(DisplayName = "Magic"),
+    Ki       UMETA(DisplayName = "Ki"),
 };
 
 USTRUCT(BlueprintType)
@@ -33,8 +34,8 @@ struct FAttackData : public FTableRowBase
     UPROPERTY(EditAnywhere, BlueprintReadOnly)
     float ActiveTime;
 
-    UPROPERTY(EditAnywhere, BlueprintReadOnly)
-    float RecoveryTime;
+    //UPROPERTY(EditAnywhere, BlueprintReadOnly)
+    //float RecoveryTime;
 
     UPROPERTY(EditAnywhere, BlueprintReadOnly)
     TSoftObjectPtr<class UPaperFlipbook> Animation;

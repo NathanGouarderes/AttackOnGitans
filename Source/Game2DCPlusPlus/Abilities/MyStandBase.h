@@ -5,7 +5,11 @@
 #include "CoreMinimal.h"
 #include "PaperFlipbookComponent.h"
 #include "GameFramework/Actor.h"
-class AMyCharacter;
+#include "../Data/FStandData.h"
+#include "../Components/Stand/StandAbilitiesComponent.h"
+#include "../Components/Stand/StandAnimationComponent.h"
+#include "../Components/Stand/StandCombatComponent.h"
+
 #include "MyStandBase.generated.h"
 
 UCLASS()
@@ -19,17 +23,35 @@ public:
 
 protected:
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Stand", meta = (AllowPrivateAccess = "true"))
-	UPaperFlipbookComponent* StandFlipbook;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "StandComponent", meta = (AllowPrivateAccess = "true"))
+	UStandAbilitiesComponent* StandAbilitiesComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "StandComponent", meta = (AllowPrivateAccess = "true"))
+	UStandAnimationComponent* StandAnimationComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "StandComponent", meta = (AllowPrivateAccess = "true"))
+	UStandCombatComponent* StandCombatComponent;
 
 	UPROPERTY()
-	AMyCharacter* CharacterUser;
+	UPaperFlipbookComponent* FlipbookComponent;
+
+	UPROPERTY()
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Stand", meta = (AllowPrivateAccess = "true"))
+	UDataTable* StandDataTable;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Stand", meta = (AllowPrivateAccess = "true"))
+	FStandData StandData;
 
 	float FollowDistance = 100.0f;
 
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	UFUNCTION()
+	void UpdateStandPosition();
 
 	UFUNCTION()
 	virtual void OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
@@ -46,6 +68,9 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void InitializeStand(AMyCharacter* CharacterOwner);
+	void InitializeStand(AActor* ActorOwner);
+	AActor* OwnerCharacter;
+
+
 
 };

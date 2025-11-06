@@ -59,20 +59,7 @@ void AAMyEnemyAIController::BeginPlay()
 void AAMyEnemyAIController::Tick(float Deltatime)
 {
     Super::Tick(Deltatime);
-    if (BlackboardComponent->GetValueAsBool("IsPlayerVisible"))
-    {
-        AActor* PlayerActor = Cast<AActor>(BlackboardComponent->GetValueAsObject("Player"));
-        if (PlayerActor)
-        {
-            FVector NewLocation = PlayerActor->GetActorLocation();
-            if (FVector::Dist(OldLocation, NewLocation) > 200.0f)
-            {
-                BlackboardComponent->SetValueAsVector("CurrentPlayerLocation", PlayerActor->GetActorLocation());
-                OldLocation = NewLocation;
-                UE_LOG(LogTemp, Warning, TEXT("Mise à jour de CurrentPlayerLocation : %s"), *NewLocation.ToString());
-            }
-        }
-    }
+    
 }
 
 void AAMyEnemyAIController::SetNewPatrolLocation()
@@ -88,7 +75,7 @@ void AAMyEnemyAIController::SetNewPatrolLocation()
         if (NavSystem->GetRandomReachablePointInRadius(Origin, 3000.0f, NavLocation))
         {
             PatrolLocation = NavLocation.Location;
-            BlackboardComponent->SetValueAsVector(TEXT("PatrolLocation"), PatrolLocation);
+            BlackboardComponent->SetValueAsVector(BBKeys::PatrolLocation, PatrolLocation);
             MoveToLocation(PatrolLocation);
 
             UE_LOG(LogTemp, Warning, TEXT("Nouvelle position de patrouille : %s"), *PatrolLocation.ToString());
@@ -113,13 +100,13 @@ void AAMyEnemyAIController::OnTargetDetected(AActor* Actor, FAIStimulus Stimulus
     if (Stimulus.WasSuccessfullySensed())
     {
         UE_LOG(LogTemp, Warning, TEXT("Stimulus reçu : %s, Source: %s"), *Stimulus.Tag.ToString(), *Actor->GetName());
-        BlackboardComponent->SetValueAsObject("Player", Actor);
+        BlackboardComponent->SetValueAsObject(BBKeys::Player, Actor);
         UE_LOG(LogTemp, Warning, TEXT("Blackboard 'Player' mis à jour avec : %s"), *Actor->GetName());
-        BlackboardComponent->SetValueAsBool("IsPlayerVisible", true);
+        BlackboardComponent->SetValueAsBool(BBKeys::IsPlayerVisible, true);
 
         if (Actor)
         {
-            BlackboardComponent->SetValueAsVector("LastKnownPlayerLocation", Actor->GetActorLocation());
+            BlackboardComponent->SetValueAsVector(BBKeys::LastKnownPlayerLocation, Actor->GetActorLocation());
             UE_LOG(LogTemp, Warning, TEXT("Mise à jour continue de LastKnownPlayerLocation: %s"), *Actor->GetActorLocation().ToString());
         }
         UE_LOG(LogTemp, Warning, TEXT("Blackboard 'IsPlayerVisible' mis à jour à : true"));
@@ -129,11 +116,11 @@ void AAMyEnemyAIController::OnTargetDetected(AActor* Actor, FAIStimulus Stimulus
     else
     {
         UE_LOG(LogTemp, Warning, TEXT("Stimulus perdu : %s, Source: %s"), *Stimulus.Tag.ToString(), *Actor->GetName());
-        BlackboardComponent->ClearValue("Player");
-        BlackboardComponent->SetValueAsBool("IsPlayerVisible", false);
+        BlackboardComponent->SetValueAsBool(BBKeys::IsPlayerVisible, false);
         if (Actor)
         {
-            BlackboardComponent->SetValueAsVector("LastKnownPlayerLocation", Actor->GetActorLocation());
+            const FVector SenseLoc = Stimulus.StimulusLocation.IsNearlyZero() ? Actor->GetActorLocation() : Stimulus.StimulusLocation;
+            BlackboardComponent->SetValueAsVector(BBKeys::LastKnownPlayerLocation, SenseLoc);
             UE_LOG(LogTemp, Warning, TEXT("Conservation de LastKnownPlayerLocation après perte : %s"), *Actor->GetActorLocation().ToString());
         }
         UE_LOG(LogTemp, Warning, TEXT("Blackboard 'Player' vidé et 'IsPlayerVisible' mis à false"));

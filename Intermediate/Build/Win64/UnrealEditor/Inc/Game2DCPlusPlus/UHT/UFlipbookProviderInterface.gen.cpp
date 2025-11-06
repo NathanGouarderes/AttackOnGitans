@@ -6,24 +6,50 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Game2DCPlusPlus/Interface/UFlipbookProviderInterface.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeUFlipbookProviderInterface() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 COREUOBJECT_API UClass* Z_Construct_UClass_UInterface();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UFlipbookProviderInterface();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UFlipbookProviderInterface_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Interface UFlipbookProviderInterface
+// ********** Begin Interface UFlipbookProviderInterface *******************************************
 void UFlipbookProviderInterface::StaticRegisterNativesUFlipbookProviderInterface()
 {
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UFlipbookProviderInterface);
+FClassRegistrationInfo Z_Registration_Info_UClass_UFlipbookProviderInterface;
+UClass* UFlipbookProviderInterface::GetPrivateStaticClass()
+{
+	using TClass = UFlipbookProviderInterface;
+	if (!Z_Registration_Info_UClass_UFlipbookProviderInterface.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("FlipbookProviderInterface"),
+			Z_Registration_Info_UClass_UFlipbookProviderInterface.InnerSingleton,
+			StaticRegisterNativesUFlipbookProviderInterface,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UFlipbookProviderInterface.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UFlipbookProviderInterface_NoRegister()
 {
-	return UFlipbookProviderInterface::StaticClass();
+	return UFlipbookProviderInterface::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UFlipbookProviderInterface_Statics
 {
@@ -66,25 +92,21 @@ UClass* Z_Construct_UClass_UFlipbookProviderInterface()
 	}
 	return Z_Registration_Info_UClass_UFlipbookProviderInterface.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<UFlipbookProviderInterface>()
-{
-	return UFlipbookProviderInterface::StaticClass();
-}
 UFlipbookProviderInterface::UFlipbookProviderInterface(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
-DEFINE_VTABLE_PTR_HELPER_CTOR(UFlipbookProviderInterface);
-UFlipbookProviderInterface::~UFlipbookProviderInterface() {}
-// End Interface UFlipbookProviderInterface
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, UFlipbookProviderInterface);
+// ********** End Interface UFlipbookProviderInterface *********************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Interface_UFlipbookProviderInterface_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Interface_UFlipbookProviderInterface_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UFlipbookProviderInterface, UFlipbookProviderInterface::StaticClass, TEXT("UFlipbookProviderInterface"), &Z_Registration_Info_UClass_UFlipbookProviderInterface, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFlipbookProviderInterface), 179942296U) },
+		{ Z_Construct_UClass_UFlipbookProviderInterface, UFlipbookProviderInterface::StaticClass, TEXT("UFlipbookProviderInterface"), &Z_Registration_Info_UClass_UFlipbookProviderInterface, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFlipbookProviderInterface), 692605173U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Interface_UFlipbookProviderInterface_h_2210575656(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Interface_UFlipbookProviderInterface_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Interface_UFlipbookProviderInterface_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Interface_UFlipbookProviderInterface_h__Script_Game2DCPlusPlus_1667031272(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Interface_UFlipbookProviderInterface_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Interface_UFlipbookProviderInterface_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -6,24 +6,50 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Game2DCPlusPlus/MyBehaviorTree.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeMyBehaviorTree() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UMyBehaviorTree();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UMyBehaviorTree_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class UMyBehaviorTree
+// ********** Begin Class UMyBehaviorTree **********************************************************
 void UMyBehaviorTree::StaticRegisterNativesUMyBehaviorTree()
 {
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UMyBehaviorTree);
+FClassRegistrationInfo Z_Registration_Info_UClass_UMyBehaviorTree;
+UClass* UMyBehaviorTree::GetPrivateStaticClass()
+{
+	using TClass = UMyBehaviorTree;
+	if (!Z_Registration_Info_UClass_UMyBehaviorTree.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("MyBehaviorTree"),
+			Z_Registration_Info_UClass_UMyBehaviorTree.InnerSingleton,
+			StaticRegisterNativesUMyBehaviorTree,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UMyBehaviorTree.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UMyBehaviorTree_NoRegister()
 {
-	return UMyBehaviorTree::StaticClass();
+	return UMyBehaviorTree::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UMyBehaviorTree_Statics
 {
@@ -70,25 +96,22 @@ UClass* Z_Construct_UClass_UMyBehaviorTree()
 	}
 	return Z_Registration_Info_UClass_UMyBehaviorTree.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<UMyBehaviorTree>()
-{
-	return UMyBehaviorTree::StaticClass();
-}
 UMyBehaviorTree::UMyBehaviorTree(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
-DEFINE_VTABLE_PTR_HELPER_CTOR(UMyBehaviorTree);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, UMyBehaviorTree);
 UMyBehaviorTree::~UMyBehaviorTree() {}
-// End Class UMyBehaviorTree
+// ********** End Class UMyBehaviorTree ************************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_MyBehaviorTree_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_MyBehaviorTree_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UMyBehaviorTree, UMyBehaviorTree::StaticClass, TEXT("UMyBehaviorTree"), &Z_Registration_Info_UClass_UMyBehaviorTree, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyBehaviorTree), 1233852142U) },
+		{ Z_Construct_UClass_UMyBehaviorTree, UMyBehaviorTree::StaticClass, TEXT("UMyBehaviorTree"), &Z_Registration_Info_UClass_UMyBehaviorTree, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyBehaviorTree), 4030227586U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_MyBehaviorTree_h_580847435(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_MyBehaviorTree_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_MyBehaviorTree_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_MyBehaviorTree_h__Script_Game2DCPlusPlus_2859781197(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_MyBehaviorTree_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_MyBehaviorTree_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -6,25 +6,51 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Game2DCPlusPlus/Characters/JordanCharacter.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeJordanCharacter() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AJordanCharacter();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AJordanCharacter_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AMyCharacter();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbook_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class AJordanCharacter
+// ********** Begin Class AJordanCharacter *********************************************************
 void AJordanCharacter::StaticRegisterNativesAJordanCharacter()
 {
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AJordanCharacter);
+FClassRegistrationInfo Z_Registration_Info_UClass_AJordanCharacter;
+UClass* AJordanCharacter::GetPrivateStaticClass()
+{
+	using TClass = AJordanCharacter;
+	if (!Z_Registration_Info_UClass_AJordanCharacter.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("JordanCharacter"),
+			Z_Registration_Info_UClass_AJordanCharacter.InnerSingleton,
+			StaticRegisterNativesAJordanCharacter,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_AJordanCharacter.InnerSingleton;
+}
 UClass* Z_Construct_UClass_AJordanCharacter_NoRegister()
 {
-	return AJordanCharacter::StaticClass();
+	return AJordanCharacter::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_AJordanCharacter_Statics
 {
@@ -90,24 +116,21 @@ UClass* Z_Construct_UClass_AJordanCharacter()
 	}
 	return Z_Registration_Info_UClass_AJordanCharacter.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<AJordanCharacter>()
-{
-	return AJordanCharacter::StaticClass();
-}
-DEFINE_VTABLE_PTR_HELPER_CTOR(AJordanCharacter);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, AJordanCharacter);
 AJordanCharacter::~AJordanCharacter() {}
-// End Class AJordanCharacter
+// ********** End Class AJordanCharacter ***********************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Characters_JordanCharacter_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_JordanCharacter_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AJordanCharacter, AJordanCharacter::StaticClass, TEXT("AJordanCharacter"), &Z_Registration_Info_UClass_AJordanCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AJordanCharacter), 1801987198U) },
+		{ Z_Construct_UClass_AJordanCharacter, AJordanCharacter::StaticClass, TEXT("AJordanCharacter"), &Z_Registration_Info_UClass_AJordanCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AJordanCharacter), 35238086U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Characters_JordanCharacter_h_2916653797(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Characters_JordanCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Characters_JordanCharacter_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_JordanCharacter_h__Script_Game2DCPlusPlus_2282919058(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_JordanCharacter_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_JordanCharacter_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

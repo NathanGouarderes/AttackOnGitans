@@ -5,25 +5,29 @@
 ===========================================================================*/
 
 // IWYU pragma: private, include "FistCombatRow.h"
-#include "UObject/ObjectMacros.h"
-#include "UObject/ScriptMacros.h"
 
-PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #ifdef GAME2DCPLUSPLUS_FistCombatRow_generated_h
 #error "FistCombatRow.generated.h already included, missing '#pragma once' in FistCombatRow.h"
 #endif
 #define GAME2DCPLUSPLUS_FistCombatRow_generated_h
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_FistCombatRow_h_11_GENERATED_BODY \
-	friend struct Z_Construct_UScriptStruct_FFistCombatRow_Statics; \
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FFistCombatRow ****************************************************
+struct Z_Construct_UScriptStruct_FFistCombatRow_Statics;
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_FistCombatRow_h_11_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FFistCombatRow_Statics; \
 	GAME2DCPLUSPLUS_API static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;
 
 
-template<> GAME2DCPLUSPLUS_API UScriptStruct* StaticStruct<struct FFistCombatRow>();
+struct FFistCombatRow;
+// ********** End ScriptStruct FFistCombatRow ******************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_FistCombatRow_h
-
+#define CURRENT_FILE_ID FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_FistCombatRow_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

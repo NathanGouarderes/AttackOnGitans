@@ -1,4 +1,4 @@
-#include "MyEnemyBase.h"
+ï»¿#include "MyEnemyBase.h"
 #include "Engine/DamageEvents.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -6,6 +6,9 @@
 #include "GameFramework/DamageType.h"
 #include "../DamageTypes/FireDamageType.h"
 
+#define ECC_BEAMOBJECT ECC_GameTraceChannel1
+#define ECC_TRACEHITBOX ECC_GameTraceChannel2
+#define ECC_BEAMTRACE ECC_GameTraceChannel3
 
 // Sets default values
 AMyEnemyBase::AMyEnemyBase()
@@ -15,16 +18,31 @@ AMyEnemyBase::AMyEnemyBase()
     // Capsule Component (root)
     //GetCapsuleComponent()->InitCapsuleSize(42.0f, 96.0f);
     GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-    GetCapsuleComponent()->SetCollisionObjectType(ECC_Pawn); // Définit le Pawn comme type d'objet
+    GetCapsuleComponent()->SetCollisionObjectType(ECC_Pawn); // DÃ©finit le Pawn comme type d'objet
     GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_Pawn, ECR_Block);
-    GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_GameTraceChannel1, ECR_Overlap); // Collision avec projectiles
+    GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_TRACEHITBOX, ECR_Overlap); // Collision avec Traces
+    GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_BEAMTRACE, ECR_Overlap);
+    GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_WorldDynamic, ECR_Overlap);
+    GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_BEAMOBJECT, ECR_Overlap);
     RootComponent = GetCapsuleComponent();
 
     //Combat Component
     CombatComponent = CreateDefaultSubobject<UCharacterCombatComponent>(TEXT("CombatComponent"));
-    //AnimationComponent
 
+    //AnimationComponent
     AnimationComponent = CreateDefaultSubobject<UCharacterAnimationComponent>(TEXT("AnimationComponent"));
+
+    //StatsComponent
+    StatsComponent = CreateDefaultSubobject<UStatsComponent>(TEXT("StatsComponent"));
+
+    //KiComponent
+    KiComponent = CreateDefaultSubobject<UCharacterKiComponent>(TEXT("KiComponent"));
+
+    //AbilitiesComponent
+    AbilitiesComponent = CreateDefaultSubobject<UCharacterAbilitiesComponent>(TEXT("AbilitiesComponent"));
+
+    StateComponent = CreateDefaultSubobject<UCharacterStateComponent>(TEXT("StateComponent"));
+
 
 
     // PaperFlipbook
@@ -33,7 +51,7 @@ AMyEnemyBase::AMyEnemyBase()
     EnemyFlipbook->SetCollisionEnabled(ECollisionEnabled::NoCollision); // Pas de collision pour le flipbook
 
     GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-    GetCapsuleComponent()->SetSimulatePhysics(false); //Active la PUTAIN de gravité
+    GetCapsuleComponent()->SetSimulatePhysics(false); //Active la PUTAIN de gravitÃ©
     GetCapsuleComponent()->SetEnableGravity(true);
 
     //Contrainte sur la profondeur (Y)
@@ -48,10 +66,8 @@ AMyEnemyBase::AMyEnemyBase()
 
     AIControllerClass = AAMyEnemyAIController::StaticClass();
     AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
-
+    Health = 1000.0f;
     // Initialiser les variables
-    Health = 11100.0f;
-    MoveSpeed = 300.0f;
 }
 
 // Called when the game starts or when spawned
@@ -61,18 +77,59 @@ void AMyEnemyBase::BeginPlay()
 
     AnimationComponent->CharacterRole = ERole::Enemy;
 
-    GetCharacterMovement()->SetMovementMode(MOVE_Walking); // S'assurer que l'ennemi est en mode chute
+    GetCharacterMovement()->SetMovementMode(MOVE_Walking);
     GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AMyEnemyBase::OnOverlapBegin);
-    
     GetCharacterMovement()->MaxWalkSpeed = 300.0f;
 
+    // --- Initialisation des stats ---
+    if (StatsComponent)
+    {
+        StatsComponent->MaxKi = 500.0f;
+        StatsComponent->KiLoadSpeed = 200.0f;
+        StatsComponent->CurrentHealth = StatsComponent->MaxHealth;
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("StatsComponent NULL pour %s"), *GetName());
+        return;
+    }
+
+    // --- Initialisation du Ki ---
+    if (KiComponent)
+    {
+        // Ã‰tape 1 : relier Ki â†” Stats
+        KiComponent->InitializeStatsComponent(StatsComponent);
+
+        // Ã‰tape 2 : activer le systÃ¨me
+        KiComponent->InitializeKiSystem();
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("KiComponent NULL pour %s"), *GetName());
+        return;
+    }
+
+    // --- Initialisation des compÃ©tences ---
+    if (AbilitiesComponent)
+    {
+        // Ã‰tape 3 : relier Abilities â†” Ki et Stats
+        AbilitiesComponent->InitializeAllComponents(KiComponent, StatsComponent);
+        UE_LOG(LogTemp, Warning, TEXT("AbilitiesComponent correctement initialisÃ© pour %s"), *GetName());
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("AbilitiesComponent NULL pour %s"), *GetName());
+        return;
+    }
+
+    // --- VÃ©rification IA ---
     if (AIControllerClass)
     {
         UE_LOG(LogTemp, Warning, TEXT("AI Controller correctly initialized"));
     }
     else
     {
-        UE_LOG(LogTemp, Warning, TEXT("AI Controller doesn't work"));
+        UE_LOG(LogTemp, Error, TEXT("AI Controller doesn't work"));
     }
 }
 
@@ -81,20 +138,21 @@ void AMyEnemyBase::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    FVector BoxExtentHead(25.0f, 10.0f, 5.0f);  // Taille de la boîte pour la tête
-    FVector BoxExtentTorso(25.0f, 10.0f, 8.0f); // Taille de la boîte pour le torse
-    FVector BoxExtentLegs(25.0f, 10.0f, 10.0f);  // Taille de la boîte pour les jambes
+    FVector BoxExtentHead(25.0f, 10.0f, 5.0f);  // Taille de la boÃ®te pour la tÃªte
+    FVector BoxExtentTorso(25.0f, 10.0f, 8.0f); // Taille de la boÃ®te pour le torse
+    FVector BoxExtentLegs(25.0f, 10.0f, 10.0f);  // Taille de la boÃ®te pour les jambes
 
     FVector HeadLocation = EnemyFlipbook->GetComponentLocation() + FVector(0.0f, 0.0f, 18.0f);
     FVector TorsoLocation = EnemyFlipbook->GetComponentLocation() + FVector(0.0f, 0.0f, 0.0f);
     FVector LegsLocation = EnemyFlipbook->GetComponentLocation() + FVector(0.0f, 0.0f, -15.0f);
 
     // Dessiner les zones
-    DrawDebugBox(GetWorld(), HeadLocation, BoxExtentHead, FColor::Red, false, -1.0f, 0, 2.0f); // Tête en rouge
+    DrawDebugBox(GetWorld(), HeadLocation, BoxExtentHead, FColor::Red, false, -1.0f, 0, 2.0f); // TÃªte en rouge
     DrawDebugBox(GetWorld(), TorsoLocation, BoxExtentTorso, FColor::Green, false, -1.0f, 0, 2.0f); // Torse en vert
     DrawDebugBox(GetWorld(), LegsLocation, BoxExtentLegs, FColor::Blue, false, -1.0f, 0, 2.0f); // Jambes en bleu
 
-   
+    //UE_LOG(LogTemp, Warning, TEXT("AMyEnemyBase::Tick(float DeltaTime) --> ECC_BEAMTRACE value: %d"), (int32)ECC_BEAMTRACE);
+
 
     FVector currentLocation = GetActorLocation();
     FRotator currentRotation = GetActorRotation();
@@ -119,6 +177,8 @@ void AMyEnemyBase::Tick(float DeltaTime)
     SetActorLocation(CurrentLocation);
     SetActorRotation(FRotator(0.0f, CurrentRotation.Yaw, 0.0f));
 
+    //UE_LOG(LogTemp, Warning, TEXT("AMyEnemyBase::Tick --> CurrentHealth : %d"), StatsComponent->CurrentHealth);
+
 }
 
 
@@ -138,22 +198,22 @@ float AMyEnemyBase::TakeDamage(float DamageAmount, const FDamageEvent& DamageEve
 
     if (DamageType && DamageType->IsA(UFireDamageType::StaticClass()))
     {
-        UE_LOG(LogTemp, Warning, TEXT("L'ennemi Brûle"));
+        UE_LOG(LogTemp, Warning, TEXT("L'ennemi BrÃ»le"));
         int fireDamage = 1;
         for (int i = 0; i < 12; i++)
         {
-            Health -= fireDamage;
-            UE_LOG(LogTemp, Warning, TEXT("Vie : %d"), Health);
+           StatsComponent->CurrentHealth -= fireDamage;
+            UE_LOG(LogTemp, Warning, TEXT("Vie : %d"), StatsComponent->CurrentHealth);
 
         }
     }
-    UE_LOG(LogTemp, Warning, TEXT("Dommages infligés : %f"), DamageAmount);
-    Health -= DamageAmount;
+    UE_LOG(LogTemp, Warning, TEXT("Dommages infligÃ©s : %f"), DamageAmount);
+    StatsComponent->CurrentHealth -= DamageAmount;
     float KnockbackStrength = DamageAmount * 5000.0f;
     ApplyKncokback(DamageCauser, KnockbackStrength);
-    UE_LOG(LogTemp, Warning, TEXT("Vie : %d"), Health);
+    UE_LOG(LogTemp, Warning, TEXT("Vie : %d"), StatsComponent->CurrentHealth);
 
-    if (Health <= 0)
+    if (StatsComponent->CurrentHealth <= 0)
     {
         Die(); 
     }
@@ -165,7 +225,7 @@ void AMyEnemyBase::OnPlayerDetected(APawn* Player, bool bIsVisible)
 {
     if (bIsVisible)
     {
-        UE_LOG(LogTemp, Warning, TEXT("Player detected by %s"), *GetName());
+       UE_LOG(LogTemp, Warning, TEXT("Player detected by %s"), *GetName());
     }
     else
     {
@@ -176,7 +236,7 @@ void AMyEnemyBase::OnPlayerDetected(APawn* Player, bool bIsVisible)
 void AMyEnemyBase::DealDamages(float DamageAmount)
 {
     // Logique de gestion des dommages
-    UE_LOG(LogTemp, Warning, TEXT("Dommages infligés : %f"), DamageAmount);
+    UE_LOG(LogTemp, Warning, TEXT("Dommages infligÃ©s : %f"), DamageAmount);
 
 }
 
@@ -184,7 +244,7 @@ void AMyEnemyBase::Die()
 {
     // Logique de mort de l'ennemi
     UE_LOG(LogTemp, Warning, TEXT("L'ennemi est mort !"));
-    Destroy(); // Détruire l'acteur
+    Destroy(); // DÃ©truire l'acteur
 }
 
 void AMyEnemyBase::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
@@ -195,7 +255,7 @@ void AMyEnemyBase::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* O
     FVector LocalImpactPosition = EnemyFlipbook->GetComponentTransform().InverseTransformPosition(SweepResult.Location);
     if (LocalImpactPosition.Z > 18.0f)
     {
-        UE_LOG(LogTemp, Warning, TEXT("Impact : Tête !"));
+        UE_LOG(LogTemp, Warning, TEXT("Impact : TÃªte !"));
     }
     if (LocalImpactPosition.Z > 0.0f && LocalImpactPosition.Z < 18.0f)
     {
@@ -208,18 +268,18 @@ void AMyEnemyBase::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* O
     }
     
     // Logique lors de la collision avec un autre acteur
-    //UE_LOG(LogTemp, Warning, TEXT("Collision détectée avec un autre acteur !"));
+    //UE_LOG(LogTemp, Warning, TEXT("Collision dÃ©tectÃ©e avec un autre acteur !"));
     if (OtherActor && (OtherActor != this) && OtherComp)
     {
         AMyProjectileBase* projectile = Cast<AMyProjectileBase>(OtherActor);
         if (projectile)
         {
-            UE_LOG(LogTemp, Warning, TEXT("Vie actuelle : %d"), Health);
+            UE_LOG(LogTemp, Warning, TEXT("Vie actuelle : %d"), StatsComponent->CurrentHealth);
             FPointDamageEvent DamageEvent;
             DamageEvent.DamageTypeClass = UFireDamageType::StaticClass();
             TakeDamage(projectile->Damage, DamageEvent, nullptr, projectile);
                
-            UE_LOG(LogTemp, Warning, TEXT("Vie actuelle : %d"), Health);
+            UE_LOG(LogTemp, Warning, TEXT("Vie actuelle : %d"), StatsComponent->CurrentHealth);
             projectile->Destroy();
         }
         else

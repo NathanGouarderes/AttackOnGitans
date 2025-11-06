@@ -3,50 +3,27 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "../Abilities/Projectiles/MyKiProjectileBase.h"
-#include "CharacterKiComponent.h"
-#include "PaperFlipbookComponent.h"
-#include "Components/CapsuleComponent.h"
-class UCharacterAbilitiesComponent;
-class AMyCharacter;
+#include "BeamBase.h"
 #include "Kamehameha.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class GAME2DCPLUSPLUS_API AKamehameha : public AMyKiProjectileBase
+class GAME2DCPLUSPLUS_API AKamehameha : public ABeamBase
 {
 	GENERATED_BODY()
-
-
+	
 public:
 	AKamehameha();
 
-	virtual void Tick(float DeltaTime) override;
-	virtual void Initialize(FVector NewDirection) override;
+	//virtual void Tick(float DeltaTime) override;
+	void StartBeam();
+	//void StopBeam();
+
 protected:
+	virtual void BeginPlay() override;
+	virtual void StartFiringBeam() override;
+	virtual void StopFiringBeam() override;
 
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Animation")
-	UPaperFlipbookComponent* FlipbookComponent;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Collision")
-	UCapsuleComponent* CapsuleCollisionComponent;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animations", meta = (AllowPrivateAccess = "true"))
-	UPaperFlipbook* KamehamehaFlipbook;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Kamehameha")
-	float ExpansionSpeed;
-
-	UPROPERTY(EditAnywhere, Category = "Character")
-	TSubclassOf<AMyCharacter> CharacterClass;
-
-	UCharacterAbilitiesComponent* AbilitiesComponent;
-
-	FVector ExpensionDirection;
-	float maxKiUser;
-
-	UCharacterKiComponent* KiComponent;
 };

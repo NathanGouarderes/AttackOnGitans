@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
+/*
 #include "FireBall.h"
 
 AFireBall::AFireBall()
@@ -11,8 +11,9 @@ AFireBall::AFireBall()
 	LifeSpan = 3.0f; // Dure moins longtemps
 }
 
-void AFireBall::Initialize(FVector NewDirection)
+void AFireBall::Initialize(AActor* InOwner, FVector NewDirection)
 {
-	Super::Initialize(NewDirection);
+	Super::Initialize(InOwner, NewDirection);
 	UE_LOG(LogTemp, Warning, TEXT("Boule de feu lancee !"));
 }
+*/

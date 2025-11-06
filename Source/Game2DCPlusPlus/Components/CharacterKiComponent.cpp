@@ -16,9 +16,6 @@ UCharacterKiComponent::UCharacterKiComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	MaxKi = 500.0f;
-	CurrentKi = 0.0f;
-	KiLoadSpeed = 1.5f;
 	bIsKiCharging = false;
 }
 
@@ -27,7 +24,7 @@ UCharacterKiComponent::UCharacterKiComponent()
 void UCharacterKiComponent::BeginPlay()
 {
 	Super::BeginPlay();
-	OwnerCharacter = Cast<AMyCharacter>(GetOwner());
+	OwnerCharacter = Cast<AActor>(GetOwner());
 
 	if (!OwnerCharacter)
 	{
@@ -35,7 +32,6 @@ void UCharacterKiComponent::BeginPlay()
 		return;
 	}
 
-	InitializeKiSystem();
 	
 }
 
@@ -44,7 +40,11 @@ void UCharacterKiComponent::InitializeKiSystem()
 	// Initialisation de la barre de Ki
 	if (KiBarWidgetClass)
 	{
-		KiBarWidget = CreateWidget<UKiBarWidget>(GetWorld(), KiBarWidgetClass);
+		APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+		if (PC && PC->IsLocalPlayerController())
+		{
+			KiBarWidget = CreateWidget<UKiBarWidget>(PC, KiBarWidgetClass);
+		}
 		if (KiBarWidget)
 		{
 			KiBarWidget->AddToViewport();
@@ -75,24 +75,61 @@ void UCharacterKiComponent::InitializeKiSystem()
 
 void UCharacterKiComponent::LoadKi(float Value)
 {
-	if (Value > 0.0f && !bIsKiCharging && CurrentKi < MaxKi)
+	if (Value > 0.0f && !bIsKiCharging && StatsComponent->CurrentKi < StatsComponent->MaxKi)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("UCharacterKiComponent::LoadKi ---> Value : %f"), Value);
 		StartChargingKi();
 		bIsKiCharging = true;
 	}
 
 	if (bIsKiCharging && Value > 0.0f)
 	{
-		CurrentKi = FMath::Clamp(CurrentKi + (KiLoadSpeed * Value), 0.0f, MaxKi);
+		StatsComponent->CurrentKi = FMath::Clamp(StatsComponent->CurrentKi + (StatsComponent->KiLoadSpeed * Value), 0.0f, StatsComponent->MaxKi);
 		UpdateKiBar();
 	}
 
-	if ((Value == 0.0f || CurrentKi >= MaxKi) && bIsKiCharging)
+	/*
+	if ((Value == 0.0f || StatsComponent->CurrentKi >= StatsComponent->MaxKi) && bIsKiCharging)
 	{
 		StopChargingKi();
 		bIsKiCharging = false;
 	}
+	*/
 }
+
+void UCharacterKiComponent::LoadKiAI(float DeltaTime)
+{
+	if (!StatsComponent)
+	{
+		UE_LOG(LogTemp, Error, TEXT("LoadKiAI: StatsComponent NULL"));
+		return;
+	}
+
+	if (!bIsKiCharging)
+	{
+		UE_LOG(LogTemp, Error, TEXT("LoadKiAI: bIsCharging : false"));
+		StartChargingKi();
+	}
+
+	if (bIsKiCharging)
+	{
+		StatsComponent->CurrentKi += StatsComponent->KiLoadSpeed * DeltaTime;
+		StatsComponent->CurrentKi = FMath::Clamp(
+			StatsComponent->CurrentKi,
+			0.0f,
+			StatsComponent->MaxKi
+		);
+		UpdateKiBar();
+
+		if (StatsComponent->CurrentKi >= StatsComponent->MaxKi)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("LoadKiAI: Ki à fond"));
+			StopChargingKi();
+		}
+	}
+}
+
+
 
 void UCharacterKiComponent::StartChargingKi()
 {
@@ -100,7 +137,11 @@ void UCharacterKiComponent::StartChargingKi()
 	{
 		KiAura->StartAura();
 		bIsKiCharging = true;
-		UE_LOG(LogTemp, Warning, TEXT("Chargement du ki en cours"));
+		UE_LOG(LogTemp, Warning, TEXT("UCharacterKiComponent::StartChargingKi() --> Chargement du ki en cours"));
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("UCharacterKiComponent::StartChargingKi() --> Pas d'aura de ki ou est déjà true"));
 	}
 }
 
@@ -118,6 +159,39 @@ void UCharacterKiComponent::UpdateKiBar()
 {
 	if (KiBarWidget)
 	{
-		KiBarWidget->UpdateKiBar(CurrentKi, MaxKi);
+ 		KiBarWidget->UpdateKiBar(StatsComponent->CurrentKi, StatsComponent->MaxKi);
 	}
+}
+
+void UCharacterKiComponent::InitializeStatsComponent(UStatsComponent* InStats)
+{
+	StatsComponent = InStats;
+
+	if (!InStats)
+	{
+		UE_LOG(LogTemp, Error, TEXT("KiComponent::Initialize - Stats NULL"));
+		return;
+	}
+}
+
+
+bool UCharacterKiComponent::TryConsumeKi(float KiCost)
+{
+
+	if (!StatsComponent)
+	{
+		UE_LOG(LogTemp, Error, TEXT("UCharacterKiComponent::TryConsumeKi - StatsComponent NULL"));
+		return false;
+	}
+
+	if (StatsComponent->CurrentKi < KiCost)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("UCharacterKiComponent::TryConsumeKi - Pas assez de ki pour cette attaque : CurrentKi : %f KiCost : %f"), StatsComponent->CurrentKi, KiCost);
+		return false;
+	}
+
+	StatsComponent->CurrentKi -= KiCost;
+	UpdateKiBar();
+
+	return true;
 }

@@ -36,11 +36,14 @@ void UCharacterCombatComponent::BeginPlay()
 
 	OwnerCharacter = Cast<ACharacter>(GetOwner());
 
-
-
-
-
 	ComboStep = 0;
+
+	StateComponent = OwnerCharacter->FindComponentByClass<UCharacterStateComponent>();
+	if(!StateComponent)
+	{
+		UE_LOG(LogTemp, Error, TEXT("CharacterCombatComponent: StateComponent non trouve !"));
+		return;
+	}
 
 	if (OwnerCharacter)
 	{
@@ -55,31 +58,7 @@ void UCharacterCombatComponent::BeginPlay()
 		{
 			UE_LOG(LogTemp, Error, TEXT("CharacterCombatComponent: AbilitiesComponent non trouve !"));
 		}
-	}
-
-	/*
-	if (!CurrentWeapon || !CurrentWeapon->WeaponHitbox)
-	{
-		UE_LOG(LogTemp, Error, TEXT("CharacterCombatComponent: CurrentWeapon || CurrentWeapon->WeaponHitbox  = NULL!"));
-		UBoxComponent* HitBoxGeneric = NewObject<UBoxComponent>(this, TEXT("HistBoxGeneric"));
-		HitBoxGeneric->AttachToComponent(OwnerCharacter->GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
-		HitBoxGeneric->RegisterComponent();
-		HitBoxGeneric->SetBoxExtent(FVector(10.f, 5.f, 5.f));
-		HitBoxGeneric->SetCollisionEnabled(ECollisionEnabled::NoCollision); // activée dynamiquement
-		HitBoxGeneric->SetCollisionObjectType(ECC_WorldDynamic);
-		HitBoxGeneric->SetCollisionResponseToAllChannels(ECR_Ignore);
-		HitBoxGeneric->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
-
-		HitBoxGeneric->OnComponentBeginOverlap.AddDynamic(this, &UCharacterCombatComponent::OnSwordOverlap);
-		
-		CurrentWeapon = NewObject<AMyWeaponBase>(this, AMyWeaponBase::StaticClass());
-		CurrentWeapon->WeaponHitbox = HitBoxGeneric;
-		UE_LOG(LogTemp, Warning, TEXT("✅ Hitbox de poing créée pour les tests sans arme"));
-		//return;
-	}
-	*/
-
-	
+	}	
 }
 
 
@@ -91,12 +70,15 @@ void UCharacterCombatComponent::TickComponent(float DeltaTime, ELevelTick TickTy
 	if (!bIsAttacking)
 	{
 		return;
-	}	
+	}
+
+	//UE_LOG(LogTemp, Warning, TEXT("ComboStap: %d"), ComboStep);
+
 
 	if (bIsTracing && CurrentAttackFlipbook != nullptr)
 	{
 		DoWeaponTrace(CurrentAttackData);
-		UE_LOG(LogTemp, Warning, TEXT("Traçage en cours"));
+		//UE_LOG(LogTemp, Warning, TEXT("Traçage en cours"));
 
 	}
 }
@@ -110,7 +92,8 @@ void UCharacterCombatComponent::LightAttack()
 		//Stocke l'attaque en file d'attente si une attaque est déjà en cours
 		if (AttackQueueSize < 2)
 		{
-			AttackQueue.Enqueue(ComboStep + 1 > 3 ? 1 : ComboStep + 1);
+			int32 NextStep = (ComboStep % 2) + 1;
+			AttackQueue.Enqueue(NextStep);
 			AttackQueueSize++;
 		}
 		return;
@@ -122,6 +105,7 @@ void UCharacterCombatComponent::LightAttack()
 
 void UCharacterCombatComponent::ExecuteLightAttack()
 {
+	StateComponent->SetState(EState::Attacking);
     bIsAttacking = true;
 
 	UE_LOG(LogTemp, Warning, TEXT("ExectureLightAttack"));
@@ -131,20 +115,13 @@ void UCharacterCombatComponent::ExecuteLightAttack()
         int32 NextComboStep;
         AttackQueue.Dequeue(NextComboStep);
 
-        // 🔥 Évite que le ComboStep reste bloqué
-        if (NextComboStep == ComboStep)
-        {
-            ComboStep = (ComboStep % 3) + 1;  // Passe à l'attaque suivante
-        }
-        else
-        {
-            ComboStep = NextComboStep;
-        }
+		ComboStep = NextComboStep;
+		AttackQueueSize--;
     }
     else
     {
         // 🔥 Incrémente toujours ComboStep proprement
-        ComboStep = (ComboStep % 3) + 1;
+        ComboStep = (ComboStep % 2) + 1;
     }
 
 
@@ -153,11 +130,16 @@ void UCharacterCombatComponent::ExecuteLightAttack()
 
     GetWorld()->GetTimerManager().ClearTimer(ComboResetTimerHandle);
 
-    float AnimationDuration;
-    if (AnimationComponent && AnimationComponent->FlipbookComponent)
-    {
-        AnimationDuration = AnimationComponent->FlipbookComponent->GetFlipbookLength();
-    }
+    float AnimationDuration = 0.5f;
+	if (CurrentAttackFlipbook)
+	{
+		AnimationDuration = CurrentAttackFlipbook->GetTotalDuration();
+	}
+	else if (AnimationComponent && AnimationComponent->FlipbookComponent && AnimationComponent->FlipbookComponent->GetFlipbook())
+	{
+		AnimationDuration = AnimationComponent->FlipbookComponent->GetFlipbook()->GetTotalDuration();
+	}
+	//UE_LOG(LogTemp, Warning, TEXT("⏱ Durée de l'animation détectée : %.2f secondes"), AnimationDuration);
 
     GetWorld()->GetTimerManager().SetTimer(ComboResetTimerHandle, this, &UCharacterCombatComponent::EndLightAttack, AnimationDuration, false);
 }
@@ -167,7 +149,7 @@ void UCharacterCombatComponent::ExecuteLightAttack()
 
 void UCharacterCombatComponent::EndLightAttack()
 {
-
+	StateComponent->ResetState();
 	bIsAttacking = false;
 	bIsTracing = false;
 	CurrentAttackFlipbook = nullptr;
@@ -245,6 +227,7 @@ void UCharacterCombatComponent::PlayComboAnimation()
 
 		CurrentAttackData = *AttackData;
 		CurrentAttackFlipbook = AttackData->PlayerAnimation.LoadSynchronous();
+		UE_LOG(LogTemp, Warning, TEXT("PlayComboAnimation : Animation en cours : %s"), *RowName.ToString());
 	}
 	else
 	{
@@ -298,13 +281,8 @@ void UCharacterCombatComponent::DoWeaponTrace(const FAttackData& AttackData)
 	const TArray<FName>& Sockets = AttackData.TraceSockets;
 	if (Sockets.Num() < 2)
 	{
-		UE_LOG(LogTemp, Error, TEXT("DoWeaponTrace : Nombre de sockets inférieur à 2"));
+		//UE_LOG(LogTemp, Error, TEXT("DoWeaponTrace : Nombre de sockets inférieur à 2"));
 		return;
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("DoWeaponTrace : Nombre de sockets supérieur à 2"));
-
 	}
 
 	for (int32 i = 0; i < Sockets.Num() - 1; i++)
@@ -326,7 +304,7 @@ void UCharacterCombatComponent::DoWeaponTrace(const FAttackData& AttackData)
 
 		FColor DebugColor = bHit ? FColor::Red : FColor::Green;
 		DrawDebugLine(GetWorld(), Start, End, FColor::Blue, false, 1.0f, 0, 2.0f);
-		UE_LOG(LogTemp, Warning, TEXT("Trace entre %s et %s"), *Sockets[i].ToString(), *Sockets[i + 1].ToString());
+		//UE_LOG(LogTemp, Warning, TEXT("Trace entre %s et %s"), *Sockets[i].ToString(), *Sockets[i + 1].ToString());
 
 
 		if (bHit && HitResult.GetActor())

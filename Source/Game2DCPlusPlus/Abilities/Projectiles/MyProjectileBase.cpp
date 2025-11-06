@@ -46,6 +46,8 @@ void AMyProjectileBase::BeginPlay()
 {
 	Super::BeginPlay();
 
+	
+
 	if (!UparticleSystemInstance)
 	{
 		UparticleSystemInstance = NewObject<UParticleSystemComponent>(this, TEXT("UparticleSystemInstance"));
@@ -84,15 +86,25 @@ void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
 	UE_LOG(LogTemp, Warning, TEXT("Je suis un projectile et j'ai touché %s en OnHit"), *OtherActor->GetName());
 }
 
-void AMyProjectileBase::Initialize(FVector FireDirection)
+void AMyProjectileBase::Initialize(AActor* InOwner, FVector FireDirection)
 {
+	OwnerCharacter = InOwner;
 	Direction = FireDirection;
+
+	if (OwnerCharacter != nullptr)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("AMyProjectileBase->Initialize : OwnerCharacter : %s"), *OwnerCharacter->GetName());
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("AMyProjectileBase->Initialize : OwnerCharacter est NULL"));
+	}
+
 	if (UparticleSystemInstance && UparticleEffect)
 	{
 		UparticleSystemInstance->SetTemplate(UparticleEffect);
 		UparticleSystemInstance->ActivateSystem();
 		UE_LOG(LogTemp, Warning, TEXT("Particules du projectile activees"));
-
 	}
 }
 

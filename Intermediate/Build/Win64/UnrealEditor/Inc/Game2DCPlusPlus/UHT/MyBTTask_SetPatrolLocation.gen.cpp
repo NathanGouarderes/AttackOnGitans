@@ -5,25 +5,51 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Game2DCPlusPlus/Tasks/MyBTTask_SetPatrolLocation.h"
+#include "MyBTTask_SetPatrolLocation.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeMyBTTask_SetPatrolLocation() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 AIMODULE_API UClass* Z_Construct_UClass_UBTTaskNode();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UMyBTTask_SetPatrolLocation();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UMyBTTask_SetPatrolLocation_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class UMyBTTask_SetPatrolLocation
+// ********** Begin Class UMyBTTask_SetPatrolLocation **********************************************
 void UMyBTTask_SetPatrolLocation::StaticRegisterNativesUMyBTTask_SetPatrolLocation()
 {
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UMyBTTask_SetPatrolLocation);
+FClassRegistrationInfo Z_Registration_Info_UClass_UMyBTTask_SetPatrolLocation;
+UClass* UMyBTTask_SetPatrolLocation::GetPrivateStaticClass()
+{
+	using TClass = UMyBTTask_SetPatrolLocation;
+	if (!Z_Registration_Info_UClass_UMyBTTask_SetPatrolLocation.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			TClass::StaticPackage(),
+			TEXT("MyBTTask_SetPatrolLocation"),
+			Z_Registration_Info_UClass_UMyBTTask_SetPatrolLocation.InnerSingleton,
+			StaticRegisterNativesUMyBTTask_SetPatrolLocation,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UMyBTTask_SetPatrolLocation.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UMyBTTask_SetPatrolLocation_NoRegister()
 {
-	return UMyBTTask_SetPatrolLocation::StaticClass();
+	return UMyBTTask_SetPatrolLocation::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UMyBTTask_SetPatrolLocation_Statics
 {
@@ -67,24 +93,21 @@ UClass* Z_Construct_UClass_UMyBTTask_SetPatrolLocation()
 	}
 	return Z_Registration_Info_UClass_UMyBTTask_SetPatrolLocation.OuterSingleton;
 }
-template<> GAME2DCPLUSPLUS_API UClass* StaticClass<UMyBTTask_SetPatrolLocation>()
-{
-	return UMyBTTask_SetPatrolLocation::StaticClass();
-}
-DEFINE_VTABLE_PTR_HELPER_CTOR(UMyBTTask_SetPatrolLocation);
+DEFINE_VTABLE_PTR_HELPER_CTOR_NS(, UMyBTTask_SetPatrolLocation);
 UMyBTTask_SetPatrolLocation::~UMyBTTask_SetPatrolLocation() {}
-// End Class UMyBTTask_SetPatrolLocation
+// ********** End Class UMyBTTask_SetPatrolLocation ************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Tasks_MyBTTask_SetPatrolLocation_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Tasks_MyBTTask_SetPatrolLocation_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UMyBTTask_SetPatrolLocation, UMyBTTask_SetPatrolLocation::StaticClass, TEXT("UMyBTTask_SetPatrolLocation"), &Z_Registration_Info_UClass_UMyBTTask_SetPatrolLocation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyBTTask_SetPatrolLocation), 2400829108U) },
+		{ Z_Construct_UClass_UMyBTTask_SetPatrolLocation, UMyBTTask_SetPatrolLocation::StaticClass, TEXT("UMyBTTask_SetPatrolLocation"), &Z_Registration_Info_UClass_UMyBTTask_SetPatrolLocation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyBTTask_SetPatrolLocation), 430726811U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Tasks_MyBTTask_SetPatrolLocation_h_3345538195(TEXT("/Script/Game2DCPlusPlus"),
-	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Tasks_MyBTTask_SetPatrolLocation_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_5_Source_Game2DCPlusPlus_Tasks_MyBTTask_SetPatrolLocation_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Tasks_MyBTTask_SetPatrolLocation_h__Script_Game2DCPlusPlus_2188600264(TEXT("/Script/Game2DCPlusPlus"),
+	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Tasks_MyBTTask_SetPatrolLocation_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Tasks_MyBTTask_SetPatrolLocation_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -12,14 +12,13 @@ public class Game2DCPlusPlus : ModuleRules
             "InputCore",
             "UMG", //Ajout à la main
             "Paper2D",
-            "PaperZD", // pour les animation type 3D
             "AIModule",
             "GameplayTasks",
-            "NavigationSystem"
+            "NavigationSystem",
+            "Niagara"
         });
 
         PublicIncludePaths.AddRange(new string[] {
-            "PaperZD/Public/AnimSequences",
             "Game2DCPlusPlus/Enemies",
             "Game2DCPlusPlus/Components",
             "Game2DCPlusPlus/Abilities",

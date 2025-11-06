@@ -2,6 +2,7 @@
 #include "../Characters/MyCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "PaperFlipbookComponent.h"
+#include "CharacterAbilitiesComponent.h"
 
 UCharacterAnimationComponent::UCharacterAnimationComponent()
 {
@@ -17,6 +18,7 @@ void UCharacterAnimationComponent::BeginPlay()
     OwnerCharacter = Cast<ACharacter>(GetOwner());
     CombatComponent = OwnerCharacter->FindComponentByClass<UCharacterCombatComponent>();
     FlipbookComponent = OwnerCharacter->FindComponentByClass<UPaperFlipbookComponent>();
+    AbilitiesComponent = OwnerCharacter->FindComponentByClass<UCharacterAbilitiesComponent>();
     IFlipbookProviderInterface* FlipbookProvider = Cast<IFlipbookProviderInterface>(OwnerCharacter);
 
     if (!OwnerCharacter)
@@ -70,7 +72,10 @@ void UCharacterAnimationComponent::UpdateAnimation()
 
     // 🎬 État prioritaire : Attaque
     if (CombatComponent && CombatComponent->IsAttacking())
+    {
         return;
+    }
+        
 
     // 👟 Marche
     if (bIsWalking)
@@ -86,6 +91,10 @@ void UCharacterAnimationComponent::UpdateAnimation()
         return;
     }
 
+    if (AbilitiesComponent && AbilitiesComponent->GetIsChargingBeam())
+    {
+        return;
+    }
     // 😴 Idle
     SetDefaultAnimation();
 }
@@ -182,18 +191,18 @@ void UCharacterAnimationComponent::SetFacingDirection(float VelocityX)
 
     if (VelocityX > 0.1f)
     {
-        FlipbookComponent->SetRelativeScale3D(FVector(2.0f, 1.0f, 1.0f));
+        FlipbookComponent->SetRelativeScale3D(FVector(-0.50f, 1.0f, 1.0f));
         bIsFacingRight = true;
     }
     else if (VelocityX < -0.1f)
     {
-        FlipbookComponent->SetRelativeScale3D(FVector(-2.0f, 1.0f, 1.0f));
+        FlipbookComponent->SetRelativeScale3D(FVector(0.50f, 1.0f, 1.0f));
         bIsFacingRight = false;
     }
 
     if (bWasFacingRight != bIsFacingRight)
     {
-        float Direction = bIsFacingRight ? -2.0f : 2.0f;
+        float Direction = bIsFacingRight ? -1.0f : 1.0f;
         FVector NewScale = FlipbookComponent->GetRelativeScale3D();
         NewScale.X = Direction;
         FlipbookComponent->SetRelativeScale3D(NewScale);
@@ -256,4 +265,86 @@ void UCharacterAnimationComponent::PlayWalkAnimation(ERole Role)
     default:
         break;
     }
+}
+
+
+void UCharacterAnimationComponent::PlayChangingBeamAnimation(const FBeamAttackData& BeamData)
+{
+    UE_LOG(LogTemp, Warning, TEXT("UCharacterAnimationComponent::PlayChangingBeamAnimation"));
+    UPaperFlipbook* ChargeFlipbook = nullptr;
+    switch (CharacterRole)
+    {
+    case ERole::Player:
+        ChargeFlipbook = BeamData.PlayerCharginBeamAnimation.LoadSynchronous();
+        break;
+    case ERole::Enemy:
+        ChargeFlipbook = BeamData.EnemyCharginBeamAnimation.LoadSynchronous();
+        break;
+    case ERole::Boss:
+        break;
+    case ERole::NPC:
+        break;
+    default:
+        break;
+    }
+
+    if (!ChargeFlipbook)
+    {
+        UE_LOG(LogTemp, Error, TEXT("UCharacterAnimationComponent::PlayChangingBeamAnimation PAS DE CHARGE FLIPBOOK"));
+        return;
+    }
+
+    PlayAndFreezeAtEnd(ChargeFlipbook);
+    UE_LOG(LogTemp, Warning, TEXT("Animation de charge de rayon jouee : %s"), *ChargeFlipbook->GetName());
+}
+
+void UCharacterAnimationComponent::PlayAndFreezeAtEnd(UPaperFlipbook* Animation)
+{
+    if (!FlipbookComponent || !Animation)
+        return;
+
+    if (AbilitiesComponent && AbilitiesComponent->GetIsChargingBeam())
+    {
+        FlipbookComponent->SetFlipbook(Animation);
+        FlipbookComponent->PlayFromStart();
+
+        // Calcul de la durée totale de l’animation
+        float Duration = FlipbookComponent->GetFlipbookLength();
+
+        // Quand l’animation finit, on la stoppe et on la fige
+        FlipbookComponent->SetLooping(false);
+        GetWorld()->GetTimerManager().SetTimer(
+            BeamFreezeTimerHandle,
+            FTimerDelegate::CreateLambda([this]()
+                {
+                    if (FlipbookComponent)
+                    {
+                        FlipbookComponent->Stop();
+                        FlipbookComponent->SetPlaybackPositionInFrames(
+                            FlipbookComponent->GetFlipbookLengthInFrames(),
+                            false
+                        );
+                        UE_LOG(LogTemp, Warning, TEXT("Animation figée sur la dernière frame"));
+                    }
+                }),
+            Duration,
+            false
+        );
+    }
+    else
+    {
+
+    }
+}
+
+
+void UCharacterAnimationComponent::UnfreezeAnimation()
+{
+    if (!FlipbookComponent)
+        return;
+
+    FlipbookComponent->SetLooping(true);
+    FlipbookComponent->PlayFromStart(); // ou rien, si tu veux juste repasser Idle/Walk
+    SetDefaultAnimation();
+    UE_LOG(LogTemp, Warning, TEXT("Animation dégelée (fin de charge)"));
 }

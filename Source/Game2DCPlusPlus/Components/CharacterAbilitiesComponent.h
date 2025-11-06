@@ -4,6 +4,17 @@
 #include "Components/ActorComponent.h"
 #include "CharacterAnimationComponent.h"
 #include "PaperFlipbookComponent.h"
+#include "../Abilities/MyKiAttack.h"
+#include "../Data/FProjectileData.h"
+#include "StandComponent.h"
+#include "./UCharacterStateComponent.h"
+#include "../Data/FBeamAttackData.h"
+#include "../Abilities/Beams/BeamBase.h"
+#include "../Data/Enums/EState.h"
+#include "../Abilities/Beams/ChargingBeamSphere.h"
+#include "../Abilities/MyStandBase.h"
+#include "StatsComponent.h"
+#include "CharacterKiComponent.h"
 #include "PaperFlipbook.h"
 #include "CharacterAbilitiesComponent.generated.h"
 
@@ -12,12 +23,6 @@ class AMyProjectileBase;
 class UCharacterKiComponent;
 class UCharacterCombatComponent;
 
-UENUM(BlueprintType)
-enum class EProjectileType : uint8
-{
-    Kamehameha UMETA(DisplayName = "Kamehameha"),
-    Fireball UMETA(DisplayName = "Fireball")
-};
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class GAME2DCPLUSPLUS_API UCharacterAbilitiesComponent : public UActorComponent
@@ -32,13 +37,37 @@ protected:
 
 public:
 	/** Lancer un projectile */
-	void CastProjectile(EProjectileType ProjectileType);
+	void CastProjectile(EProjectileType Type);
+	UFUNCTION()
+	void StartChargingBeam();
+
+	UFUNCTION()
+	void ConsumeKiWhileChargingBeam();
+
+	UFUNCTION()
+	void ReleaseBeam();
 
 	/** Effectuer un dash/esquive */
 	void Dodge();
 
 	/** Reinitialiser le dash */
 	void ResetDash();
+
+	void InitializeKiComponent(UCharacterKiComponent* KiComponent);
+	void InitializeAllComponents(UCharacterKiComponent* InKi, UStatsComponent* InStast);
+
+	void SetCurrentBeam(TSubclassOf<ABeamBase> CurrentBeam);
+
+	void UpdateChargingBeamVisual();
+
+
+	TSubclassOf<ABeamBase> GetCurrentBeam();
+
+
+	bool GetIsChargingBeam();
+	bool GetIsFacingRight();
+
+	void SummonStand();
 
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	float DashDistance;
@@ -70,8 +99,65 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TSubclassOf<AMyProjectileBase> FireballClass;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Projectiles")
+	TSubclassOf<AActor> BP_KiBallClass;
 
-	AMyCharacter* OwnerCharacter;
+	UPROPERTY(EditDefaultsOnly, Category = "Projectiles")
+	TSubclassOf<AActor> BP_Kamehameha;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Projectiles")
+	TSoftClassPtr<AChargingBeamSphere> BP_ChargingBeamSphere;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Projectiles")
+
+	TSubclassOf<ABeamBase> BeamClass;
+
+	UPROPERTY(EditAnywhere, Category = "Stand")
+	TSubclassOf<AMyStandBase> StandClass;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TSubclassOf<ABeamBase> CurrentBeamSelected;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	UCharacterKiComponent* KiComponent;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	UStatsComponent* StatsComponent;
+
+	UPROPERTY()
+	ABeamBase* CurrentBeam;
+
+	ACharacter* OwnerCharacter;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Data")
+	FName CurrentBeamName;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Data")
+	FBeamAttackData KamehamehaData;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Data")
+	UDataTable* ProjectileDataTable;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Data")
+	UDataTable* BeamDataTable;
+
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Data")
+	UDataTable* PhysicalAttackDataTable;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Component")
+	UCharacterStateComponent* StateComponent;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Component")
+	UStandComponent* StandComponent;
+
+	AChargingBeamSphere* ChargingBeamSphere;
+
+
+	bool bCanDash;
+	bool bIsAttacking;
+	bool bIsChargingBeam;
+	bool bIsStandOut;
 
 private:
 	UPROPERTY(EditAnywhere, Category = "Combat")
@@ -81,6 +167,9 @@ private:
 
 	UCharacterAnimationComponent* AnimationComponent;
 
+	AMyKiAttack* MyKiAttack;
+
+	
 
 
 
@@ -97,8 +186,9 @@ private:
 
 
 
-	bool bCanDash;
-	bool bIsAttacking;
+	
 	FTimerHandle DashTimerHandle;
 	FTimerHandle AttackTimerHandle;
+	FTimerHandle BeamChargeTimer;
+	FTimerHandle BeamVisualTimer;
 };
