@@ -10,6 +10,7 @@
 class UKiBarWidget;
 class AMyCharacter;
 class AKiAura;
+class AFighterCharacters;
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class GAME2DCPLUSPLUS_API UCharacterKiComponent : public UActorComponent
@@ -50,7 +51,7 @@ public:
 
 private:
 	UPROPERTY()
-	AActor* OwnerCharacter;
+	AFighterCharacters* OwnerCharacter;
 
 	UPROPERTY()
 	UKiBarWidget* KiBarWidget;

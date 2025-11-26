@@ -3,7 +3,7 @@
 
 #include "CharacterKiComponent.h"
 #include "../Characters/MyCharacter.h"       
-#include "../Widgets/KiBarWidget.h"       
+#include "../Widgets/KiBarWidget.h"     
 #include "../Visuals/KiAura.h"            
 #include "Kismet/GameplayStatics.h"
 #include "Blueprint/UserWidget.h" 
@@ -24,7 +24,7 @@ UCharacterKiComponent::UCharacterKiComponent()
 void UCharacterKiComponent::BeginPlay()
 {
 	Super::BeginPlay();
-	OwnerCharacter = Cast<AActor>(GetOwner());
+	OwnerCharacter = Cast<AFighterCharacters>(GetOwner());
 
 	if (!OwnerCharacter)
 	{
@@ -75,7 +75,7 @@ void UCharacterKiComponent::InitializeKiSystem()
 
 void UCharacterKiComponent::LoadKi(float Value)
 {
-	if (Value > 0.0f && !bIsKiCharging && StatsComponent->CurrentKi < StatsComponent->MaxKi)
+	if (Value > 0.0f && !bIsKiCharging && StatsComponent->CurrentKi < StatsComponent->CharacterStats.MaxKi)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("UCharacterKiComponent::LoadKi ---> Value : %f"), Value);
 		StartChargingKi();
@@ -84,7 +84,7 @@ void UCharacterKiComponent::LoadKi(float Value)
 
 	if (bIsKiCharging && Value > 0.0f)
 	{
-		StatsComponent->CurrentKi = FMath::Clamp(StatsComponent->CurrentKi + (StatsComponent->KiLoadSpeed * Value), 0.0f, StatsComponent->MaxKi);
+		StatsComponent->CurrentKi = FMath::Clamp(StatsComponent->CurrentKi + (StatsComponent->CharacterStats.KiLoadSpeed * Value), 0.0f, StatsComponent->CharacterStats.MaxKi);
 		UpdateKiBar();
 	}
 
@@ -113,15 +113,15 @@ void UCharacterKiComponent::LoadKiAI(float DeltaTime)
 
 	if (bIsKiCharging)
 	{
-		StatsComponent->CurrentKi += StatsComponent->KiLoadSpeed * DeltaTime;
+		StatsComponent->CurrentKi += StatsComponent->CharacterStats.KiLoadSpeed * DeltaTime;
 		StatsComponent->CurrentKi = FMath::Clamp(
 			StatsComponent->CurrentKi,
 			0.0f,
-			StatsComponent->MaxKi
+			StatsComponent->CharacterStats.MaxKi
 		);
 		UpdateKiBar();
 
-		if (StatsComponent->CurrentKi >= StatsComponent->MaxKi)
+		if (StatsComponent->CurrentKi >= StatsComponent->CharacterStats.MaxKi)
 		{
 			UE_LOG(LogTemp, Warning, TEXT("LoadKiAI: Ki à fond"));
 			StopChargingKi();
@@ -159,7 +159,7 @@ void UCharacterKiComponent::UpdateKiBar()
 {
 	if (KiBarWidget)
 	{
- 		KiBarWidget->UpdateKiBar(StatsComponent->CurrentKi, StatsComponent->MaxKi);
+ 		KiBarWidget->UpdateKiBar(StatsComponent->CurrentKi, StatsComponent->CharacterStats.MaxKi);
 	}
 }
 

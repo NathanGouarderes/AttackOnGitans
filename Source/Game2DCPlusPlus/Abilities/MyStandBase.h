@@ -6,9 +6,11 @@
 #include "PaperFlipbookComponent.h"
 #include "GameFramework/Actor.h"
 #include "../Data/FStandData.h"
+#include "Engine/DataAsset.h"
 #include "../Components/Stand/StandAbilitiesComponent.h"
 #include "../Components/Stand/StandAnimationComponent.h"
 #include "../Components/Stand/StandCombatComponent.h"
+#include "../Components/CharacterKiComponent.h"
 
 #include "MyStandBase.generated.h"
 
@@ -36,13 +38,7 @@ protected:
 	UPROPERTY()
 	UPaperFlipbookComponent* FlipbookComponent;
 
-	UPROPERTY()
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Stand", meta = (AllowPrivateAccess = "true"))
-	UDataTable* StandDataTable;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Stand", meta = (AllowPrivateAccess = "true"))
-	FStandData StandData;
+	
 
 	float FollowDistance = 100.0f;
 
@@ -69,8 +65,23 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	void InitializeStand(AActor* ActorOwner);
+	void ReturnToOwner(float DeltaTime);
+	AActor* GetOwnerCharacter();
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Stand", meta = (AllowPrivateAccess = "true"))
+	UDataTable* StandDataTable;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Stand", meta = (AllowPrivateAccess = "true"))
+	UDataAsset* StandDataAsset;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Stand", meta = (AllowPrivateAccess = "true"))
+	FStandData StandData;
+	UPROPERTY()
 	AActor* OwnerCharacter;
 
+	FCharacterData CharacterData;
+	UStatsComponent* CharacterStats;
+	UCharacterKiComponent* CharacterKiComp;
+	UStandComponent* CharacterStandComp;
 
 
 };

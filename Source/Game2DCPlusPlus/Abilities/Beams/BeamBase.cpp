@@ -368,7 +368,7 @@ void ABeamBase::PerformBeamTraceAndDamage()
 			if (AMyEnemyBase* Enemy = Cast<AMyEnemyBase>(HitActor))
 			{
 				auto EnemyStats = Enemy->FindComponentByClass<UStatsComponent>();
-				if (EnemyStats && EnemyStats->MaxKi > StatsComponent->CurrentKi)
+				if (EnemyStats && EnemyStats->CharacterStats.MaxKi > StatsComponent->CurrentKi)
 				{
 					UE_LOG(LogTemp, Warning, TEXT("ABeamBase::PerformBeamTraceAndDamage() --> Kamehameha stoppé par %s !"), *HitActor->GetName());
 					StopBeam();
@@ -404,7 +404,7 @@ void ABeamBase::OnBeamOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other
 	if (AMyEnemyBase* Enemy = Cast<AMyEnemyBase>(OtherActor))
 	{
 		UStatsComponent* EnemyStats = Enemy->FindComponentByClass<UStatsComponent>();
-		if (EnemyStats && StatsComponent && EnemyStats->MaxKi > StatsComponent->CurrentKi)
+		if (EnemyStats && StatsComponent && EnemyStats->CharacterStats.MaxKi > StatsComponent->CurrentKi)
 		{
 			UE_LOG(LogTemp, Warning, TEXT("💥 Le Kamehameha est stoppé par %s (MaxKi supérieur) !"), *Enemy->GetName());
 			return;

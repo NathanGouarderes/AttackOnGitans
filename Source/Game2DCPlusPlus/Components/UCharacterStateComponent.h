@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "../Data/Enums/EState.h"
+#include "../Data/FAttackData.h"
+#include "Engine/EngineTypes.h"   // pour FHitResult
 #include "UCharacterStateComponent.generated.h"
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
@@ -26,6 +28,9 @@ public:
 
     UFUNCTION(BlueprintCallable, Category = "State")
     void ResetState();
+
+    UFUNCTION(BlueprintPure, Category = "State")
+    bool TryResolveDefence(AActor* Target, const FAttackData& AttackData, const FHitResult& Hit);
 
     UFUNCTION(BlueprintPure, Category = "State")
     bool IsInState(EState State) const { return CurrentState == State; }

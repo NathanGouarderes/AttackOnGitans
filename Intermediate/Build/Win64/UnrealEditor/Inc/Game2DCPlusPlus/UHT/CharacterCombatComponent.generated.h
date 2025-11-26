@@ -21,7 +21,7 @@ struct FAttackData;
 struct FHitResult;
 
 // ********** Begin Class UCharacterCombatComponent ************************************************
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execIsAttacking); \
 	DECLARE_FUNCTION(execDoWeaponTrace); \
 	DECLARE_FUNCTION(execUpdateHitboxFromSockets); \
@@ -31,7 +31,7 @@ struct FHitResult;
 struct Z_Construct_UClass_UCharacterCombatComponent_Statics;
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterCombatComponent_NoRegister();
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_20_INCLASS_NO_PURE_DECLS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_21_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUCharacterCombatComponent(); \
 	friend struct ::Z_Construct_UClass_UCharacterCombatComponent_Statics; \
@@ -42,7 +42,7 @@ public: \
 	DECLARE_SERIALIZER(UCharacterCombatComponent)
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_20_ENHANCED_CONSTRUCTORS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_21_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	UCharacterCombatComponent(UCharacterCombatComponent&&) = delete; \
 	UCharacterCombatComponent(const UCharacterCombatComponent&) = delete; \
@@ -52,13 +52,13 @@ public: \
 	NO_API virtual ~UCharacterCombatComponent();
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_17_PROLOG
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_20_GENERATED_BODY \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_18_PROLOG
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_21_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_20_INCLASS_NO_PURE_DECLS \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_20_ENHANCED_CONSTRUCTORS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_21_INCLASS_NO_PURE_DECLS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

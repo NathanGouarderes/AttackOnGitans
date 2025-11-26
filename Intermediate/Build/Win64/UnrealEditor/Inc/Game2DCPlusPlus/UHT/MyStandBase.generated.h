@@ -20,7 +20,7 @@ class UPrimitiveComponent;
 struct FHitResult;
 
 // ********** Begin Class AMyStandBase *************************************************************
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnHit); \
 	DECLARE_FUNCTION(execOnOverlapBegin); \
 	DECLARE_FUNCTION(execUpdateStandPosition);
@@ -29,7 +29,7 @@ struct FHitResult;
 struct Z_Construct_UClass_AMyStandBase_Statics;
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AMyStandBase_NoRegister();
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_18_INCLASS_NO_PURE_DECLS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMyStandBase(); \
 	friend struct ::Z_Construct_UClass_AMyStandBase_Statics; \
@@ -40,7 +40,7 @@ public: \
 	DECLARE_SERIALIZER(AMyStandBase)
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_18_ENHANCED_CONSTRUCTORS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_20_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AMyStandBase(AMyStandBase&&) = delete; \
 	AMyStandBase(const AMyStandBase&) = delete; \
@@ -50,13 +50,13 @@ public: \
 	NO_API virtual ~AMyStandBase();
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_15_PROLOG
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_18_GENERATED_BODY \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_17_PROLOG
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_18_INCLASS_NO_PURE_DECLS \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_18_ENHANCED_CONSTRUCTORS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_20_INCLASS_NO_PURE_DECLS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

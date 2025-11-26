@@ -12,6 +12,7 @@ bool UCharacterStateComponent::CanEnterState(EState NewState) const
     {
     case EState::Idle:
     case EState::Walking:
+    case EState::ParryStartup:
         return true;
 
     case EState::ChargingBeam:
@@ -31,20 +32,32 @@ void UCharacterStateComponent::SetState(EState NewState)
 {
     if (!CanEnterState(NewState))
     {
-        UE_LOG(LogTemp, Warning, TEXT("Impossible de changer d'état vers %d (état actuel : %d)"),
+        UE_LOG(LogTemp, Warning, TEXT("UCharacterStateComponent::SetState Impossible de changer d'état vers %d (état actuel : %d)"),
             (uint8)NewState, (uint8)CurrentState);
         return;
     }
 
     CurrentState = NewState;
 
-    UE_LOG(LogTemp, Warning, TEXT("Nouvel état : %s"),
+    UE_LOG(LogTemp, Warning, TEXT("UCharacterStateComponent::SetState Nouvel état : %s"),
         *UEnum::GetValueAsString(CurrentState));
 }
 
 void UCharacterStateComponent::ResetState()
 {
     CurrentState = EState::Idle;
+}
+
+bool UCharacterStateComponent::TryResolveDefence(AActor* Target, const FAttackData& AttackData, const FHitResult& Hit)
+{
+    UCharacterStateComponent* State = Target->FindComponentByClass<UCharacterStateComponent>();
+    if (!State)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("UCharacterStateComponent::TryResolveDefence --> State NULL"));
+        return false;
+    }
+    return true;
+
 }
 
 bool UCharacterStateComponent::IsBeamActive() const

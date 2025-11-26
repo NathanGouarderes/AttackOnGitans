@@ -21,13 +21,13 @@ FORCENOINLINE UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus()
 			SingletonFuncArray,
 			UE_ARRAY_COUNT(SingletonFuncArray),
 			PKG_CompiledIn | 0x00000000,
-			0xC7A17819,
-			0x9B80E416,
+			0x453D805B,
+			0x9A2E777D,
 			METADATA_PARAMS(0, nullptr)
 		};
 		UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_Game2DCPlusPlus.OuterSingleton, PackageParams);
 	}
 	return Z_Registration_Info_UPackage__Script_Game2DCPlusPlus.OuterSingleton;
 }
-static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Game2DCPlusPlus(Z_Construct_UPackage__Script_Game2DCPlusPlus, TEXT("/Script/Game2DCPlusPlus"), Z_Registration_Info_UPackage__Script_Game2DCPlusPlus, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xC7A17819, 0x9B80E416));
+static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Game2DCPlusPlus(Z_Construct_UPackage__Script_Game2DCPlusPlus, TEXT("/Script/Game2DCPlusPlus"), Z_Registration_Info_UPackage__Script_Game2DCPlusPlus, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x453D805B, 0x9A2E777D));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

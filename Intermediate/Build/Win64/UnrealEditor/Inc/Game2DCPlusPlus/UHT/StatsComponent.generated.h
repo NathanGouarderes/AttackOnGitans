@@ -15,18 +15,20 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FCharacterData;
 
 // ********** Begin Class UStatsComponent **********************************************************
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execIsDead); \
 	DECLARE_FUNCTION(execHeal); \
-	DECLARE_FUNCTION(execApplyDamages);
+	DECLARE_FUNCTION(execApplyDamages); \
+	DECLARE_FUNCTION(execInitializeCharacterData);
 
 
 struct Z_Construct_UClass_UStatsComponent_Statics;
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UStatsComponent_NoRegister();
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUStatsComponent(); \
 	friend struct ::Z_Construct_UClass_UStatsComponent_Statics; \
@@ -37,7 +39,7 @@ public: \
 	DECLARE_SERIALIZER(UStatsComponent)
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_15_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	UStatsComponent(UStatsComponent&&) = delete; \
 	UStatsComponent(const UStatsComponent&) = delete; \
@@ -47,13 +49,13 @@ public: \
 	NO_API virtual ~UStatsComponent();
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_11_PROLOG
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_14_GENERATED_BODY \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_12_PROLOG
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_14_INCLASS_NO_PURE_DECLS \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_14_ENHANCED_CONSTRUCTORS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_StatsComponent_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

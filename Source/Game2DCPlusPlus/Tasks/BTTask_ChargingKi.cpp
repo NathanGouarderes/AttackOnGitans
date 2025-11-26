@@ -49,9 +49,9 @@ void UBTTask_ChargingKi::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* Node
 	//if(!Enemy->AbilitiesComponent->bIsChargingBeam || )
 	Enemy->KiComponent->LoadKiAI(DeltaSeconds);
 
-	if (Enemy->StatsComponent->CurrentKi >= (Enemy->StatsComponent->MaxKi * 0.7))
+	if (Enemy->StatsComponent->CurrentKi >= (Enemy->StatsComponent->CharacterStats.MaxKi * 0.7))
 	{
-		Enemy->StatsComponent->CurrentKi = Enemy->StatsComponent->MaxKi;
+		Enemy->StatsComponent->CurrentKi = Enemy->StatsComponent->CharacterStats.MaxKi;
 		Enemy->KiComponent->StopChargingKi();
 		UE_LOG(LogTemp, Warning, TEXT("Ennemi a terminé de charger son Ki"));
 		FinishLatentTask(OwnerComp, EBTNodeResult::Succeeded);
@@ -59,7 +59,7 @@ void UBTTask_ChargingKi::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* Node
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("EnemiKi : %f\nEnemiMaxKi :%f\n"), Enemy->StatsComponent->CurrentKi, Enemy->StatsComponent->MaxKi);
+		UE_LOG(LogTemp, Warning, TEXT("EnemiKi : %f\nEnemiMaxKi :%f\n"), Enemy->StatsComponent->CurrentKi, Enemy->StatsComponent->CharacterStats.MaxKi);
 	}
 
 

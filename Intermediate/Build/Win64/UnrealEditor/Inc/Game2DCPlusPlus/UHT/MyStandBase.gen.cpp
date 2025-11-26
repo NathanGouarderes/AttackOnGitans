@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeMyStandBase() {}
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_UDataAsset_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
@@ -280,10 +281,12 @@ struct Z_Construct_UClass_AMyStandBase_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Abilities/MyStandBase.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OwnerCharacter_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StandDataTable_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Stand" },
 		{ "ModuleRelativePath", "Abilities/MyStandBase.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StandDataTable_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StandDataAsset_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Stand" },
 		{ "ModuleRelativePath", "Abilities/MyStandBase.h" },
@@ -293,14 +296,18 @@ struct Z_Construct_UClass_AMyStandBase_Statics
 		{ "Category", "Stand" },
 		{ "ModuleRelativePath", "Abilities/MyStandBase.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OwnerCharacter_MetaData[] = {
+		{ "ModuleRelativePath", "Abilities/MyStandBase.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_StandAbilitiesComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_StandAnimationComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_StandCombatComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_FlipbookComponent;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_OwnerCharacter;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_StandDataTable;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_StandDataAsset;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_StandData;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_OwnerCharacter;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -318,17 +325,19 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyStandBase_S
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyStandBase_Statics::NewProp_StandAnimationComponent = { "StandAnimationComponent", nullptr, (EPropertyFlags)0x00200800000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyStandBase, StandAnimationComponent), Z_Construct_UClass_UStandAnimationComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StandAnimationComponent_MetaData), NewProp_StandAnimationComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyStandBase_Statics::NewProp_StandCombatComponent = { "StandCombatComponent", nullptr, (EPropertyFlags)0x00200800000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyStandBase, StandCombatComponent), Z_Construct_UClass_UStandCombatComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StandCombatComponent_MetaData), NewProp_StandCombatComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyStandBase_Statics::NewProp_FlipbookComponent = { "FlipbookComponent", nullptr, (EPropertyFlags)0x0020080000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyStandBase, FlipbookComponent), Z_Construct_UClass_UPaperFlipbookComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FlipbookComponent_MetaData), NewProp_FlipbookComponent_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyStandBase_Statics::NewProp_OwnerCharacter = { "OwnerCharacter", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyStandBase, OwnerCharacter), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OwnerCharacter_MetaData), NewProp_OwnerCharacter_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyStandBase_Statics::NewProp_StandDataTable = { "StandDataTable", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyStandBase, StandDataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StandDataTable_MetaData), NewProp_StandDataTable_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyStandBase_Statics::NewProp_StandData = { "StandData", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyStandBase, StandData), Z_Construct_UScriptStruct_FStandData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StandData_MetaData), NewProp_StandData_MetaData) }; // 3129778164
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyStandBase_Statics::NewProp_StandDataTable = { "StandDataTable", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyStandBase, StandDataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StandDataTable_MetaData), NewProp_StandDataTable_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyStandBase_Statics::NewProp_StandDataAsset = { "StandDataAsset", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyStandBase, StandDataAsset), Z_Construct_UClass_UDataAsset_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StandDataAsset_MetaData), NewProp_StandDataAsset_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyStandBase_Statics::NewProp_StandData = { "StandData", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyStandBase, StandData), Z_Construct_UScriptStruct_FStandData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StandData_MetaData), NewProp_StandData_MetaData) }; // 1741236492
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyStandBase_Statics::NewProp_OwnerCharacter = { "OwnerCharacter", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyStandBase, OwnerCharacter), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OwnerCharacter_MetaData), NewProp_OwnerCharacter_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyStandBase_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyStandBase_Statics::NewProp_StandAbilitiesComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyStandBase_Statics::NewProp_StandAnimationComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyStandBase_Statics::NewProp_StandCombatComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyStandBase_Statics::NewProp_FlipbookComponent,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyStandBase_Statics::NewProp_OwnerCharacter,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyStandBase_Statics::NewProp_StandDataTable,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyStandBase_Statics::NewProp_StandDataAsset,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyStandBase_Statics::NewProp_StandData,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyStandBase_Statics::NewProp_OwnerCharacter,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyStandBase_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMyStandBase_Statics::DependentSingletons[])() = {
@@ -367,10 +376,10 @@ AMyStandBase::~AMyStandBase() {}
 struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyStandBase, AMyStandBase::StaticClass, TEXT("AMyStandBase"), &Z_Registration_Info_UClass_AMyStandBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyStandBase), 4065317569U) },
+		{ Z_Construct_UClass_AMyStandBase, AMyStandBase::StaticClass, TEXT("AMyStandBase"), &Z_Registration_Info_UClass_AMyStandBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyStandBase), 2267634447U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h__Script_Game2DCPlusPlus_2639820887(TEXT("/Script/Game2DCPlusPlus"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h__Script_Game2DCPlusPlus_2190723282(TEXT("/Script/Game2DCPlusPlus"),
 	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Abilities_MyStandBase_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -23,6 +23,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 // ********** Begin Enum EState ********************************************************************
 #define FOREACH_ENUM_ESTATE(op) \
 	op(EState::Idle) \
+	op(EState::ParryStartup) \
+	op(EState::ParryActive) \
+	op(EState::ParryRecovery) \
+	op(EState::DodgeIFrames) \
+	op(EState::Staggered) \
+	op(EState::WallImpact) \
+	op(EState::Buried) \
+	op(EState::LaunchedAirborne) \
 	op(EState::Walking) \
 	op(EState::Jumping) \
 	op(EState::Dodging) \
@@ -31,6 +39,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	op(EState::ChargingKi) \
 	op(EState::ChargingBeam) \
 	op(EState::FiringBeam) \
+	op(EState::RecoverBeam) \
 	op(EState::UsingMagic) \
 	op(EState::UsingStand) \
 	op(EState::Stunned) \

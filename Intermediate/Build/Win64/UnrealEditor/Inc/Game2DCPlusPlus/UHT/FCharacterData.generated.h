@@ -18,7 +18,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin ScriptStruct FCharacterData ****************************************************
 struct Z_Construct_UScriptStruct_FCharacterData_Statics;
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FCharacterData_h_10_GENERATED_BODY \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FCharacterData_h_11_GENERATED_BODY \
 	friend struct ::Z_Construct_UScriptStruct_FCharacterData_Statics; \
 	GAME2DCPLUSPLUS_API static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;

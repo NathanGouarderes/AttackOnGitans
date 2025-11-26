@@ -107,7 +107,7 @@ struct Z_Construct_UScriptStruct_FStandData_Statics
 	}
 	static const UECodeGen_Private::FStructParams StructParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FStandData_Statics::NewProp_Base = { "Base", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FStandData, Base), Z_Construct_UScriptStruct_FAttackData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Base_MetaData), NewProp_Base_MetaData) }; // 1947728159
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FStandData_Statics::NewProp_Base = { "Base", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FStandData, Base), Z_Construct_UScriptStruct_FAttackData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Base_MetaData), NewProp_Base_MetaData) }; // 3263392156
 const UECodeGen_Private::FSoftObjectPropertyParams Z_Construct_UScriptStruct_FStandData_Statics::NewProp_StandAttackSet = { "StandAttackSet", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::SoftObject, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FStandData, StandAttackSet), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StandAttackSet_MetaData), NewProp_StandAttackSet_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FStandData_Statics::NewProp_FollowingDistance = { "FollowingDistance", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FStandData, FollowingDistance), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FollowingDistance_MetaData), NewProp_FollowingDistance_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FStandData_Statics::NewProp_FollowingSpeed = { "FollowingSpeed", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FStandData, FollowingSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FollowingSpeed_MetaData), NewProp_FollowingSpeed_MetaData) };
@@ -161,10 +161,10 @@ UScriptStruct* Z_Construct_UScriptStruct_FStandData()
 struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FStandData_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FStandData::StaticStruct, Z_Construct_UScriptStruct_FStandData_Statics::NewStructOps, TEXT("StandData"), &Z_Registration_Info_UScriptStruct_FStandData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FStandData), 3129778164U) },
+		{ FStandData::StaticStruct, Z_Construct_UScriptStruct_FStandData_Statics::NewStructOps, TEXT("StandData"), &Z_Registration_Info_UScriptStruct_FStandData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FStandData), 1741236492U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FStandData_h__Script_Game2DCPlusPlus_1970819660(TEXT("/Script/Game2DCPlusPlus"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FStandData_h__Script_Game2DCPlusPlus_922969902(TEXT("/Script/Game2DCPlusPlus"),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FStandData_h__Script_Game2DCPlusPlus_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FStandData_h__Script_Game2DCPlusPlus_Statics::ScriptStructInfo),
 	nullptr, 0);

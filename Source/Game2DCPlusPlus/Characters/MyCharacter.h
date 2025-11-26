@@ -5,10 +5,8 @@
 #include "../MyFistBase.h"
 #include "../Interface/UFlipbookProviderInterface.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "../Components/UCharacterStateComponent.h"
-#include "../Components/StatsComponent.h"
-#include "../Components/StandComponent.h"
-#include "../Data/FCharacterData.h"
+#include "../Data/Interfaces/FighterInterface.h"
+#include "../FighterCharacters.h"
 #include "MyCharacter.generated.h"
 
 class UCharacterCombatComponent;
@@ -21,7 +19,7 @@ class UCameraComponent;
 class UBoxComponent;
 
 UCLASS()
-class GAME2DCPLUSPLUS_API AMyCharacter : public APaperCharacter, public IFlipbookProviderInterface
+class GAME2DCPLUSPLUS_API AMyCharacter : public AFighterCharacters, public IFlipbookProviderInterface, public IFighterInterface
 {
 	GENERATED_BODY()
 
@@ -45,6 +43,11 @@ public:
 	void InitializeInputHandler();
 	virtual void Landed(const FHitResult& Hit) override;
 	virtual void Jump() override;
+	
+	virtual UStatsComponent* GetStatsComponent_Implementation() const override { return StatsComponent; }
+	virtual UCharacterKiComponent* GetKiComponent_Implementation() const override { return KiComponent; }
+	virtual UStandComponent* GetStandComponent_Implementation() const override { return StandComponent; }
+	virtual FCharacterData GetCharacterData_Implementation() const override { return CharacterData; }
 
 
 	bool bIsWalking;
@@ -55,38 +58,28 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Visuals")
 	UPaperFlipbookComponent* CharacterFlipbook;
 
+	/*
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UBoxComponent* HeadHitBox;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UBoxComponent* BodyHitbox;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UBoxComponent* LegHitBox;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UBoxComponent* ArmHitBox;
+	*/
+
 	/** Composants principaux **/
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UCharacterCombatComponent* CombatComponent;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UCharacterKiComponent* KiComponent;
-
-	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	//UCharacterAnimationComponent* MyAnimationComponent;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UCharacterAbilitiesComponent* AbilitiesComponent;
+	
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UCharacterInputComponent* InputHandler;
 
 	/** Composant graphique **/
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UCharacterAnimationComponent* CharacterAnimationComponent;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UStatsComponent* StatsComponent;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UCharacterStateComponent* StateComponent;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UStandComponent* StandComponent;
-
-	TSoftObjectPtr<UDataTable> CharacterDataTable;
-
-	FCharacterData CharacterData;
+	
 
 	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Visuals")
 	//UPaperFlipbookComponent* SwordFlipbook;
@@ -105,12 +98,4 @@ public:
 	//AMyWeaponBase* EquipedWeapon;
 
 	TArray<USceneComponent*> SceneComponents;
-
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character Stat")
-
-	float CharacterMaxKi;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character Stat")
-	float CharacterKiLoadSpeed;
 };

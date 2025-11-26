@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "FAttackData.h"
 #include "FProjectileData.generated.h"
 
 UENUM(BlueprintType)

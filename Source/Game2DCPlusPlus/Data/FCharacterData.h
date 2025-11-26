@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataTable.h"
+#include "FAttackData.h"
 #include "FCharacterData.generated.h"
 
 USTRUCT(BlueprintType)
@@ -28,7 +29,16 @@ struct FCharacterData : public FTableRowBase
     bool bIsManaUser = false;
 
     UPROPERTY(EditAnywhere, BlueprintReadOnly)
+    bool bIsPlayer = false;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly)
+    bool bIsEnnemy = false;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly)
     TSoftClassPtr<class AMyStandBase> StandClass;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly)
+    TSoftObjectPtr<UDataTable> AttackDataSet;
 
     //Des données supplémentaires
     UPROPERTY(EditAnywhere, BlueprintReadOnly)

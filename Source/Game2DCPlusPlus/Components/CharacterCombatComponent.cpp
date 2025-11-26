@@ -35,13 +35,44 @@ void UCharacterCombatComponent::BeginPlay()
 	Super::BeginPlay();
 
 	OwnerCharacter = Cast<ACharacter>(GetOwner());
+	CharacterData = IFighterInterface::Execute_GetCharacterData(OwnerCharacter);
+	UE_LOG(LogTemp, Warning, TEXT("UCharacterCombatComponent::BeginPlay() --> CharacterData Name : %s"), *CharacterData.CharacterName.ToString());
+	
+	/*
+	if (CharacterData.AttackDataSet.IsNull())
+	{
+		UE_LOG(LogTemp, Error, TEXT("UCharacterCombatComponent::BeginPlay() ⚠️ CharacterData.AttackDataSet est NULL dans la DataTable CharacterData !"));
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("UCharacterCombatComponent::BeginPlay() --> AttackDataSet Path = %s"), *CharacterData.AttackDataSet.ToSoftObjectPath().ToString());
+		UE_LOG(LogTemp, Warning, TEXT("UCharacterCombatComponent::BeginPlay() --> Chargement de la ligne de CharacterData : %s"), *CharacterData.CharacterName.ToString());
 
+	}
+
+	UE_LOG(LogTemp, Warning, TEXT("void UCharacterCombatComponent::BeginPlay() --> CharacterData : Name -> %s !"), *CharacterData.CharacterName.ToString());
+
+	UDataTable* AttackData = CharacterData.AttackDataSet.LoadSynchronous();
+	TArray<FAttackData*> AllAttackRows;
+	if (!AttackData)
+	{
+		UE_LOG(LogTemp, Error, TEXT("void UCharacterCombatComponent::BeginPlay()❌ AttackData NULL !"));
+		return;
+	}
+
+	const UScriptStruct* RowStruct = AttackData->GetRowStruct();
+	UE_LOG(LogTemp, Warning, TEXT("void UCharacterCombatComponent::BeginPlay() 🔍 RowStruct trouvé : %s (Attendu : %s)"),
+
+
+		*GetNameSafe(RowStruct), *FAttackData::StaticStruct()->GetName());
+		* 
+		* */
 	ComboStep = 0;
 
 	StateComponent = OwnerCharacter->FindComponentByClass<UCharacterStateComponent>();
 	if(!StateComponent)
 	{
-		UE_LOG(LogTemp, Error, TEXT("CharacterCombatComponent: StateComponent non trouve !"));
+		UE_LOG(LogTemp, Error, TEXT("void UCharacterCombatComponent::BeginPlay(): StateComponent non trouve !"));
 		return;
 	}
 
@@ -52,11 +83,11 @@ void UCharacterCombatComponent::BeginPlay()
 		
 		if (!AnimationComponent)
 		{
-			UE_LOG(LogTemp, Error, TEXT("CharacterCombatComponent: AnimationComponent non trouve !"));
+			UE_LOG(LogTemp, Error, TEXT("void UCharacterCombatComponent::BeginPlay(): AnimationComponent non trouve !"));
 		}
 		if (!AbilitiesComponent)
 		{
-			UE_LOG(LogTemp, Error, TEXT("CharacterCombatComponent: AbilitiesComponent non trouve !"));
+			UE_LOG(LogTemp, Error, TEXT("void UCharacterCombatComponent::BeginPlay(): AbilitiesComponent non trouve !"));
 		}
 	}	
 }
@@ -83,8 +114,77 @@ void UCharacterCombatComponent::TickComponent(float DeltaTime, ELevelTick TickTy
 	}
 }
 
+void UCharacterCombatComponent::PerformAttack()
+{
+	if (!OwnerCharacter)
+	{
+		UE_LOG(LogTemp, Error, TEXT("UCharacterCombatComponent::PerformAttack() --> OwnerCharacter NULL !"));
+		return;
+	}
+	if (CharacterData.CharacterName.IsNone() || CharacterData.AttackDataSet.IsNull())
+	{
+		UE_LOG(LogTemp, Error, TEXT("UCharacterCombatComponent::PerformAttack() --> CharacterData invalide : StandUser sans StandClass"));
+		return;
+	}
+
+	
+	for (FAttackData* Attack : CachedAttacks)
+	{
+		//UE_LOG(LogTemp, Warning, TEXT("UCharacterCombatComponent::PerformAttack() --> Attack->AttackName : %s"), *Attack->AttackName.ToString());
+		if (IsCharacterMoving() && !Attack->bRequiresMovement)
+		{
+			continue;
+		}
+		if (!IsCharacterMoving() && Attack->bRequiresMovement)
+		{
+			continue;
+		}
+
+		UE_LOG(LogTemp, Warning, TEXT("UCharacterCombatComponent::PerformAttack() --> Attaque trouvée pour ce contexte : %s"), *Attack->AttackName.ToString());
+		AnimationComponent->PlayAnimation(Attack->Animation.LoadSynchronous());
+
+	}
+}
+
+void UCharacterCombatComponent::InitializeCombat(const FCharacterData& InData)
+{
+	CharacterData = InData;
+	if (!CharacterData.AttackDataSet.IsNull())
+	{
+		if (UDataTable* AttackDT = CharacterData.AttackDataSet.LoadSynchronous())
+		{
+			TArray<FAttackData*> Rows;
+			AttackDT->GetAllRows(TEXT("InitCombat"), Rows);
+			CachedAttacks = Rows;
+			UE_LOG(LogTemp, Warning, TEXT("UCharacterCombatComponent::InitializeCombat --> ✅ %d attaques chargées"), CachedAttacks.Num());
+		}
+	}
+
+}
+
+bool UCharacterCombatComponent::IsCharacterMoving() const
+{
+	if (!OwnerCharacter)
+	{
+		UE_LOG(LogTemp, Error, TEXT("UCharacterCombatComponent::IsCharacterMoving --> OwnerCharacter NULL"));
+		return false;
+	}
+
+	const FVector Velocity = OwnerCharacter->GetVelocity();
+	if (FMath::Abs(Velocity.X) > 0.0f)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+	
+}
+
 void UCharacterCombatComponent::LightAttack()
 {
+	PerformAttack();
 	if (bIsAttacking)
 	{
 		//UE_LOG(LogTemp, Warning, TEXT("⚠️ LightAttack ignorée : Une attaque est déjà en cours, ajoutée à la queue"));
@@ -105,10 +205,17 @@ void UCharacterCombatComponent::LightAttack()
 
 void UCharacterCombatComponent::ExecuteLightAttack()
 {
+
+	if (!StateComponent)
+	{
+		UE_LOG(LogTemp, Error, TEXT("UCharacterCombatComponent::ExecuteLightAttack() --> StateComponent NULL !"));
+		return;
+	}
+
 	StateComponent->SetState(EState::Attacking);
     bIsAttacking = true;
 
-	UE_LOG(LogTemp, Warning, TEXT("ExectureLightAttack"));
+	UE_LOG(LogTemp, Warning, TEXT(" UCharacterCombatComponent::ExecuteLightAttack() ExectureLightAttack"));
 
     if (!AttackQueue.IsEmpty())
     {
@@ -204,7 +311,7 @@ void UCharacterCombatComponent::PlayComboAnimation()
 {
 	if (!AnimationComponent)
 	{
-		UE_LOG(LogTemp, Error, TEXT("PlayComboAnimation : AnimationComponent NULL !"));
+		UE_LOG(LogTemp, Error, TEXT("UCharacterCombatComponent::PlayComboAnimation() : AnimationComponent NULL !"));
 		return;
 	}
 
@@ -215,7 +322,7 @@ void UCharacterCombatComponent::PlayComboAnimation()
 	
 	if (!AttackDataTable)
 	{
-		UE_LOG(LogTemp, Error, TEXT("PlayComboAnimation : DataTable introuvable via SoftObjectPtr !"));
+		UE_LOG(LogTemp, Error, TEXT("UCharacterCombatComponent::PlayComboAnimation() : DataTable introuvable via SoftObjectPtr !"));
 		return;
 	}
 
@@ -226,12 +333,12 @@ void UCharacterCombatComponent::PlayComboAnimation()
 		AnimationComponent->PlayAttackAnimation(*AttackData, AnimationComponent->CharacterRole);
 
 		CurrentAttackData = *AttackData;
-		CurrentAttackFlipbook = AttackData->PlayerAnimation.LoadSynchronous();
-		UE_LOG(LogTemp, Warning, TEXT("PlayComboAnimation : Animation en cours : %s"), *RowName.ToString());
+		CurrentAttackFlipbook = AttackData->Animation.LoadSynchronous();
+		UE_LOG(LogTemp, Warning, TEXT("UCharacterCombatComponent::PlayComboAnimation() : Animation en cours : %s"), *RowName.ToString());
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("PlayComboAnimation : Aucune ligne trouvée pour %s"), *RowName.ToString());
+		UE_LOG(LogTemp, Error, TEXT("UCharacterCombatComponent::PlayComboAnimation() : Aucune ligne trouvée pour %s"), *RowName.ToString());
 	}
 }
 
@@ -241,7 +348,7 @@ void UCharacterCombatComponent::OnSwordOverlap(UPrimitiveComponent* OverlappedCo
 {
 	if (!AbilitiesComponent)
 	{
-		UE_LOG(LogTemp, Error, TEXT("CharacterCombatComponent: AbilitiesComponent est NULL, impossible d'appliquer des dégâts !"));
+		UE_LOG(LogTemp, Error, TEXT("CharacterCombatComponent::OnSwordOverlap: AbilitiesComponent est NULL, impossible d'appliquer des dégâts !"));
 		return;
 	}
 
@@ -251,12 +358,12 @@ void UCharacterCombatComponent::OnSwordOverlap(UPrimitiveComponent* OverlappedCo
 		UStatsComponent* TargetStats = OtherActor->FindComponentByClass<UStatsComponent>();
 		if (!TargetStats)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("❌ Aucun StatsComponent trouvé sur l’acteur touché : %s"), *OtherActor->GetName());
+			UE_LOG(LogTemp, Warning, TEXT("CharacterCombatComponent::OnSwordOverlap ❌ Aucun StatsComponent trouvé sur l’acteur touché : %s"), *OtherActor->GetName());
 			return;
 		}
 
 		float Damages = AbilitiesComponent->SwordDamages * AbilitiesComponent->Strength;
-		UE_LOG(LogTemp, Warning, TEXT("🎯 Impact sur %s, dégâts = %.2f"), *OtherActor->GetName(), Damages);
+		UE_LOG(LogTemp, Warning, TEXT("CharacterCombatComponent::OnSwordOverlap 🎯 Impact sur %s, dégâts = %.2f"), *OtherActor->GetName(), Damages);
 		TargetStats->ApplyDamages(Damages);
 	}
 }

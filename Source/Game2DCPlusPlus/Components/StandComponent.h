@@ -26,13 +26,17 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	void SummonStand();
+	void UnsumonStand();
 
 	UPROPERTY(EditAnywhere, Category = "Stand")
 	TSubclassOf<AMyStandBase> StandClass;
 
 	AActor* OwnerCharacter;
 
+	AMyStandBase* Stand;
+
 	bool bIsStandOut;
+	bool bIsStandComingBack = false;
 
 		
 };

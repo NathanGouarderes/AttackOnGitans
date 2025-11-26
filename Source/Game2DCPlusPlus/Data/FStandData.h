@@ -8,6 +8,8 @@
 #include "FStandData.generated.h"
 
 class AMyStandBase;
+class UPaperFlipbook;
+class UDataTable;
 
 USTRUCT(BlueprintType)
 struct FStandData

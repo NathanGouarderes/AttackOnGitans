@@ -20,19 +20,19 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct Z_Construct_UClass_AMyCharacter_Statics;
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AMyCharacter_NoRegister();
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_MyCharacter_h_26_INCLASS_NO_PURE_DECLS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_MyCharacter_h_24_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMyCharacter(); \
 	friend struct ::Z_Construct_UClass_AMyCharacter_Statics; \
 	static UClass* GetPrivateStaticClass(); \
 	friend GAME2DCPLUSPLUS_API UClass* ::Z_Construct_UClass_AMyCharacter_NoRegister(); \
 public: \
-	DECLARE_CLASS2(AMyCharacter, APaperCharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Game2DCPlusPlus"), Z_Construct_UClass_AMyCharacter_NoRegister) \
+	DECLARE_CLASS2(AMyCharacter, AFighterCharacters, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Game2DCPlusPlus"), Z_Construct_UClass_AMyCharacter_NoRegister) \
 	DECLARE_SERIALIZER(AMyCharacter) \
 	virtual UObject* _getUObject() const override { return const_cast<AMyCharacter*>(this); }
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_MyCharacter_h_26_ENHANCED_CONSTRUCTORS \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_MyCharacter_h_24_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AMyCharacter(AMyCharacter&&) = delete; \
 	AMyCharacter(const AMyCharacter&) = delete; \
@@ -42,12 +42,12 @@ public: \
 	NO_API virtual ~AMyCharacter();
 
 
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_MyCharacter_h_23_PROLOG
-#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_MyCharacter_h_26_GENERATED_BODY \
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_MyCharacter_h_21_PROLOG
+#define FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_MyCharacter_h_24_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_MyCharacter_h_26_INCLASS_NO_PURE_DECLS \
-	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_MyCharacter_h_26_ENHANCED_CONSTRUCTORS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_MyCharacter_h_24_INCLASS_NO_PURE_DECLS \
+	FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Characters_MyCharacter_h_24_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

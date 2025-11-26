@@ -26,25 +26,6 @@ AMyEnemyBase::AMyEnemyBase()
     GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_BEAMOBJECT, ECR_Overlap);
     RootComponent = GetCapsuleComponent();
 
-    //Combat Component
-    CombatComponent = CreateDefaultSubobject<UCharacterCombatComponent>(TEXT("CombatComponent"));
-
-    //AnimationComponent
-    AnimationComponent = CreateDefaultSubobject<UCharacterAnimationComponent>(TEXT("AnimationComponent"));
-
-    //StatsComponent
-    StatsComponent = CreateDefaultSubobject<UStatsComponent>(TEXT("StatsComponent"));
-
-    //KiComponent
-    KiComponent = CreateDefaultSubobject<UCharacterKiComponent>(TEXT("KiComponent"));
-
-    //AbilitiesComponent
-    AbilitiesComponent = CreateDefaultSubobject<UCharacterAbilitiesComponent>(TEXT("AbilitiesComponent"));
-
-    StateComponent = CreateDefaultSubobject<UCharacterStateComponent>(TEXT("StateComponent"));
-
-
-
     // PaperFlipbook
     EnemyFlipbook = CreateDefaultSubobject<UPaperFlipbookComponent>(TEXT("EnemyFlipbook"));
     EnemyFlipbook->SetupAttachment(RootComponent);
@@ -66,7 +47,8 @@ AMyEnemyBase::AMyEnemyBase()
 
     AIControllerClass = AAMyEnemyAIController::StaticClass();
     AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
-    Health = 1000.0f;
+
+    GetDatasFromCharacterDataTable();
     // Initialiser les variables
 }
 
@@ -81,12 +63,24 @@ void AMyEnemyBase::BeginPlay()
     GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AMyEnemyBase::OnOverlapBegin);
     GetCharacterMovement()->MaxWalkSpeed = 300.0f;
 
+    SetDatasFromCharacterDataTable("EnemyBase");
+
     // --- Initialisation des stats ---
+
+    if (LifeCycleComponent)
+    {
+        LifeCycleComponent->StartLifeCycle();
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("void AMyCharacter::BeginPlay --> ❌ Aucun LifecycleComponent sur %s"), *GetName());
+    }
+
     if (StatsComponent)
     {
-        StatsComponent->MaxKi = 500.0f;
-        StatsComponent->KiLoadSpeed = 200.0f;
-        StatsComponent->CurrentHealth = StatsComponent->MaxHealth;
+        //StatsComponent->CharacterStats.MaxKi;
+        //StatsComponent->CharacterStats.KiLoadSpeed;
+        //StatsComponent->CurrentHealth = StatsComponent->CharacterStats.MaxHealth;
     }
     else
     {
@@ -98,10 +92,10 @@ void AMyEnemyBase::BeginPlay()
     if (KiComponent)
     {
         // Étape 1 : relier Ki ↔ Stats
-        KiComponent->InitializeStatsComponent(StatsComponent);
+        //KiComponent->InitializeStatsComponent(StatsComponent);
 
         // Étape 2 : activer le système
-        KiComponent->InitializeKiSystem();
+        //KiComponent->InitializeKiSystem();
     }
     else
     {
@@ -113,8 +107,8 @@ void AMyEnemyBase::BeginPlay()
     if (AbilitiesComponent)
     {
         // Étape 3 : relier Abilities ↔ Ki et Stats
-        AbilitiesComponent->InitializeAllComponents(KiComponent, StatsComponent);
-        UE_LOG(LogTemp, Warning, TEXT("AbilitiesComponent correctement initialisé pour %s"), *GetName());
+        //AbilitiesComponent->InitializeAllComponents(KiComponent, StatsComponent);
+        //UE_LOG(LogTemp, Warning, TEXT("AbilitiesComponent correctement initialisé pour %s"), *GetName());
     }
     else
     {

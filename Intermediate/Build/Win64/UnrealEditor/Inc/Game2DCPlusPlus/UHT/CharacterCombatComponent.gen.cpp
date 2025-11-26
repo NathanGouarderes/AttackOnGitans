@@ -8,6 +8,7 @@
 #include "CharacterCombatComponent.h"
 #include "Engine/HitResult.h"
 #include "Game2DCPlusPlus/Data/FAttackData.h"
+#include "Game2DCPlusPlus/Data/FCharacterData.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
@@ -25,6 +26,7 @@ GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterCombatComponent();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterCombatComponent_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterStateComponent_NoRegister();
 GAME2DCPLUSPLUS_API UScriptStruct* Z_Construct_UScriptStruct_FAttackData();
+GAME2DCPLUSPLUS_API UScriptStruct* Z_Construct_UScriptStruct_FCharacterData();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbook_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
 // ********** End Cross Module References **********************************************************
@@ -49,7 +51,7 @@ struct Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::NewProp_AttackData = { "AttackData", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterCombatComponent_eventDoWeaponTrace_Parms, AttackData), Z_Construct_UScriptStruct_FAttackData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackData_MetaData), NewProp_AttackData_MetaData) }; // 1947728159
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::NewProp_AttackData = { "AttackData", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterCombatComponent_eventDoWeaponTrace_Parms, AttackData), Z_Construct_UScriptStruct_FAttackData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackData_MetaData), NewProp_AttackData_MetaData) }; // 3263392156
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace_Statics::NewProp_AttackData,
 };
@@ -308,6 +310,9 @@ struct Z_Construct_UClass_UCharacterCombatComponent_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Components/CharacterCombatComponent.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CharacterData_MetaData[] = {
+		{ "ModuleRelativePath", "Components/CharacterCombatComponent.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentAttackFlipbook_MetaData[] = {
 		{ "ModuleRelativePath", "Components/CharacterCombatComponent.h" },
 	};
@@ -333,6 +338,7 @@ struct Z_Construct_UClass_UCharacterCombatComponent_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AbilitiesComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AnimationComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_StateComponent;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_CharacterData;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentAttackFlipbook;
 	static void NewProp_bIsAttacking_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsAttacking;
@@ -341,7 +347,7 @@ struct Z_Construct_UClass_UCharacterCombatComponent_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace, "DoWeaponTrace" }, // 4138964745
+		{ &Z_Construct_UFunction_UCharacterCombatComponent_DoWeaponTrace, "DoWeaponTrace" }, // 1358051331
 		{ &Z_Construct_UFunction_UCharacterCombatComponent_IsAttacking, "IsAttacking" }, // 1923942013
 		{ &Z_Construct_UFunction_UCharacterCombatComponent_OnSwordOverlap, "OnSwordOverlap" }, // 2118132951
 		{ &Z_Construct_UFunction_UCharacterCombatComponent_UpdateHitboxFromSockets, "UpdateHitboxFromSockets" }, // 3855058955
@@ -356,6 +362,7 @@ const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UCharacterCombatC
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_AbilitiesComponent = { "AbilitiesComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, AbilitiesComponent), Z_Construct_UClass_UCharacterAbilitiesComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AbilitiesComponent_MetaData), NewProp_AbilitiesComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_AnimationComponent = { "AnimationComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, AnimationComponent), Z_Construct_UClass_UCharacterAnimationComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AnimationComponent_MetaData), NewProp_AnimationComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_StateComponent = { "StateComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, StateComponent), Z_Construct_UClass_UCharacterStateComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StateComponent_MetaData), NewProp_StateComponent_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_CharacterData = { "CharacterData", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, CharacterData), Z_Construct_UScriptStruct_FCharacterData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CharacterData_MetaData), NewProp_CharacterData_MetaData) }; // 3358070478
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_CurrentAttackFlipbook = { "CurrentAttackFlipbook", nullptr, (EPropertyFlags)0x0114000000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, CurrentAttackFlipbook), Z_Construct_UClass_UPaperFlipbook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentAttackFlipbook_MetaData), NewProp_CurrentAttackFlipbook_MetaData) };
 void Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_bIsAttacking_SetBit(void* Obj)
 {
@@ -363,12 +370,13 @@ void Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_bIsAttacking_
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_bIsAttacking = { "bIsAttacking", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UCharacterCombatComponent), &Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_bIsAttacking_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsAttacking_MetaData), NewProp_bIsAttacking_MetaData) };
 const UECodeGen_Private::FSoftObjectPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_AttackDataTableAsset = { "AttackDataTableAsset", nullptr, (EPropertyFlags)0x0014000000010001, UECodeGen_Private::EPropertyGenFlags::SoftObject, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, AttackDataTableAsset), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackDataTableAsset_MetaData), NewProp_AttackDataTableAsset_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_CurrentAttackData = { "CurrentAttackData", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, CurrentAttackData), Z_Construct_UScriptStruct_FAttackData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentAttackData_MetaData), NewProp_CurrentAttackData_MetaData) }; // 1947728159
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_CurrentAttackData = { "CurrentAttackData", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterCombatComponent, CurrentAttackData), Z_Construct_UScriptStruct_FAttackData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentAttackData_MetaData), NewProp_CurrentAttackData_MetaData) }; // 3263392156
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UCharacterCombatComponent_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_CurrentComboStep,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_AbilitiesComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_AnimationComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_StateComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_CharacterData,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_CurrentAttackFlipbook,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_bIsAttacking,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterCombatComponent_Statics::NewProp_AttackDataTableAsset,
@@ -411,10 +419,10 @@ UCharacterCombatComponent::~UCharacterCombatComponent() {}
 struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCharacterCombatComponent, UCharacterCombatComponent::StaticClass, TEXT("UCharacterCombatComponent"), &Z_Registration_Info_UClass_UCharacterCombatComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterCombatComponent), 2187347354U) },
+		{ Z_Construct_UClass_UCharacterCombatComponent, UCharacterCombatComponent::StaticClass, TEXT("UCharacterCombatComponent"), &Z_Registration_Info_UClass_UCharacterCombatComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterCombatComponent), 4042109915U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h__Script_Game2DCPlusPlus_683213912(TEXT("/Script/Game2DCPlusPlus"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h__Script_Game2DCPlusPlus_2838828575(TEXT("/Script/Game2DCPlusPlus"),
 	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterCombatComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

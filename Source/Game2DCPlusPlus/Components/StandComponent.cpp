@@ -38,8 +38,7 @@ void UStandComponent::BeginPlay()
 void UStandComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	// ...
+	
 }
 
 void UStandComponent::SummonStand()
@@ -47,8 +46,7 @@ void UStandComponent::SummonStand()
 	if (bIsStandOut)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("SummonStand::SummonStand() --> Le stand est deja sorti. Il est donc rappelle"));
-		bIsStandOut = false;
-		//Rappeler le stand
+		UnsumonStand();		
 	}
 	else
 	{
@@ -64,7 +62,7 @@ void UStandComponent::SummonStand()
 
 		Params.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 		bIsStandOut = true;
-		AMyStandBase* Stand = GetWorld()->SpawnActor<AMyStandBase>(StandClass, SpawnLocation, SpawnRotation, SpawnParams);
+		Stand = GetWorld()->SpawnActor<AMyStandBase>(StandClass, SpawnLocation, SpawnRotation, SpawnParams);
 
 		if (Stand)
 		{
@@ -75,5 +73,18 @@ void UStandComponent::SummonStand()
 			UE_LOG(LogTemp, Error, TEXT("SummonStand::SummonStand() --> Stand NULL"));
 		}
 	}
+}
+
+void UStandComponent::UnsumonStand()
+{
+
+	if (!bIsStandOut)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("UnsumonStand() --> Stand déjà rappele."));
+		return;
+	}
+
+	bIsStandComingBack = true;
+	UE_LOG(LogTemp, Warning, TEXT("UnsumonStand() --> Stand rappelé, retour en cours"));
 }
 

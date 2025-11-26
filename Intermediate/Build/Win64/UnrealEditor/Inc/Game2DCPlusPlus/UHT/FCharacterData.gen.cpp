@@ -13,6 +13,7 @@ void EmptyLinkFunctionForGeneratedCodeFCharacterData() {}
 
 // ********** Begin Cross Module References ********************************************************
 COREUOBJECT_API UClass* Z_Construct_UClass_UClass_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FTableRowBase();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AMyStandBase_NoRegister();
 GAME2DCPLUSPLUS_API UScriptStruct* Z_Construct_UScriptStruct_FCharacterData();
@@ -57,7 +58,19 @@ struct Z_Construct_UScriptStruct_FCharacterData_Statics
 		{ "Category", "CharacterData" },
 		{ "ModuleRelativePath", "Data/FCharacterData.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bIsPlayer_MetaData[] = {
+		{ "Category", "CharacterData" },
+		{ "ModuleRelativePath", "Data/FCharacterData.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bIsEnnemy_MetaData[] = {
+		{ "Category", "CharacterData" },
+		{ "ModuleRelativePath", "Data/FCharacterData.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StandClass_MetaData[] = {
+		{ "Category", "CharacterData" },
+		{ "ModuleRelativePath", "Data/FCharacterData.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AttackDataSet_MetaData[] = {
 		{ "Category", "CharacterData" },
 		{ "ModuleRelativePath", "Data/FCharacterData.h" },
 	};
@@ -81,7 +94,12 @@ struct Z_Construct_UScriptStruct_FCharacterData_Statics
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsDevilFruitUser;
 	static void NewProp_bIsManaUser_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsManaUser;
+	static void NewProp_bIsPlayer_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsPlayer;
+	static void NewProp_bIsEnnemy_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsEnnemy;
 	static const UECodeGen_Private::FSoftClassPropertyParams NewProp_StandClass;
+	static const UECodeGen_Private::FSoftObjectPropertyParams NewProp_AttackDataSet;
 	static const UECodeGen_Private::FNamePropertyParams NewProp_StandName;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static void* NewStructOps()
@@ -111,7 +129,18 @@ void Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsManaUser_SetBi
 	((FCharacterData*)Obj)->bIsManaUser = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsManaUser = { "bIsManaUser", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FCharacterData), &Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsManaUser_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsManaUser_MetaData), NewProp_bIsManaUser_MetaData) };
+void Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsPlayer_SetBit(void* Obj)
+{
+	((FCharacterData*)Obj)->bIsPlayer = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsPlayer = { "bIsPlayer", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FCharacterData), &Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsPlayer_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsPlayer_MetaData), NewProp_bIsPlayer_MetaData) };
+void Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsEnnemy_SetBit(void* Obj)
+{
+	((FCharacterData*)Obj)->bIsEnnemy = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsEnnemy = { "bIsEnnemy", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FCharacterData), &Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsEnnemy_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsEnnemy_MetaData), NewProp_bIsEnnemy_MetaData) };
 const UECodeGen_Private::FSoftClassPropertyParams Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_StandClass = { "StandClass", nullptr, (EPropertyFlags)0x0014000000000015, UECodeGen_Private::EPropertyGenFlags::SoftClass, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCharacterData, StandClass), Z_Construct_UClass_AMyStandBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StandClass_MetaData), NewProp_StandClass_MetaData) };
+const UECodeGen_Private::FSoftObjectPropertyParams Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_AttackDataSet = { "AttackDataSet", nullptr, (EPropertyFlags)0x0014000000000015, UECodeGen_Private::EPropertyGenFlags::SoftObject, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCharacterData, AttackDataSet), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackDataSet_MetaData), NewProp_AttackDataSet_MetaData) };
 const UECodeGen_Private::FNamePropertyParams Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_StandName = { "StandName", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FCharacterData, StandName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StandName_MetaData), NewProp_StandName_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FCharacterData_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_CharacterName,
@@ -119,7 +148,10 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FC
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsStandUser,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsDevilFruitUser,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsManaUser,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsPlayer,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_bIsEnnemy,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_StandClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_AttackDataSet,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FCharacterData_Statics::NewProp_StandName,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FCharacterData_Statics::PropPointers) < 2048);
@@ -150,10 +182,10 @@ UScriptStruct* Z_Construct_UScriptStruct_FCharacterData()
 struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FCharacterData_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FCharacterData::StaticStruct, Z_Construct_UScriptStruct_FCharacterData_Statics::NewStructOps, TEXT("CharacterData"), &Z_Registration_Info_UScriptStruct_FCharacterData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FCharacterData), 3470226106U) },
+		{ FCharacterData::StaticStruct, Z_Construct_UScriptStruct_FCharacterData_Statics::NewStructOps, TEXT("CharacterData"), &Z_Registration_Info_UScriptStruct_FCharacterData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FCharacterData), 3358070478U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FCharacterData_h__Script_Game2DCPlusPlus_3766178285(TEXT("/Script/Game2DCPlusPlus"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FCharacterData_h__Script_Game2DCPlusPlus_2717200933(TEXT("/Script/Game2DCPlusPlus"),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FCharacterData_h__Script_Game2DCPlusPlus_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Data_FCharacterData_h__Script_Game2DCPlusPlus_Statics::ScriptStructInfo),
 	nullptr, 0);

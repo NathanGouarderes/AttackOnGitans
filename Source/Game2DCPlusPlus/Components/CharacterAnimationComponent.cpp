@@ -1,6 +1,7 @@
 ﻿#include "CharacterAnimationComponent.h"
 #include "../Characters/MyCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "../Data/FAnimationData.h"
 #include "PaperFlipbookComponent.h"
 #include "CharacterAbilitiesComponent.h"
 
@@ -9,6 +10,18 @@ UCharacterAnimationComponent::UCharacterAnimationComponent()
     PrimaryComponentTick.bCanEverTick = true;
     PrimaryComponentTick.bStartWithTickEnabled = true;
     SetComponentTickEnabled(true);
+
+    static ConstructorHelpers::FObjectFinder<UDataTable> AnimationDT(TEXT("/Game/DataTables/DT_AnimationData.DT_AnimationData"));
+
+    if (AnimationDT.Succeeded())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("UCharacterAnimationComponent::UCharacterAnimationComponent() --> CharacterDT OK"));
+        AnimationDataTableAsset = AnimationDT.Object;
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("UCharacterAnimationComponent::UCharacterAnimationComponent() --> CharacterDT KO"));
+    }
 }
 
 void UCharacterAnimationComponent::BeginPlay()
@@ -20,6 +33,8 @@ void UCharacterAnimationComponent::BeginPlay()
     FlipbookComponent = OwnerCharacter->FindComponentByClass<UPaperFlipbookComponent>();
     AbilitiesComponent = OwnerCharacter->FindComponentByClass<UCharacterAbilitiesComponent>();
     IFlipbookProviderInterface* FlipbookProvider = Cast<IFlipbookProviderInterface>(OwnerCharacter);
+
+
 
     if (!OwnerCharacter)
     {
@@ -121,10 +136,10 @@ void UCharacterAnimationComponent::PlayAttackAnimation(const FAttackData& Attack
     switch (Role)
     {
     case ERole::Player:
-        SelectedFlipbook = AttackData.PlayerAnimation.LoadSynchronous();
+        SelectedFlipbook = AttackData.Animation.LoadSynchronous();
         break;
     case ERole::Enemy:
-        SelectedFlipbook = AttackData.EnemyAnimation.LoadSynchronous();
+        SelectedFlipbook = AttackData.Animation.LoadSynchronous();
         break;
     default:
         UE_LOG(LogTemp, Error, TEXT("❌ PlayAttackAnimation : Rôle non géré (%d) !"), static_cast<int>(Role));
@@ -191,12 +206,12 @@ void UCharacterAnimationComponent::SetFacingDirection(float VelocityX)
 
     if (VelocityX > 0.1f)
     {
-        FlipbookComponent->SetRelativeScale3D(FVector(-0.50f, 1.0f, 1.0f));
+        FlipbookComponent->SetRelativeScale3D(FVector(-3.0f, 1.0f, 1.0f));
         bIsFacingRight = true;
     }
     else if (VelocityX < -0.1f)
     {
-        FlipbookComponent->SetRelativeScale3D(FVector(0.50f, 1.0f, 1.0f));
+        FlipbookComponent->SetRelativeScale3D(FVector(3.0f, 1.0f, 1.0f));
         bIsFacingRight = false;
     }
 
@@ -218,27 +233,27 @@ bool UCharacterAnimationComponent::IsFacingRight() const
 
 void UCharacterAnimationComponent::PlayIdleAnimation(ERole Role)
 {
-    
-    const UDataTable* AnimationData = AnimationDataTableAsset.LoadSynchronous();
-
-    CurrentAnimationData = AnimationData->FindRow<FAnimationData>(FName("Idle"), TEXT(""));
-        
-    switch (Role)
+    if (AnimationDataTableAsset)
     {
-    case ERole::Player:
-        FlipbookComponent->SetFlipbook(CurrentAnimationData->PlayerAnimation.LoadSynchronous());
-        //UE_LOG(LogTemp, Warning, TEXT("IdleAnimation du Player"));
-        break;
-    case ERole::Enemy:
-        FlipbookComponent->SetFlipbook(CurrentAnimationData->EnemyAnimation.LoadSynchronous());
-        //UE_LOG(LogTemp, Warning, TEXT("IdleAnimation de l'ennemi"));
-        break;
-    case ERole::Boss:
-        break;
-    case ERole::NPC:
-        break;
-    default:
-        break;
+        CurrentAnimationData = AnimationDataTableAsset.LoadSynchronous()->FindRow<FAnimationData>(FName("Idle"), TEXT(""));
+
+        switch (Role)
+        {
+        case ERole::Player:
+            FlipbookComponent->SetFlipbook(CurrentAnimationData->PlayerAnimation.LoadSynchronous());
+            //UE_LOG(LogTemp, Warning, TEXT("IdleAnimation du Player"));
+            break;
+        case ERole::Enemy:
+            FlipbookComponent->SetFlipbook(CurrentAnimationData->EnemyAnimation.LoadSynchronous());
+            //UE_LOG(LogTemp, Warning, TEXT("IdleAnimation de l'ennemi"));
+            break;
+        case ERole::Boss:
+            break;
+        case ERole::NPC:
+            break;
+        default:
+            break;
+        }
     }
 }
 

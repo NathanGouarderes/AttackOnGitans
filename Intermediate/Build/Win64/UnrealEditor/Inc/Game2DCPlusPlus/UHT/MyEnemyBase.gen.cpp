@@ -16,18 +16,13 @@ void EmptyLinkFunctionForGeneratedCodeMyEnemyBase() {}
 AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
 AIMODULE_API UClass* Z_Construct_UClass_UBlackboardData_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
-ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
+GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AFighterCharacters();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AMyEnemyBase();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AMyEnemyBase_NoRegister();
-GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterAbilitiesComponent_NoRegister();
-GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterAnimationComponent_NoRegister();
-GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterCombatComponent_NoRegister();
-GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterKiComponent_NoRegister();
-GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterStateComponent_NoRegister();
+GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UFighterInterface_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UFlipbookProviderInterface_NoRegister();
-GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UStatsComponent_NoRegister();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbook_NoRegister();
 PAPER2D_API UClass* Z_Construct_UClass_UPaperFlipbookComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
@@ -194,41 +189,6 @@ struct Z_Construct_UClass_AMyEnemyBase_Statics
 		{ "Category", "AI" },
 		{ "ModuleRelativePath", "Enemies/MyEnemyBase.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CombatComponent_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Component" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Enemies/MyEnemyBase.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AnimationComponent_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Component" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Enemies/MyEnemyBase.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StatsComponent_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Component" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Enemies/MyEnemyBase.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KiComponent_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Component" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Enemies/MyEnemyBase.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AbilitiesComponent_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Component" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Enemies/MyEnemyBase.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StateComponent_MetaData[] = {
-		{ "Category", "Components" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Enemies/MyEnemyBase.h" },
-	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IdleFlipbook_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Animations" },
@@ -250,12 +210,6 @@ struct Z_Construct_UClass_AMyEnemyBase_Statics
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_MoveSpeed;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_BehaviorTree;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_BlackboardData;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_CombatComponent;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_AnimationComponent;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_StatsComponent;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_KiComponent;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_AbilitiesComponent;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_StateComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_IdleFlipbook;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_WalkFlipbook;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Attack1Flipbook;
@@ -276,12 +230,6 @@ const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMyEnemyBase_Stat
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_MoveSpeed = { "MoveSpeed", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, MoveSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MoveSpeed_MetaData), NewProp_MoveSpeed_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_BehaviorTree = { "BehaviorTree", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, BehaviorTree), Z_Construct_UClass_UBehaviorTree_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BehaviorTree_MetaData), NewProp_BehaviorTree_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_BlackboardData = { "BlackboardData", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, BlackboardData), Z_Construct_UClass_UBlackboardData_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BlackboardData_MetaData), NewProp_BlackboardData_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_CombatComponent = { "CombatComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, CombatComponent), Z_Construct_UClass_UCharacterCombatComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CombatComponent_MetaData), NewProp_CombatComponent_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_AnimationComponent = { "AnimationComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, AnimationComponent), Z_Construct_UClass_UCharacterAnimationComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AnimationComponent_MetaData), NewProp_AnimationComponent_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_StatsComponent = { "StatsComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, StatsComponent), Z_Construct_UClass_UStatsComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StatsComponent_MetaData), NewProp_StatsComponent_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_KiComponent = { "KiComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, KiComponent), Z_Construct_UClass_UCharacterKiComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KiComponent_MetaData), NewProp_KiComponent_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_AbilitiesComponent = { "AbilitiesComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, AbilitiesComponent), Z_Construct_UClass_UCharacterAbilitiesComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AbilitiesComponent_MetaData), NewProp_AbilitiesComponent_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_StateComponent = { "StateComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, StateComponent), Z_Construct_UClass_UCharacterStateComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StateComponent_MetaData), NewProp_StateComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_IdleFlipbook = { "IdleFlipbook", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, IdleFlipbook), Z_Construct_UClass_UPaperFlipbook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IdleFlipbook_MetaData), NewProp_IdleFlipbook_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_WalkFlipbook = { "WalkFlipbook", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, WalkFlipbook), Z_Construct_UClass_UPaperFlipbook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WalkFlipbook_MetaData), NewProp_WalkFlipbook_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_Attack1Flipbook = { "Attack1Flipbook", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyEnemyBase, Attack1Flipbook), Z_Construct_UClass_UPaperFlipbook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Attack1Flipbook_MetaData), NewProp_Attack1Flipbook_MetaData) };
@@ -291,24 +239,19 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyEnemyB
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_MoveSpeed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_BehaviorTree,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_BlackboardData,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_CombatComponent,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_AnimationComponent,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_StatsComponent,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_KiComponent,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_AbilitiesComponent,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_StateComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_IdleFlipbook,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_WalkFlipbook,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyEnemyBase_Statics::NewProp_Attack1Flipbook,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyEnemyBase_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMyEnemyBase_Statics::DependentSingletons[])() = {
-	(UObject* (*)())Z_Construct_UClass_ACharacter,
+	(UObject* (*)())Z_Construct_UClass_AFighterCharacters,
 	(UObject* (*)())Z_Construct_UPackage__Script_Game2DCPlusPlus,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyEnemyBase_Statics::DependentSingletons) < 16);
 const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AMyEnemyBase_Statics::InterfaceParams[] = {
 	{ Z_Construct_UClass_UFlipbookProviderInterface_NoRegister, (int32)VTABLE_OFFSET(AMyEnemyBase, IFlipbookProviderInterface), false },  // 692605173
+	{ Z_Construct_UClass_UFighterInterface_NoRegister, (int32)VTABLE_OFFSET(AMyEnemyBase, IFighterInterface), false },  // 3743277246
 };
 const UECodeGen_Private::FClassParams Z_Construct_UClass_AMyEnemyBase_Statics::ClassParams = {
 	&AMyEnemyBase::StaticClass,
@@ -341,10 +284,10 @@ AMyEnemyBase::~AMyEnemyBase() {}
 struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyEnemyBase, AMyEnemyBase::StaticClass, TEXT("AMyEnemyBase"), &Z_Registration_Info_UClass_AMyEnemyBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyEnemyBase), 888382975U) },
+		{ Z_Construct_UClass_AMyEnemyBase, AMyEnemyBase::StaticClass, TEXT("AMyEnemyBase"), &Z_Registration_Info_UClass_AMyEnemyBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyEnemyBase), 3193285057U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h__Script_Game2DCPlusPlus_1973038446(TEXT("/Script/Game2DCPlusPlus"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h__Script_Game2DCPlusPlus_4062559730(TEXT("/Script/Game2DCPlusPlus"),
 	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Enemies_MyEnemyBase_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -6,16 +6,21 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "UCharacterStateComponent.h"
+#include "Engine/HitResult.h"
+#include "Game2DCPlusPlus/Data/FAttackData.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 void EmptyLinkFunctionForGeneratedCodeUCharacterStateComponent() {}
 
 // ********** Begin Cross Module References ********************************************************
+ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
+ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterStateComponent();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterStateComponent_NoRegister();
 GAME2DCPLUSPLUS_API UEnum* Z_Construct_UEnum_Game2DCPlusPlus_EState();
+GAME2DCPLUSPLUS_API UScriptStruct* Z_Construct_UScriptStruct_FAttackData();
 UPackage* Z_Construct_UPackage__Script_Game2DCPlusPlus();
 // ********** End Cross Module References **********************************************************
 
@@ -41,7 +46,7 @@ struct Z_Construct_UFunction_UCharacterStateComponent_CanEnterState_Statics
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UCharacterStateComponent_CanEnterState_Statics::NewProp_NewState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UCharacterStateComponent_CanEnterState_Statics::NewProp_NewState = { "NewState", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterStateComponent_eventCanEnterState_Parms, NewState), Z_Construct_UEnum_Game2DCPlusPlus_EState, METADATA_PARAMS(0, nullptr) }; // 1516219444
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UCharacterStateComponent_CanEnterState_Statics::NewProp_NewState = { "NewState", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterStateComponent_eventCanEnterState_Parms, NewState), Z_Construct_UEnum_Game2DCPlusPlus_EState, METADATA_PARAMS(0, nullptr) }; // 2703452667
 void Z_Construct_UFunction_UCharacterStateComponent_CanEnterState_Statics::NewProp_ReturnValue_SetBit(void* Obj)
 {
 	((CharacterStateComponent_eventCanEnterState_Parms*)Obj)->ReturnValue = 1;
@@ -143,7 +148,7 @@ struct Z_Construct_UFunction_UCharacterStateComponent_IsInState_Statics
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UCharacterStateComponent_IsInState_Statics::NewProp_State_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UCharacterStateComponent_IsInState_Statics::NewProp_State = { "State", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterStateComponent_eventIsInState_Parms, State), Z_Construct_UEnum_Game2DCPlusPlus_EState, METADATA_PARAMS(0, nullptr) }; // 1516219444
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UCharacterStateComponent_IsInState_Statics::NewProp_State = { "State", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterStateComponent_eventIsInState_Parms, State), Z_Construct_UEnum_Game2DCPlusPlus_EState, METADATA_PARAMS(0, nullptr) }; // 2703452667
 void Z_Construct_UFunction_UCharacterStateComponent_IsInState_Statics::NewProp_ReturnValue_SetBit(void* Obj)
 {
 	((CharacterStateComponent_eventIsInState_Parms*)Obj)->ReturnValue = 1;
@@ -225,7 +230,7 @@ struct Z_Construct_UFunction_UCharacterStateComponent_SetState_Statics
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UCharacterStateComponent_SetState_Statics::NewProp_NewState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UCharacterStateComponent_SetState_Statics::NewProp_NewState = { "NewState", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterStateComponent_eventSetState_Parms, NewState), Z_Construct_UEnum_Game2DCPlusPlus_EState, METADATA_PARAMS(0, nullptr) }; // 1516219444
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UCharacterStateComponent_SetState_Statics::NewProp_NewState = { "NewState", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterStateComponent_eventSetState_Parms, NewState), Z_Construct_UEnum_Game2DCPlusPlus_EState, METADATA_PARAMS(0, nullptr) }; // 2703452667
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCharacterStateComponent_SetState_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterStateComponent_SetState_Statics::NewProp_NewState_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterStateComponent_SetState_Statics::NewProp_NewState,
@@ -252,6 +257,74 @@ DEFINE_FUNCTION(UCharacterStateComponent::execSetState)
 }
 // ********** End Class UCharacterStateComponent Function SetState *********************************
 
+// ********** Begin Class UCharacterStateComponent Function TryResolveDefence **********************
+struct Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics
+{
+	struct CharacterStateComponent_eventTryResolveDefence_Parms
+	{
+		AActor* Target;
+		FAttackData AttackData;
+		FHitResult Hit;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "State" },
+		{ "ModuleRelativePath", "Components/UCharacterStateComponent.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AttackData_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Hit_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Target;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_AttackData;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_Hit;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::NewProp_Target = { "Target", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterStateComponent_eventTryResolveDefence_Parms, Target), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::NewProp_AttackData = { "AttackData", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterStateComponent_eventTryResolveDefence_Parms, AttackData), Z_Construct_UScriptStruct_FAttackData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackData_MetaData), NewProp_AttackData_MetaData) }; // 3263392156
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::NewProp_Hit = { "Hit", nullptr, (EPropertyFlags)0x0010008008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CharacterStateComponent_eventTryResolveDefence_Parms, Hit), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Hit_MetaData), NewProp_Hit_MetaData) }; // 267591329
+void Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((CharacterStateComponent_eventTryResolveDefence_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(CharacterStateComponent_eventTryResolveDefence_Parms), &Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::NewProp_Target,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::NewProp_AttackData,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::NewProp_Hit,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UCharacterStateComponent, nullptr, "TryResolveDefence", Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::PropPointers), sizeof(Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::CharacterStateComponent_eventTryResolveDefence_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::CharacterStateComponent_eventTryResolveDefence_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UCharacterStateComponent::execTryResolveDefence)
+{
+	P_GET_OBJECT(AActor,Z_Param_Target);
+	P_GET_STRUCT_REF(FAttackData,Z_Param_Out_AttackData);
+	P_GET_STRUCT_REF(FHitResult,Z_Param_Out_Hit);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->TryResolveDefence(Z_Param_Target,Z_Param_Out_AttackData,Z_Param_Out_Hit);
+	P_NATIVE_END;
+}
+// ********** End Class UCharacterStateComponent Function TryResolveDefence ************************
+
 // ********** Begin Class UCharacterStateComponent *************************************************
 void UCharacterStateComponent::StaticRegisterNativesUCharacterStateComponent()
 {
@@ -262,6 +335,7 @@ void UCharacterStateComponent::StaticRegisterNativesUCharacterStateComponent()
 		{ "IsInState", &UCharacterStateComponent::execIsInState },
 		{ "ResetState", &UCharacterStateComponent::execResetState },
 		{ "SetState", &UCharacterStateComponent::execSetState },
+		{ "TryResolveDefence", &UCharacterStateComponent::execTryResolveDefence },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -313,11 +387,12 @@ struct Z_Construct_UClass_UCharacterStateComponent_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UCharacterStateComponent_CanEnterState, "CanEnterState" }, // 161074115
+		{ &Z_Construct_UFunction_UCharacterStateComponent_CanEnterState, "CanEnterState" }, // 4240913695
 		{ &Z_Construct_UFunction_UCharacterStateComponent_IsBeamActive, "IsBeamActive" }, // 3113777884
-		{ &Z_Construct_UFunction_UCharacterStateComponent_IsInState, "IsInState" }, // 3833305245
+		{ &Z_Construct_UFunction_UCharacterStateComponent_IsInState, "IsInState" }, // 3127325724
 		{ &Z_Construct_UFunction_UCharacterStateComponent_ResetState, "ResetState" }, // 3862471112
-		{ &Z_Construct_UFunction_UCharacterStateComponent_SetState, "SetState" }, // 3940678093
+		{ &Z_Construct_UFunction_UCharacterStateComponent_SetState, "SetState" }, // 4114047856
+		{ &Z_Construct_UFunction_UCharacterStateComponent_TryResolveDefence, "TryResolveDefence" }, // 1906932711
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -326,7 +401,7 @@ struct Z_Construct_UClass_UCharacterStateComponent_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UCharacterStateComponent_Statics::NewProp_CurrentState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UCharacterStateComponent_Statics::NewProp_CurrentState = { "CurrentState", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterStateComponent, CurrentState), Z_Construct_UEnum_Game2DCPlusPlus_EState, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentState_MetaData), NewProp_CurrentState_MetaData) }; // 1516219444
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UCharacterStateComponent_Statics::NewProp_CurrentState = { "CurrentState", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterStateComponent, CurrentState), Z_Construct_UEnum_Game2DCPlusPlus_EState, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentState_MetaData), NewProp_CurrentState_MetaData) }; // 2703452667
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UCharacterStateComponent_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterStateComponent_Statics::NewProp_CurrentState_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterStateComponent_Statics::NewProp_CurrentState,
@@ -368,10 +443,10 @@ UCharacterStateComponent::~UCharacterStateComponent() {}
 struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_UCharacterStateComponent_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCharacterStateComponent, UCharacterStateComponent::StaticClass, TEXT("UCharacterStateComponent"), &Z_Registration_Info_UClass_UCharacterStateComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterStateComponent), 774785290U) },
+		{ Z_Construct_UClass_UCharacterStateComponent, UCharacterStateComponent::StaticClass, TEXT("UCharacterStateComponent"), &Z_Registration_Info_UClass_UCharacterStateComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterStateComponent), 216185495U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_UCharacterStateComponent_h__Script_Game2DCPlusPlus_262228431(TEXT("/Script/Game2DCPlusPlus"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_UCharacterStateComponent_h__Script_Game2DCPlusPlus_3753916626(TEXT("/Script/Game2DCPlusPlus"),
 	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_UCharacterStateComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_UCharacterStateComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

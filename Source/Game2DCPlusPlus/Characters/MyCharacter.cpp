@@ -37,14 +37,7 @@ AMyCharacter::AMyCharacter()
 
 
 	// === Components custom ===
-	CombatComponent = CreateDefaultSubobject<UCharacterCombatComponent>(TEXT("CombatComponent"));
-	KiComponent = CreateDefaultSubobject<UCharacterKiComponent>(TEXT("KiComponent"));
-	AbilitiesComponent = CreateDefaultSubobject<UCharacterAbilitiesComponent>(TEXT("AbilitiesComponent"));
 	InputHandler = CreateDefaultSubobject<UCharacterInputComponent>(TEXT("InputHandler"));
-	CharacterAnimationComponent = CreateDefaultSubobject<UCharacterAnimationComponent>(TEXT("CharacterAnimationComponent"));
-	StatsComponent = CreateDefaultSubobject<UStatsComponent>(TEXT("StatsComponent"));
-	StateComponent = CreateDefaultSubobject<UCharacterStateComponent>(TEXT("StateComponent"));
-	StandComponent = CreateDefaultSubobject<UStandComponent>(TEXT("StandComponent"));
 
 
 	// === Character flipbook (perso) ===
@@ -52,36 +45,12 @@ AMyCharacter::AMyCharacter()
 	CharacterFlipbook->SetupAttachment(RootComponent);
 
 
-	//MyAnimationComponent = CreateDefaultSubobject<UCharacterAnimationComponent>(TEXT("MyAnimationComponent"));
-
-
-	// === Sword flipbook (arme visible) ===
-	//SwordFlipbook = CreateDefaultSubobject<UPaperFlipbookComponent>(TEXT("SwordFlipbook"));
-	//SwordFlipbook->SetupAttachment(CharacterFlipbook, TEXT("Weapon socket")); // 👈 ton socket sur les sprites
-	//SwordFlipbook->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	//SwordFlipbook->SetGenerateOverlapEvents(false);
 
 	// === Caméra ===
 	CharacterCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("CharacterCamera"));
 	CharacterCamera->SetupAttachment(RootComponent);
 
-	// === Hitbox de l'épée ===
-	//SwordHitbox->SetupAttachment(CharacterFlipbook);
-	//SwordHitbox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
-	//SwordHitbox->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
-	//SwordHitbox->SetNotifyRigidBodyCollision(true);
-
-	static ConstructorHelpers::FObjectFinder<UDataTable> CharacterDT(TEXT("/Game/DataTables/DT_CharacterData.DT_CharacterData"));
-
-	if (CharacterDT.Succeeded())
-	{
-		UE_LOG(LogTemp, Warning, TEXT("AMyCharacter::AMyCharacter() --> CharacterDT OK"));
-		CharacterDataTable = CharacterDT.Object;
-	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("AMyCharacter::AMyCharacter() --> CharacterDT KO"));
-	}
+	GetDatasFromCharacterDataTable();
 
 	// === Mouvements ===
 	GetCharacterMovement()->JumpZVelocity = 1000.0f;
@@ -94,12 +63,6 @@ AMyCharacter::AMyCharacter()
 	// === Saut multiple ===
 	MaxJumpCount = 2;
 	JumpMaxCount = MaxJumpCount;
-
-	// Stats de base du personnage
-
-	CharacterMaxKi = 300.0f;
-	CharacterKiLoadSpeed = 3.0f;
-
 }
 
 
@@ -108,23 +71,12 @@ void AMyCharacter::BeginPlay()
 	Super::BeginPlay();
 	InitializeInputHandler();
 
-	CharacterAnimationComponent->CharacterRole = ERole::Player;
+	AnimationComponent->CharacterRole = ERole::Player;
 
-	const FString Context(TEXT("AMyCharacter::BeginPlay() --> CharacterData Initialisation"));
-	if (CharacterDataTable)
-	{
-		FCharacterData* Row = CharacterDataTable->FindRow<FCharacterData>(FName("CharacterBase"), Context);
-		if (Row && Row->bIsStandUser && Row->StandName != "")
-		{
-			CharacterData = *Row;
-			UE_LOG(LogTemp, Warning, TEXT("Chargé : %s, Stand = %s"), *Row->CharacterName.ToString(), *Row->StandName.ToString());
-		}
-	}
+	
+	SetDatasFromCharacterDataTable("CharacterBase");
 
-	if (!GetCapsuleComponent())
-	{
-		UE_LOG(LogTemp, Error, TEXT("ATTENTION: CapsuleComponent est toujours NULL !"));
-	}
+	
 
 	UCharacterMovementComponent* MoveComp = GetCharacterMovement();
 	if (MoveComp)
@@ -140,7 +92,7 @@ void AMyCharacter::BeginPlay()
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("CharacterMovementComponent est NULL !"));
+		UE_LOG(LogTemp, Error, TEXT(" AMyCharacter::BeginPlay() CharacterMovementComponent est NULL !"));
 	}
 
 	//GetWorld()->GetTimerManager().SetTimerForNextTick(this, &AMyCharacter::InitializeInputHandler);
@@ -157,13 +109,13 @@ void AMyCharacter::BeginPlay()
 			// Vérifions si la capsule bloque le mouvement
 			if (Capsule->GetCollisionEnabled() != ECollisionEnabled::QueryAndPhysics)
 			{
-				UE_LOG(LogTemp, Error, TEXT("ATTENTION: La collision de la capsule est désactivée !"));
+				UE_LOG(LogTemp, Error, TEXT("AMyCharacter::BeginPlay() La collision de la capsule est désactivée !"));
 				Capsule->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 			}
 		}
 		else
 		{
-			UE_LOG(LogTemp, Error, TEXT("La capsule de collision est NULL !"));
+			UE_LOG(LogTemp, Error, TEXT("AMyCharacter::BeginPlay() La capsule de collision est NULL !"));
 		}
 	}
 
@@ -174,7 +126,7 @@ void AMyCharacter::BeginPlay()
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("InputHandler est NULL dans AMyCharacter !"));
+		UE_LOG(LogTemp, Error, TEXT("AMyCharacter::BeginPlay() InputHandler est NULL dans AMyCharacter !"));
 	}
 
 	if (GetCharacterMovement())
@@ -183,61 +135,11 @@ void AMyCharacter::BeginPlay()
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("CharacterMovementComponent est NULL, problème de mouvement !"));
+		UE_LOG(LogTemp, Error, TEXT("AMyCharacter::BeginPlay() CharacterMovementComponent est NULL, problème de mouvement !"));
 	}
 
-	/** Initialisation des composants **/
+	
 
-	if (StatsComponent)
-	{
-		StatsComponent->CurrentHealth = StatsComponent->MaxHealth;
-		StatsComponent->MaxKi = CharacterMaxKi;
-		StatsComponent->KiLoadSpeed = CharacterKiLoadSpeed;
-	}
-
-	if (KiComponent && StatsComponent)
-	{
-		KiComponent->InitializeStatsComponent(StatsComponent);
-		KiComponent->InitializeKiSystem();
-	}
-
-	if (KiComponent && AbilitiesComponent && StatsComponent)
-	{
-		AbilitiesComponent->InitializeAllComponents(KiComponent, StatsComponent);
-	}
-
-
-	/*********************************
-	* 
-	* 
-	* 
-	* 
-	if (CombatComponent)
-	{
-		AMyWeaponBase* DefaultWeapon = GetWorld()->SpawnActor<AMyWeaponBase>(DefaultWeaponClass);
-		if (DefaultWeapon)
-		{
-			CombatComponent->EquipWeapon(DefaultWeapon);
-			UE_LOG(LogTemp, Warning, TEXT("MyCharacter : Arme équipée : Default Weapon."));
-		}
-		//UE_LOG(LogTemp, Warning, TEXT("CharacterCombatComponent : Initialisation du systeme de combat avec une arme."));
-	}
-
-	if (CombatComponent)
-	{
-		AMyFistBase* FistBase = GetWorld()->SpawnActor<AMyFistBase>();
-		if (FistBase)
-		{
-			CombatComponent->EquipWeapon(FistBase);
-			UE_LOG(LogTemp, Warning, TEXT("MyCharacter : Arme équipée : Poings."));
-		}
-		else
-		{
-			UE_LOG(LogTemp, Error, TEXT("MyCharacter : MyFistBase n'est pas reconnu."));
-
-		}
-	}
-	********************************************/
 }
 
 
@@ -245,7 +147,7 @@ void AMyCharacter::BeginPlay()
 void AMyCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	//DebugDrawHitboxes();
 }
 
 UPaperFlipbookComponent* AMyCharacter::GetCharacterFlipbook() const 
@@ -265,7 +167,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("InputHandler est NULL, impossible de lier les inputs !"));
+		UE_LOG(LogTemp, Error, TEXT(" AMyCharacter::GetCharacterFlipbook() InputHandler est NULL, impossible de lier les inputs !"));
 	}	
 }
 
@@ -275,9 +177,9 @@ void AMyCharacter::MoveRight(float Value)
 	AddMovementInput(FVector(1.0f, 0.0f, 0.0f), Value);
 	bIsWalking = FMath::Abs(Value) > 0.1f;
 
-	if (Value != 0.0f && CharacterAnimationComponent)
+	if (Value != 0.0f && AnimationComponent)
 	{
-		CharacterAnimationComponent->SetFacingDirection(Value);
+		AnimationComponent->SetFacingDirection(Value);
 	}
 }
 
@@ -291,7 +193,7 @@ void AMyCharacter::InitializeInputHandler()
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("InitializeInputHandler: InputHandler est NULL !"));
+		UE_LOG(LogTemp, Error, TEXT(" AMyCharacter::InitializeInputHandler() InputHandler est NULL !"));
 	}
 }
 
@@ -300,11 +202,11 @@ float AMyCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& Da
 	if (StatsComponent)
 	{
 		StatsComponent->ApplyDamages(DamageAmount);
-		UE_LOG(LogTemp, Warning, TEXT("💔 %s a reçu %f dégâts via TakeDamage."), *GetName(), DamageAmount);
+		UE_LOG(LogTemp, Warning, TEXT("AMyCharacter::InitializeInputHandler() 💔 %s a reçu %f dégâts via TakeDamage."), *GetName(), DamageAmount);
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("❌ StatsComponent est NULL sur %s !"), *GetName());
+		UE_LOG(LogTemp, Error, TEXT("AMyCharacter::InitializeInputHandler() ❌ StatsComponent est NULL sur %s !"), *GetName());
 	}
 
 	return DamageAmount;
@@ -315,7 +217,7 @@ void AMyCharacter::SetCollisionEnabled(bool Enabled)
 	if (UCapsuleComponent* Capsule = GetCapsuleComponent())
 	{
 		Capsule->SetCollisionResponseToChannel(ECC_TRACEHITBOX, Enabled ? ECR_Block : ECR_Ignore);
-		UE_LOG(LogTemp, Warning, TEXT("🎯 Collision canal TRACEHITBOX modifié"));
+		UE_LOG(LogTemp, Warning, TEXT("AMyCharacter::InitializeInputHandler() 🎯 Collision canal TRACEHITBOX modifié"));
 	}
 }
 
@@ -329,6 +231,5 @@ void AMyCharacter::Jump()
 {
 	Super::Jump();
 }
-
 
 

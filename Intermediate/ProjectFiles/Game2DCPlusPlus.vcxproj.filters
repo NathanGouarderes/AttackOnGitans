@@ -272,6 +272,24 @@
     <ClInclude Include="..\..\Source\Game2DCPlusPlus\Components\CharacterKiComponent.h">
       <Filter>Source\Game2DCPlusPlus\Components</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CharacterMagicComponent.cpp">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Components\CharacterMagicComponent.h">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CreatureSegmentComponent.cpp">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Components\CreatureSegmentComponent.h">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\FighterLifeCycleComponent.cpp">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Components\FighterLifeCycleComponent.h">
+      <Filter>Source\Game2DCPlusPlus\Components</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\HitboxComponent.cpp">
       <Filter>Source\Game2DCPlusPlus\Components</Filter>
     </ClCompile>
@@ -317,6 +335,15 @@
     <ClInclude Include="..\..\Source\Game2DCPlusPlus\Components\UCharacterStateComponent.h">
       <Filter>Source\Game2DCPlusPlus\Components</Filter>
     </ClInclude>
+    <Filter Include="Source\Game2DCPlusPlus\Creatures">
+      <UniqueIdentifier>{2DBC5534-32EE-3D5A-A703-FDE73083E1EF}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Creatures\CreatureBase.cpp">
+      <Filter>Source\Game2DCPlusPlus\Creatures</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Creatures\CreatureBase.h">
+      <Filter>Source\Game2DCPlusPlus\Creatures</Filter>
+    </ClInclude>
     <Filter Include="Source\Game2DCPlusPlus\DamageTypes">
       <UniqueIdentifier>{E8E82B47-32FA-3149-A73C-75EFAEFF88B2}</UniqueIdentifier>
     </Filter>
@@ -329,9 +356,27 @@
     <Filter Include="Source\Game2DCPlusPlus\Data">
       <UniqueIdentifier>{AEA51105-D3F1-3C6F-AFB1-ED9E448DB6E6}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Data\CharacterStats.cpp">
+      <Filter>Source\Game2DCPlusPlus\Data</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Data\CharacterStats.h">
+      <Filter>Source\Game2DCPlusPlus\Data</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Data\CreatureData.cpp">
+      <Filter>Source\Game2DCPlusPlus\Data</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Data\CreatureData.h">
+      <Filter>Source\Game2DCPlusPlus\Data</Filter>
+    </ClInclude>
     <Filter Include="Source\Game2DCPlusPlus\Data\Enums">
       <UniqueIdentifier>{AF1BE818-2BC6-3681-82C4-2DF667D3476D}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Data\Enums\ECreatureSegmentType.cpp">
+      <Filter>Source\Game2DCPlusPlus\Data\Enums</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Data\Enums\ECreatureSegmentType.h">
+      <Filter>Source\Game2DCPlusPlus\Data\Enums</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\Data\Enums\EState.cpp">
       <Filter>Source\Game2DCPlusPlus\Data\Enums</Filter>
     </ClCompile>
@@ -365,6 +410,15 @@
     <ClInclude Include="..\..\Source\Game2DCPlusPlus\Data\FStandData.h">
       <Filter>Source\Game2DCPlusPlus\Data</Filter>
     </ClInclude>
+    <Filter Include="Source\Game2DCPlusPlus\Data\Interfaces">
+      <UniqueIdentifier>{B5EE1F5C-3AED-3561-A030-0B22D6B76666}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Data\Interfaces\FighterInterface.cpp">
+      <Filter>Source\Game2DCPlusPlus\Data\Interfaces</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Data\Interfaces\FighterInterface.h">
+      <Filter>Source\Game2DCPlusPlus\Data\Interfaces</Filter>
+    </ClInclude>
     <Filter Include="Source\Game2DCPlusPlus\Enemies">
       <UniqueIdentifier>{1F47D115-7EFC-346A-AEAF-D729C649117A}</UniqueIdentifier>
     </Filter>
@@ -373,6 +427,12 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\Game2DCPlusPlus\Enemies\MyEnemyBase.h">
       <Filter>Source\Game2DCPlusPlus\Enemies</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\FighterCharacters.cpp">
+      <Filter>Source\Game2DCPlusPlus</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\FighterCharacters.h">
+      <Filter>Source\Game2DCPlusPlus</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\FistCombatRow.cpp">
       <Filter>Source\Game2DCPlusPlus</Filter>

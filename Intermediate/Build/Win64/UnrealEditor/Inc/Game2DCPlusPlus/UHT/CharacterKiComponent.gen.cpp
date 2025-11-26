@@ -13,8 +13,8 @@ void EmptyLinkFunctionForGeneratedCodeCharacterKiComponent() {}
 
 // ********** Begin Cross Module References ********************************************************
 COREUOBJECT_API UClass* Z_Construct_UClass_UClass_NoRegister();
-ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
+GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AFighterCharacters_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_AKiAura_NoRegister();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterKiComponent();
 GAME2DCPLUSPLUS_API UClass* Z_Construct_UClass_UCharacterKiComponent_NoRegister();
@@ -101,7 +101,7 @@ struct Z_Construct_UClass_UCharacterKiComponent_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_OwnerCharacter = { "OwnerCharacter", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, OwnerCharacter), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OwnerCharacter_MetaData), NewProp_OwnerCharacter_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_OwnerCharacter = { "OwnerCharacter", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, OwnerCharacter), Z_Construct_UClass_AFighterCharacters_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OwnerCharacter_MetaData), NewProp_OwnerCharacter_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiBarWidget = { "KiBarWidget", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, KiBarWidget), Z_Construct_UClass_UKiBarWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KiBarWidget_MetaData), NewProp_KiBarWidget_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_StatsComponent = { "StatsComponent", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, StatsComponent), Z_Construct_UClass_UStatsComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StatsComponent_MetaData), NewProp_StatsComponent_MetaData) };
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UCharacterKiComponent_Statics::NewProp_KiBarWidgetClass = { "KiBarWidgetClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterKiComponent, KiBarWidgetClass), Z_Construct_UClass_UClass_NoRegister, Z_Construct_UClass_UKiBarWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KiBarWidgetClass_MetaData), NewProp_KiBarWidgetClass_MetaData) };
@@ -152,10 +152,10 @@ UCharacterKiComponent::~UCharacterKiComponent() {}
 struct Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h__Script_Game2DCPlusPlus_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCharacterKiComponent, UCharacterKiComponent::StaticClass, TEXT("UCharacterKiComponent"), &Z_Registration_Info_UClass_UCharacterKiComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterKiComponent), 3941354927U) },
+		{ Z_Construct_UClass_UCharacterKiComponent, UCharacterKiComponent::StaticClass, TEXT("UCharacterKiComponent"), &Z_Registration_Info_UClass_UCharacterKiComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterKiComponent), 4022344065U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h__Script_Game2DCPlusPlus_3650821616(TEXT("/Script/Game2DCPlusPlus"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h__Script_Game2DCPlusPlus_402841904(TEXT("/Script/Game2DCPlusPlus"),
 	Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_natha_Documents_Unreal_Projects_Game2DCPlusPlus_5_6_5_7_Source_Game2DCPlusPlus_Components_CharacterKiComponent_h__Script_Game2DCPlusPlus_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

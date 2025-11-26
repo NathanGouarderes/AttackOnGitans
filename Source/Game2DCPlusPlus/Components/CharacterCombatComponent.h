@@ -8,6 +8,7 @@
 #include "../MyWeaponBase.h"
 #include "../Data/FAttackData.h"
 #include "./UCharacterStateComponent.h"
+#include "../Data/FCharacterData.h"
 #include "Components/ActorComponent.h"
 #include "CharacterCombatComponent.generated.h"
 class UCharacterAnimationComponent;
@@ -32,10 +33,13 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	void LightAttack();
+	void PerformAttack();
+	void InitializeCombat(const FCharacterData& InData);
 	void ExecuteLightAttack();
 	void EndLightAttack();
 	void ResetCombo();
 	void PlayComboAnimation();
+	bool IsCharacterMoving() const;
 	void DealDamageToActor(AActor* Target, float DamageAmount);
 
 	UFUNCTION()
@@ -65,6 +69,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Component")
 	UCharacterStateComponent* StateComponent;
 
+	UPROPERTY()
+	FCharacterData CharacterData;
+
+	TArray<FAttackData*> CachedAttacks;
+		
 	UPROPERTY()
 	TObjectPtr<UPaperFlipbook> CurrentAttackFlipbook = nullptr;
 

@@ -6,25 +6,26 @@
 #include "FStandAttackData.generated.h"
 
 USTRUCT(BlueprintType)
-struct FStandAttackData : public FTableRowBase
+struct FStandAttackData : public FAttackData
 {
     GENERATED_BODY()
 
-    UPROPERTY(EditAnywhere, BlueprintReadOnly)
+public:
+    //(EditAnywhere, BlueprintReadOnly)
     FName AttackName;
 
-    UPROPERTY(EditAnywhere, BlueprintReadOnly)
+    //UPROPERTY(EditAnywhere, BlueprintReadOnly)
     float Damage;
 
     //UPROPERTY(EditAnywhere, BlueprintReadOnly)
     //float RecoveryTime;
 
-    UPROPERTY(EditAnywhere, BlueprintReadOnly)
+    //UPROPERTY(EditAnywhere, BlueprintReadOnly)
     TSoftObjectPtr<class UPaperFlipbook> Animation;
 
-    UPROPERTY(EditAnywhere, BlueprintReadOnly)
+   // UPROPERTY(EditAnywhere, BlueprintReadOnly)
     EDamageTypeEnum DamageType;
 
-    UPROPERTY(EditAnywhere)
-    TArray<FName> TraceSockets;
+    //UPROPERTY(EditAnywhere)
+    TArray<FName> TraceSockets; 
 };

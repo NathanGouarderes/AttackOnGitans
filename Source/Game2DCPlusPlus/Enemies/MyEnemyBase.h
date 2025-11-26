@@ -7,19 +7,21 @@
 #include "../Interface/UFlipbookProviderInterface.h"
 #include "CharacterCombatComponent.h"
 #include "CoreMinimal.h"
+#include "../Components/FighterLifeCycleComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "../Components/CharacterAnimationComponent.h"
+#include "../Data/Interfaces/FighterInterface.h"
 #include "../Components/CharacterKiComponent.h"
 #include "../Components/CharacterAbilitiesComponent.h"
 #include "../Components/UCharacterStateComponent.h"
 #include "../Components/StatsComponent.h"
+#include "../FighterCharacters.h"
 #include "GameFramework/Character.h"
 #include "MyEnemyBase.generated.h"
 
 
 UCLASS()
-class GAME2DCPLUSPLUS_API AMyEnemyBase : public ACharacter, public IFlipbookProviderInterface
+class GAME2DCPLUSPLUS_API AMyEnemyBase : public AFighterCharacters, public IFlipbookProviderInterface, public IFighterInterface
 {
 	GENERATED_BODY()
 
@@ -65,23 +67,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
 	UBlackboardData* BlackboardData;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Component", meta = (AllowPrivateAccess = "true"))
-	UCharacterCombatComponent* CombatComponent;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Component", meta = (AllowPrivateAccess = "true"))
-	UCharacterAnimationComponent* AnimationComponent;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Component", meta = (AllowPrivateAccess = "true"))
-	UStatsComponent* StatsComponent;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Component", meta = (AllowPrivateAccess = "true"))
-	UCharacterKiComponent* KiComponent;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Component", meta = (AllowPrivateAccess = "true"))
-	UCharacterAbilitiesComponent* AbilitiesComponent;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UCharacterStateComponent* StateComponent;
 
 
 

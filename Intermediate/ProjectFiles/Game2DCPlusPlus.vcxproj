@@ -728,6 +728,24 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions_1)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\Game2DCPlusPlus\Components\CharacterKiComponent.h"/>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CharacterMagicComponent.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions_1)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Components\CharacterMagicComponent.h"/>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\CreatureSegmentComponent.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions_1)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Components\CreatureSegmentComponent.h"/>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\FighterLifeCycleComponent.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions_1)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Components\FighterLifeCycleComponent.h"/>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\Components\HitboxComponent.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
@@ -770,12 +788,36 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions_1)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\Game2DCPlusPlus\Components\UCharacterStateComponent.h"/>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Creatures\CreatureBase.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions_1)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Creatures\CreatureBase.h"/>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\DamageTypes\FireDamageType.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions_1)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\Game2DCPlusPlus\DamageTypes\FireDamageType.h"/>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Data\CharacterStats.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions_1)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Data\CharacterStats.h"/>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Data\CreatureData.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions_1)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Data\CreatureData.h"/>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Data\Enums\ECreatureSegmentType.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions_1)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Data\Enums\ECreatureSegmentType.h"/>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\Data\Enums\EState.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
@@ -795,12 +837,24 @@
     <ClInclude Include="..\..\Source\Game2DCPlusPlus\Data\FProjectileData.h"/>
     <ClInclude Include="..\..\Source\Game2DCPlusPlus\Data\FStandAttackData.h"/>
     <ClInclude Include="..\..\Source\Game2DCPlusPlus\Data\FStandData.h"/>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\Data\Interfaces\FighterInterface.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions_1)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\Data\Interfaces\FighterInterface.h"/>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\Enemies\MyEnemyBase.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions_1)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\Game2DCPlusPlus\Enemies\MyEnemyBase.h"/>
+    <ClCompile Include="..\..\Source\Game2DCPlusPlus\FighterCharacters.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions_1)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Game2DCPlusPlus\FighterCharacters.h"/>
     <ClCompile Include="..\..\Source\Game2DCPlusPlus\FistCombatRow.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories_2)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles_2)</ForcedIncludeFiles>
